@@ -1,0 +1,61 @@
+/* CSS for Navbar Glow Effect */
+
+/* Remove default DaisyUI/Tailwind menu hover backgrounds to implement custom glow */
+/* We target specificities to override DaisyUI defaults */
+.navbar .menu li > *:not(ul):not(details):active,
+.navbar .menu li > *:not(ul):not(details):hover,
+.navbar .menu li > details > summary:active,
+.navbar .menu li > details > summary:hover,
+.navbar .menu li > a:hover {
+    background-color: transparent !important;
+}
+
+/* Base class for glow items */
+/* Ensures the element can hold the pseudo-element and text is vertically centered */
+.nav-item-glow {
+    position: relative;
+    isolation: isolate; /* Create new stacking context */
+    overflow: hidden; /* Constrain the glow to the button shape */
+}
+
+/* The Glow Pseudo-element */
+.nav-item-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: -1; /* Behind the text */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* Services (Left of Logo): Glow comes from the Right */
+.glow-from-right::before {
+    right: 0;
+    left: auto;
+    /* Gradient from solid/transparent #00AC52 on right to transparent on left */
+    background: linear-gradient(to left, rgba(0, 172, 82, 0.25), transparent);
+    transform: translateX(100%);
+}
+
+.glow-from-right:hover::before,
+.glow-from-right[open]::before { /* Keep glow if details is open? Maybe. User didn't specify, but often good */
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Contact (Right of Logo): Glow comes from the Left */
+.glow-from-left::before {
+    left: 0;
+    right: auto;
+    /* Gradient from solid/transparent #00AC52 on left to transparent on right */
+    background: linear-gradient(to right, rgba(0, 172, 82, 0.25), transparent);
+    transform: translateX(-100%);
+}
+
+.glow-from-left:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
