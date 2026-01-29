@@ -38,7 +38,7 @@
         <div class="w-[48px] flex-none"></div>
       </div>
       <!-- Desktop Navbar -->
-      <header class="text-gray-600 body-font shadow-md hidden lg:flex flex-col bg-base-300">
+      <header class="text-gray-600 body-font shadow-lg hidden lg:flex flex-col bg-base-300">
         <div class="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
           <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <img
@@ -50,12 +50,14 @@
               priority
             />
           </a>
-          <button
-            class="cursor-pointer inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+          <a
+            routerLink="/"
+            fragment="contacto"
+            class="contact-btn cursor-pointer inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
           >
             Contacto
             <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>
-          </button>
+          </a>
         </div>
         <div class="w-full border-t border-gray-300/50">
           <nav class="container mx-auto py-3 flex flex-wrap items-center text-base justify-center">
