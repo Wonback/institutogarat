@@ -1,11 +1,11 @@
 import { Component, NgModule, ElementRef, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail } from 'lucide-angular';
+import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight } from 'lucide-angular';
 import { animate, inView, stagger } from 'motion';
 
 // Definición del Módulo de Iconos (Correcto)
 @NgModule({
-  imports: [LucideAngularModule.pick({ Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail })],
+  imports: [LucideAngularModule.pick({ Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight })],
   exports: [LucideAngularModule],
 })
 export class LandingIconsModule {}
