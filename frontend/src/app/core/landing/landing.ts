@@ -1,5 +1,6 @@
 import { Component, NgModule, ElementRef, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router'; // Import RouterLink
 import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight } from 'lucide-angular';
 import { animate, inView, stagger } from 'motion';
 
@@ -12,7 +13,7 @@ export class LandingIconsModule {}
 
 @Component({
   selector: 'app-landing',
-  imports: [LandingIconsModule], // Importamos el módulo local
+  imports: [LandingIconsModule, RouterLink], // Add RouterLink to imports
     templateUrl: './landing.html',
   styleUrl: './landing.css',
 })

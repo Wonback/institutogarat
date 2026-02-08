@@ -1,11 +1,10 @@
 <header class="text-gray-600 body-font">
   <div class="drawer">
-    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" #drawerCheckbox />
     <div class="drawer-content flex flex-col">
       <!-- Mobile Navbar -->
-      <!-- Mobile Navbar -->
       <div
-        class="navbar bg-base-300 w-full lg:hidden min-h-0 py-2 flex justify-between items-center"
+        class="navbar bg-base-300 w-full lg:hidden min-h-20 py-3 flex justify-between items-center"
       >
         <div class="flex-none z-20">
           <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
@@ -25,14 +24,9 @@
           </label>
         </div>
         <div class="flex-1 flex justify-center">
-          <a routerLink="/" class="btn btn-ghost h-auto p-0 hover:bg-transparent">
-            <img
-              ngSrc="assets/images/garatlogomini2.png"
-              alt="Instituto Garat"
-              width="150"
-              height="46"
-              priority
-            />
+          <a routerLink="/" (click)="drawerCheckbox.checked = false" class="btn btn-ghost h-auto p-0 hover:bg-transparent text-3xl font-bold flex items-center gap-2">
+            <lucide-icon class="text-green-500" name="cross" [size]="32"></lucide-icon>
+            <span>I.M.Q.G</span>
           </a>
         </div>
         <div class="w-[48px] flex-none"></div>
@@ -130,8 +124,17 @@
       <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 min-h-full w-80 px-4 pt-25 text-xl">
         <!-- Sidebar content here -->
-        <li><a>Sidebar Item 1</a></li>
-        <li><a>Sidebar Item 2</a></li>
+        <li><a routerLink="/" class="font-bold" (click)="drawerCheckbox.checked = false">Volver a inicio</a></li>
+        <li><a routerLink="/cirugia" (click)="drawerCheckbox.checked = false">Cirugía</a></li>
+        <li><a routerLink="/gastro" (click)="drawerCheckbox.checked = false">Gastro</a></li>
+        <li><a routerLink="/urologia" (click)="drawerCheckbox.checked = false">Urología</a></li>
+        <li><a routerLink="/neonatologia" (click)="drawerCheckbox.checked = false">Neo</a></li>
+        <li><a routerLink="/hemodinamia" (click)="drawerCheckbox.checked = false">Hemodinámia</a></li>
+        <li><a routerLink="/clinica" (click)="drawerCheckbox.checked = false">Clínica</a></li>
+        <li><a routerLink="/nutricion" (click)="drawerCheckbox.checked = false">Nutrición</a></li>
+        <li><a routerLink="/terapia" (click)="drawerCheckbox.checked = false">Terapia</a></li>
+        <li><a routerLink="/traumatologia" (click)="drawerCheckbox.checked = false">Traumatología</a></li>
+        <li><a routerLink="/guardia" (click)="drawerCheckbox.checked = false">Guardia</a></li>
       </ul>
     </div>
   </div>

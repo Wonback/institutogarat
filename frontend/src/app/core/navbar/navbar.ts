@@ -2,7 +2,7 @@ import { Component, ElementRef, AfterViewInit, Inject, PLATFORM_ID } from '@angu
 import { NgOptimizedImage, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { animate, stagger } from 'motion';
-import { LucideAngularModule, Mail, LucideIconProvider, LUCIDE_ICONS } from 'lucide-angular';
+import { LucideAngularModule, Mail, Cross, LucideIconProvider, LUCIDE_ICONS } from 'lucide-angular';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +11,7 @@ import { LucideAngularModule, Mail, LucideIconProvider, LUCIDE_ICONS } from 'luc
     {
       provide: LUCIDE_ICONS,
       multi: true,
-      useValue: new LucideIconProvider({ Mail }),
+      useValue: new LucideIconProvider({ Mail, Cross }),
     },
   ],
   templateUrl: './navbar.html',

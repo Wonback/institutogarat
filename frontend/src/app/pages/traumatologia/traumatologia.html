@@ -6,7 +6,7 @@
   <div class="absolute inset-0 bg-gradient-to-r from-green-900/90 to-green-800/40 mix-blend-multiply"></div>
   
   <div class="hero-content text-white w-full justify-start px-8 md:px-16 z-10">
-    <div class="max-w-2xl text-left">
+    <div class="max-w-2xl text-left mt-32 md:mt-0">
       <h1 class="mb-2 text-4xl md:text-5xl font-black uppercase leading-tight tracking-tight">
         Servicio de <br />
         Traumatología
@@ -17,7 +17,7 @@
 </div>
 
 <section class="text-gray-600 body-font">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+  <div class="container mx-auto flex px-5 py-12 md:py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-4xl text-3xl mb-8 font-medium text-white bg-green-500 px-4 py-2 inline-block">
         NOSOTROS
@@ -39,93 +39,101 @@
 </section>
 
 <section class="text-gray-600 body-font bg-gray-50/50">
-  <div class="container px-5 py-24 mx-auto">
+  <div class="container px-5 py-12 md:py-24 mx-auto">
     <!-- Section Header -->
     <div class="flex flex-col items-center text-center w-full mb-16">
       
-      <h1 class="title-font sm:text-4xl text-3xl mb-8 font-medium text-white bg-green-500 px-4 py-2 inline-block">EQUIPO DE PROFESIONALES</h1>
+      <h1 class="title-font sm:text-4xl text-3xl font-medium inline-flex w-fit items-center justify-center bg-green-500 px-4 py-2 text-white text-center leading-tight">EQUIPO DE PROFESIONALES</h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-xl mt-2">
         Combinamos experiencia clínica con calidez humana para brindarte la mejor atención.
       </p>
     </div>
 
     <!-- Main Content Area -->
-    <div class="bg-white rounded-3xl shadow-xl overflow-hidden mb-12">
-      <div class="flex flex-col md:flex-row min-h-[500px]"> <!-- Increased height for better presence -->
-        
-        <!-- Details Column -->
-        <div class="md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-white order-2 md:order-1 relative z-10 transition-all duration-300 ease-in-out">
-          <div class="animate-fade-in">
-            <h2 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-400 mb-2">
-              {{ selectedMember().name }}
-            </h2>
-            <h3 class="text-xl text-gray-500 font-medium mb-6 uppercase tracking-wide">
-              {{ selectedMember().role }}
+    <div class="flex flex-col gap-8 md:gap-12">
+      <!-- Navigation Slider -->
+      <div class="flex flex-wrap justify-center gap-8 md:gap-12 order-1 md:order-2">
+        @for (member of teamMembers; track member.id) {
+          <button 
+            (click)="selectMember(member)"
+            class="group flex flex-col items-center focus:outline-none transition-all duration-300 cursor-pointer"
+            [class.scale-110]="selectedMember().id === member.id"
+            [class.opacity-100]="selectedMember().id === member.id"
+            [class.opacity-60]="selectedMember().id !== member.id"
+          >
+            <div class="relative w-20 h-20 md:w-24 md:h-24 mb-4 rounded-full overflow-hidden border-4 transition-all duration-300"
+                 [ngClass]="selectedMember().id === member.id ? 'border-green-500 shadow-lg shadow-green-200' : 'border-transparent group-hover:border-green-200'">
+              <img [src]="member.thumbnail || member.bioImage" [alt]="member.name" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-bold text-gray-900 group-hover:text-green-600 transition-colors"
+                [class.text-green-600]="selectedMember().id === member.id">
+              {{ member.name }}
             </h3>
             
-            <div class="mb-8">
-               <button class="btn btn-ghost text-gray-400 hover:text-green-500 transition-colors flex items-center gap-2 px-4 cursor-pointer" (click)="cvModal.showModal()" title="Ver CV">
-                 <span class="font-medium">Mi CV</span>
-                 <lucide-icon name="file-user" [size]="20"></lucide-icon>
-               </button>
-            </div>
+          </button>
+        }
+      </div>
 
-            <dialog #cvModal id="cv_modal" class="modal">
-              <div class="modal-box bg-white text-gray-800">
-                <form method="dialog">
-                  <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                </form>
-                <h3 class="font-bold text-2xl text-green-600 mb-4">{{ selectedMember().name }}</h3>
-                <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedMember().cv || 'Información curricular no disponible.'">
-                </div>
+      <!-- Main Content Area -->
+      <div class="bg-white rounded-3xl shadow-xl overflow-hidden order-2 md:order-1">
+        <div class="flex flex-col md:flex-row min-h-[500px]"> <!-- Increased height for better presence -->
+          
+          <!-- Details Column -->
+          <div class="md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-white order-2 md:order-1 relative z-10 transition-all duration-300 ease-in-out">
+            <div class="animate-fade-in">
+              <h2 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-400 mb-2">
+                {{ selectedMember().name }}
+              </h2>
+              <h3 class="text-xl text-gray-500 font-medium mb-6 uppercase tracking-wide">
+                {{ selectedMember().role }}
+              </h3>
+              
+              <div class="mb-8">
+                 <button class="btn btn-ghost text-gray-400 hover:text-green-500 transition-colors flex items-center gap-2 px-4 cursor-pointer" (click)="cvModal.showModal()" title="Ver CV">
+                   <span class="font-medium">Mi CV</span>
+                   <lucide-icon name="file-user" [size]="20"></lucide-icon>
+                 </button>
               </div>
-              <form method="dialog" class="modal-backdrop">
-                <button>close</button>
-              </form>
-            </dialog>
-
-            <p class="leading-relaxed text-lg text-gray-600 italic border-l-4 border-green-500 pl-4">
-              "{{ selectedMember().bio }}"
-            </p>
+  
+              <dialog #cvModal id="cv_modal" class="modal">
+                <div class="modal-box bg-white text-gray-800">
+                  <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  </form>
+                  <h3 class="font-bold text-2xl text-green-600 mb-4">{{ selectedMember().name }}</h3>
+                  <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedMember().cv || 'Información curricular no disponible.'">
+                  </div>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <button class="btn bg-green-500 hover:bg-green-600 text-white border-0">Cerrar</button>
+                    </form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                  <button>close</button>
+                </form>
+              </dialog>
+  
+              <p class="leading-relaxed text-lg text-gray-600 italic border-l-4 border-green-500 pl-4">
+                "{{ selectedMember().bio }}"
+              </p>
+            </div>
           </div>
-        </div>
-
-        <!-- Image Column -->
-        <div class="md:w-1/2 relative min-h-[300px] md:min-h-auto order-1 md:order-2">
-            <!-- Background Blob Decoration -->
-             <div class="absolute top-[-50%] right-[-50%] w-full h-full bg-green-100/50 rounded-full blur-3xl z-0 pointer-events-none"></div>
-
-          <img 
-            [src]="selectedMember().bioImage" 
-            [alt]="selectedMember().name"
-            [style.object-position]="selectedMember().bioImagePosition || 'center'"
-            class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-out z-10 block"
-          >
+  
+          <!-- Image Column -->
+          <div class="md:w-1/2 relative min-h-[300px] md:min-h-auto order-1 md:order-2">
+              <!-- Background Blob Decoration -->
+               <div class="absolute top-[-50%] right-[-50%] w-full h-full bg-green-100/50 rounded-full blur-3xl z-0 pointer-events-none"></div>
+  
+            <img 
+              [src]="selectedMember().bioImage" 
+              [alt]="selectedMember().name"
+              [style.object-position]="selectedMember().bioImagePosition || 'center'"
+              class="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-out z-10 block"
+            >
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Navigation Slider -->
-    <div class="flex flex-wrap justify-center gap-8 md:gap-12">
-      @for (member of teamMembers; track member.id) {
-        <button 
-          (click)="selectMember(member)"
-          class="group flex flex-col items-center focus:outline-none transition-all duration-300 cursor-pointer"
-          [class.scale-110]="selectedMember().id === member.id"
-          [class.opacity-100]="selectedMember().id === member.id"
-          [class.opacity-60]="selectedMember().id !== member.id"
-        >
-          <div class="relative w-20 h-20 md:w-24 md:h-24 mb-4 rounded-full overflow-hidden border-4 transition-all duration-300"
-               [ngClass]="selectedMember().id === member.id ? 'border-green-500 shadow-lg shadow-green-200' : 'border-transparent group-hover:border-green-200'">
-            <img [src]="member.thumbnail || member.bioImage" [alt]="member.name" class="w-full h-full object-cover">
-          </div>
-          <h3 class="font-bold text-gray-900 group-hover:text-green-600 transition-colors"
-              [class.text-green-600]="selectedMember().id === member.id">
-            {{ member.name }}
-          </h3>
-          
-        </button>
-      }
     </div>
   </div>
 </section>
@@ -162,6 +170,11 @@
         </form>
         <h3 class="font-bold text-xl text-green-600 mb-4 uppercase">{{ selectedTreatment().title }}</h3>
         <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedTreatment().description">
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn bg-green-500 hover:bg-green-600 text-white border-0">Cerrar</button>
+          </form>
         </div>
       </div>
       <form method="dialog" class="modal-backdrop">
