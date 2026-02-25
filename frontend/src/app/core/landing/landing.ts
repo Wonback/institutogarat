@@ -2,7 +2,7 @@ import { Component, NgModule, ElementRef, AfterViewInit, Inject, PLATFORM_ID } f
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router'; // Import RouterLink
 import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight } from 'lucide-angular';
-import { animate, inView, stagger } from 'motion';
+import { animate, inView, stagger, hover } from 'motion';
 
 // Definición del Módulo de Iconos (Correcto)
 @NgModule({
@@ -51,12 +51,13 @@ export class Landing implements AfterViewInit {
         });
     });
 
-    // 3. Specialties Cards (Staggered)
-    const specialtiesGrid = this.el.nativeElement.querySelector('.grid.grid-cols-1');
-    if (specialtiesGrid) {
-        inView(specialtiesGrid, () => {
-             // Es más seguro seleccionar los hijos directos o una clase específica
-             const cards = specialtiesGrid.querySelectorAll('.p-4');
+    // 3. Specialties Cards (Staggered & Hover)
+    const specialtiesDesktopGrid = this.el.nativeElement.querySelector('.hidden.lg\\:grid');
+    if (specialtiesDesktopGrid) {
+        const cards = specialtiesDesktopGrid.querySelectorAll('.bg-base-200');
+        
+        // Entrance animation
+        inView(specialtiesDesktopGrid, () => {
              if (cards.length > 0) {
                animate(
                   cards,
@@ -67,6 +68,14 @@ export class Landing implements AfterViewInit {
              return () => {
                if (cards.length > 0) animate(cards, { opacity: 0, y: 30 }, { duration: 0 });
              };
+        });
+
+        // Hover animation
+        cards.forEach((card: Element) => {
+            hover(card, (el) => {
+                animate(el, { scale: 1.03, y: -5 }, { duration: 0.3, ease: 'easeOut' });
+                return () => animate(el, { scale: 1, y: 0 }, { duration: 0.3, ease: 'easeOut' });
+            });
         });
     }
 
@@ -103,7 +112,7 @@ export class Landing implements AfterViewInit {
     }
     
     // 6. Contact Card
-    const contactCard = this.el.nativeElement.querySelector('.lg\\:w-1\\/3.md\\:w-1\\/2.bg-white');
+    const contactCard = this.el.nativeElement.querySelector('.lg\\:w-1\\/3.md\\:w-1\\/2.bg-base-100');
     if (contactCard) {
         inView(contactCard, () => {
             animate(
