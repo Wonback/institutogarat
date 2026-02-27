@@ -1,6 +1,6 @@
 import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LucideAngularModule, FileUser } from 'lucide-angular';
+import { LucideAngularModule, FileUser, Eye, Goal, CircleAlert } from 'lucide-angular';
 
 interface TeamMember {
   id: number;
@@ -14,7 +14,7 @@ interface TeamMember {
 }
 
 @NgModule({
-  imports: [LucideAngularModule.pick({ FileUser })],
+  imports: [LucideAngularModule.pick({ FileUser, Eye, Goal, CircleAlert })],
   exports: [LucideAngularModule],
 })
 export class HemodinamiaIconsModule {}
