@@ -1,12 +1,12 @@
-import { Component, NgModule, ElementRef, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, NgModule, ElementRef, AfterViewInit, Inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router'; // Import RouterLink
-import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight } from 'lucide-angular';
+import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight, Check } from 'lucide-angular';
 import { animate, inView, stagger, hover } from 'motion';
 
 // Definición del Módulo de Iconos (Correcto)
 @NgModule({
-  imports: [LucideAngularModule.pick({ Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight })],
+  imports: [LucideAngularModule.pick({ Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight, Check })],
   exports: [LucideAngularModule],
 })
 export class LandingIconsModule {}
@@ -18,10 +18,36 @@ export class LandingIconsModule {}
   styleUrl: './landing.css',
 })
 export class Landing implements AfterViewInit {
+  emailCopied = signal(false);
+
+  @ViewChild('mailIconRef') mailIconRef!: ElementRef;
+  @ViewChild('checkIconRef') checkIconRef!: ElementRef;
+  @ViewChild('emailTextRef') emailTextRef!: ElementRef;
+  @ViewChild('copiedTextRef') copiedTextRef!: ElementRef;
+
   constructor(
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
+
+  copyEmail() {
+    if (this.emailCopied()) return;
+    navigator.clipboard.writeText('contacto@institutogarat.com.ar').then(() => {
+      animate(this.mailIconRef.nativeElement, { opacity: 0, scale: 0.4, y: -4 }, { duration: 0.15 });
+      animate(this.checkIconRef.nativeElement, { opacity: [0, 1], scale: [0.4, 1.2, 1], y: [4, 0] }, { duration: 0.3, delay: 0.1 });
+      animate(this.emailTextRef.nativeElement, { opacity: 0, y: -8 }, { duration: 0.15 });
+      animate(this.copiedTextRef.nativeElement, { opacity: [0, 1], y: [8, 0] }, { duration: 0.25, delay: 0.1 });
+      this.emailCopied.set(true);
+
+      setTimeout(() => {
+        animate(this.checkIconRef.nativeElement, { opacity: 0, scale: 0.4, y: -4 }, { duration: 0.15 });
+        animate(this.mailIconRef.nativeElement, { opacity: [0, 1], scale: [0.4, 1.2, 1], y: [4, 0] }, { duration: 0.3, delay: 0.1 });
+        animate(this.copiedTextRef.nativeElement, { opacity: 0, y: -8 }, { duration: 0.15 });
+        animate(this.emailTextRef.nativeElement, { opacity: [0, 1], y: [8, 0] }, { duration: 0.25, delay: 0.1 });
+        this.emailCopied.set(false);
+      }, 2500);
+    });
+  }
 
   ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) {
