@@ -1,0 +1,151 @@
+<div
+  class="hero h-[80vh] hero-mask-fade"
+  style="
+    background-image: url(https://ik.imagekit.io/wonback/RRHH/WhatsApp%20Image%202026-03-05%20at%2010.27.11%20AM_upscayl_3x_upscayl-standard-4x.png);
+  "
+>
+  <div class="hero-overlay bg-opacity-70"></div>
+  <div class="hero-bottom-fade"></div>
+  <div class="hero-content text-white text-center">
+    <div class="max-w-full md:max-w-[55vw] px-4">
+      <blockquote
+        class="mb-6 text-2xl md:text-4xl font-bold italic leading-snug"
+        style="text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8)"
+      >
+        "Reunirse es un comienzo, permanecer juntos es el progreso, trabajar juntos es el éxito"
+      </blockquote>
+      <p
+        class="text-lg md:text-xl text-right font-medium tracking-wide"
+        style="text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8)"
+      >
+        — Henry Ford
+      </p>
+    </div>
+  </div>
+</div>
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-12 md:py-24 mx-auto">
+    <div class="flex flex-wrap w-full mb-10 md:mb-16">
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+          Trabaja con nosotros
+        </h1>
+        <div class="h-1 w-20 bg-green-500 rounded"></div>
+      </div>
+      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg">
+        Sumamos profesionales comprometidos con la salud y el cuidado de nuestra comunidad.
+        Completá el formulario y nos pondremos en contacto a la brevedad.
+      </p>
+    </div>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      class="lg:w-2/3 w-full mx-auto"
+      novalidate
+    >
+      @if (success) {
+        <div role="alert" class="alert alert-success mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>¡Tu postulación fue enviada con éxito! Nos pondremos en contacto a la brevedad.</span>
+        </div>
+      }
+
+      <div class="flex flex-wrap -m-2">
+        <!-- Nombre -->
+        <div class="p-2 w-full md:w-1/2">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend">Nombre</legend>
+            <input
+              type="text"
+              formControlName="nombre"
+              placeholder="Ej: María"
+              class="input w-full"
+              [class.input-error]="submitted && form.get('nombre')?.invalid"
+              maxlength="50"
+            />
+            @if (submitted && form.get('nombre')?.errors?.['required']) {
+              <p class="fieldset-label text-error">El nombre es requerido.</p>
+            } @else if (submitted && form.get('nombre')?.errors?.['minlength']) {
+              <p class="fieldset-label text-error">Mínimo 2 caracteres.</p>
+            } @else if (submitted && form.get('nombre')?.errors?.['soloLetras']) {
+              <p class="fieldset-label text-error">El nombre solo puede contener letras.</p>
+            }
+          </fieldset>
+        </div>
+
+        <!-- Apellido -->
+        <div class="p-2 w-full md:w-1/2">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend">Apellido</legend>
+            <input
+              type="text"
+              formControlName="apellido"
+              placeholder="Ej: González"
+              class="input w-full"
+              [class.input-error]="submitted && form.get('apellido')?.invalid"
+              maxlength="50"
+            />
+            @if (submitted && form.get('apellido')?.errors?.['required']) {
+              <p class="fieldset-label text-error">El apellido es requerido.</p>
+            } @else if (submitted && form.get('apellido')?.errors?.['minlength']) {
+              <p class="fieldset-label text-error">Mínimo 2 caracteres.</p>
+            } @else if (submitted && form.get('apellido')?.errors?.['soloLetras']) {
+              <p class="fieldset-label text-error">El apellido solo puede contener letras.</p>
+            }
+          </fieldset>
+        </div>
+
+        <!-- Sector -->
+        <div class="p-2 w-full">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend">Sector al que aplicás</legend>
+            <select
+              formControlName="sector"
+              class="select w-full"
+              [class.select-error]="submitted && form.get('sector')?.invalid"
+            >
+              <option value="" disabled>Seleccioná un sector</option>
+              @for (s of sectores; track s) {
+                <option [value]="s">{{ s }}</option>
+              }
+            </select>
+            @if (submitted && form.get('sector')?.errors?.['required']) {
+              <p class="fieldset-label text-error">Seleccioná un sector.</p>
+            }
+          </fieldset>
+        </div>
+
+        <!-- CV -->
+        <div class="p-2 w-full">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend">Currículum Vitae</legend>
+            <input
+              type="file"
+              accept=".pdf,application/pdf"
+              (change)="onFileChange($event)"
+              class="file-input w-full"
+              [class.file-input-error]="(submitted && !cvFile) || !!cvError"
+            />
+            <p class="fieldset-label">Solo se aceptan archivos PDF (máx. 5 MB)</p>
+            @if (cvError) {
+              <p class="fieldset-label text-error">{{ cvError }}</p>
+            } @else if (submitted && !cvFile) {
+              <p class="fieldset-label text-error">El CV es requerido.</p>
+            }
+          </fieldset>
+        </div>
+
+        <!-- Submit -->
+        <div class="p-2 w-full mt-4">
+          <button type="submit" class="btn bg-green-500 hover:bg-green-600 text-white border-0 w-full md:w-auto px-8">
+            Enviar postulación
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
