@@ -1,22 +1,21 @@
-<div
-  class="hero h-[80vh] hero-mask-fade"
-  style="
-    background-image: url(https://ik.imagekit.io/wonback/RRHH/WhatsApp%20Image%202026-03-05%20at%2010.27.11%20AM_upscayl_3x_upscayl-standard-4x.png);
-  "
->
-  <div class="hero-overlay bg-opacity-70"></div>
+<div class="hero h-[80vh] hero-mask-fade relative">
+  <div
+    class="absolute inset-0 bg-cover bg-center grayscale"
+    style="background-image: url(https://ik.imagekit.io/wonback/RRHH/WhatsApp%20Image%202026-03-05%20at%2010.27.11%20AM_upscayl_3x_upscayl-standard-4x.png);"
+  ></div>
+  <div class="hero-overlay bg-opacity-95"></div>
   <div class="hero-bottom-fade"></div>
   <div class="hero-content text-white text-center">
     <div class="max-w-full md:max-w-[55vw] px-4">
       <blockquote
         class="mb-6 text-2xl md:text-4xl font-bold italic leading-snug"
-        style="text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8)"
+        style="text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 4px 32px rgba(0,0,0,0.95)"
       >
         "Reunirse es un comienzo, permanecer juntos es el progreso, trabajar juntos es el éxito"
       </blockquote>
       <p
         class="text-lg md:text-xl text-right font-medium tracking-wide"
-        style="text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8)"
+        style="text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 4px 32px rgba(0,0,0,0.95)"
       >
         — Henry Ford
       </p>
@@ -26,33 +25,18 @@
 
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-12 md:py-24 mx-auto">
-    <div class="flex flex-wrap w-full mb-10 md:mb-16">
-      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
-          Trabaja con nosotros
-        </h1>
-        <div class="h-1 w-20 bg-green-500 rounded"></div>
-      </div>
-      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg">
-        Sumamos profesionales comprometidos con la salud y el cuidado de nuestra comunidad.
-        Completá el formulario y nos pondremos en contacto a la brevedad.
+    <div class="lg:w-2/3 w-full mx-auto mb-10 md:mb-16">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+        Trabaja con nosotros
+      </h1>
+      <div class="h-1 w-20 bg-green-500 rounded mb-4"></div>
+      <p class="leading-relaxed text-gray-500 text-lg">
+        Sumamos profesionales comprometidos con la salud y el cuidado de nuestra comunidad. Completá
+        el formulario y nos pondremos en contacto a la brevedad.
       </p>
     </div>
 
-    <form
-      [formGroup]="form"
-      (ngSubmit)="onSubmit()"
-      class="lg:w-2/3 w-full mx-auto"
-      novalidate
-    >
-      @if (success) {
-        <div role="alert" class="alert alert-success mb-8">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span>¡Tu postulación fue enviada con éxito! Nos pondremos en contacto a la brevedad.</span>
-        </div>
-      }
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="lg:w-2/3 w-full mx-auto" novalidate>
 
       <div class="flex flex-wrap -m-2">
         <!-- Nombre -->
@@ -122,7 +106,7 @@
         <!-- CV -->
         <div class="p-2 w-full">
           <fieldset class="fieldset">
-            <legend class="fieldset-legend">Currículum Vitae</legend>
+            <legend class="fieldset-legend">Adjunta tu CV</legend>
             <input
               type="file"
               accept=".pdf,application/pdf"
@@ -141,11 +125,55 @@
 
         <!-- Submit -->
         <div class="p-2 w-full mt-4">
-          <button type="submit" class="btn bg-green-500 hover:bg-green-600 text-white border-0 w-full md:w-auto px-8">
-            Enviar postulación
+          <button
+            type="submit"
+            [disabled]="loading"
+            class="btn bg-green-500 hover:bg-green-600 text-white border-0 w-full md:w-auto px-8 disabled:opacity-60"
+          >
+            @if (loading) {
+              <span class="loading loading-spinner loading-sm"></span>
+              Enviando...
+            } @else {
+              Enviar postulación
+            }
           </button>
         </div>
       </div>
     </form>
   </div>
 </section>
+
+<dialog #modal class="modal">
+  <div class="modal-box">
+    @if (modalType === 'success') {
+      <div class="flex items-center gap-3 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3 class="font-bold text-lg">¡Postulación enviada!</h3>
+      </div>
+    } @else {
+      <div class="flex items-center gap-3 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-error shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3 class="font-bold text-lg">Error al enviar</h3>
+      </div>
+    }
+    <p class="text-gray-600">{{ modalMessage }}</p>
+    <div class="modal-action">
+      <button
+        (click)="closeModal()"
+        class="btn border-0 text-white"
+        [class.bg-green-500]="modalType === 'success'"
+        [class.hover:bg-green-600]="modalType === 'success'"
+        [class.btn-error]="modalType === 'error'"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

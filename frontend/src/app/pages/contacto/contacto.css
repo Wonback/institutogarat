@@ -1,0 +1,23 @@
+.input,
+.select,
+.file-input {
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #22c55e;
+  outline: none;
+}
+
+.select:hover,
+.select:focus {
+  border: 2px solid #22c55e;
+  outline: none;
+}
+
+.file-input:hover,
+.file-input:focus {
+  border: 2px solid #22c55e;
+  outline: none;
+}
