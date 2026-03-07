@@ -1,7 +1,8 @@
 {
-  "functions": {
-    "api/cv.js": {
-      "maxDuration": 15
-    }
-  }
+  "builds": [
+    { "src": "api/cv.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/cv", "dest": "/api/cv.js" }
+  ]
 }
