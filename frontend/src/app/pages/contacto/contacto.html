@@ -114,7 +114,7 @@
               class="file-input w-full"
               [class.file-input-error]="(submitted && !cvFile) || !!cvError"
             />
-            <p class="fieldset-label">Solo se aceptan archivos PDF (máx. 5 MB)</p>
+            <p class="fieldset-label">Solo se aceptan archivos PDF (máx. 4 MB)</p>
             @if (cvError) {
               <p class="fieldset-label text-error">{{ cvError }}</p>
             } @else if (submitted && !cvFile) {

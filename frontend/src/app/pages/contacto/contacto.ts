@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 function soloLetras(control: AbstractControl): ValidationErrors | null {
   const value = control.value as string;
@@ -59,8 +60,8 @@ export class Contacto {
       input.value = '';
       return;
     }
-    if (file.size > 5 * 1024 * 1024) {
-      this.cvError = 'El archivo no puede superar los 5 MB.';
+    if (file.size > 4 * 1024 * 1024) {
+      this.cvError = 'El archivo no puede superar los 4 MB.';
       input.value = '';
       return;
     }
@@ -91,7 +92,7 @@ export class Contacto {
     formData.append('cv', this.cvFile);
 
     this.loading = true;
-    this.http.post('/api/cv', formData).subscribe({
+    this.http.post(`${environment.apiBaseUrl}/api/cv`, formData).subscribe({
       next: () => {
         this.loading = false;
         this.form.reset();
@@ -102,6 +103,7 @@ export class Contacto {
       },
       error: (err) => {
         this.loading = false;
+        console.error('Error al enviar postulación:', { status: err.status, message: err.message, body: err.error });
         this.openModal('error', err.error?.error || 'Ocurrió un error al enviar. Intentá más tarde.');
       },
     });
