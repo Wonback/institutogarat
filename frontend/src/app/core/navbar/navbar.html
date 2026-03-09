@@ -46,7 +46,8 @@
           </a>
           <a
             routerLink="/contacto"
-            class="contact-btn cursor-pointer inline-flex items-center bg-base-200 border-0 py-1 px-3 focus:outline-none hover:bg-base-300 rounded text-base mt-4 md:mt-0"
+            class="btn btn-outline btn-primary nav-item-glow glow-from-left"
+            (mouseenter)="animateButton($event)"
           >
             Contacto
             <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>
@@ -139,6 +140,18 @@
         <li><a routerLink="/terapia" (click)="drawerCheckbox.checked = false">Terapia</a></li>
         <li><a routerLink="/traumatologia" (click)="drawerCheckbox.checked = false">Traumatología</a></li>
         <li><a routerLink="/guardia" (click)="drawerCheckbox.checked = false">Guardia</a></li>
+        <div class="divider"></div>
+        <li>
+          <a
+            routerLink="/contacto"
+            (click)="drawerCheckbox.checked = false"
+            class="btn btn-outline btn-primary w-full mt-2"
+            (mouseenter)="animateButton($event)"
+          >
+            Contacto
+            <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
