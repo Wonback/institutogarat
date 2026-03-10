@@ -1,21 +1,30 @@
-<div class="hero h-[80vh] hero-mask-fade relative">
+<div class="hero h-[80vh] hero-mask-fade relative overflow-hidden">
   <div
-    class="absolute inset-0 bg-cover bg-center grayscale"
-    style="background-image: url(https://ik.imagekit.io/wonback/RRHH/WhatsApp%20Image%202026-03-05%20at%2010.27.11%20AM_upscayl_3x_upscayl-standard-4x.png);"
+    class="absolute inset-0 bg-cover bg-center grayscale brightness-90 blur-sm scale-110"
+    style="
+      background-image: url(https://ik.imagekit.io/wonback/RRHH/WhatsApp%20Image%202026-03-05%20at%2010.27.11%20AM_upscayl_3x_upscayl-standard-4x.png);
+    "
   ></div>
-  <div class="hero-overlay bg-opacity-95"></div>
   <div class="hero-bottom-fade"></div>
   <div class="hero-content text-white text-center">
     <div class="max-w-full md:max-w-[55vw] px-4">
       <blockquote
         class="mb-6 text-2xl md:text-4xl font-bold italic leading-snug"
-        style="text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 4px 32px rgba(0,0,0,0.95)"
+        style="
+          text-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.9),
+            0 4px 32px rgba(0, 0, 0, 0.95);
+        "
       >
         "Reunirse es un comienzo, permanecer juntos es el progreso, trabajar juntos es el éxito"
       </blockquote>
       <p
         class="text-lg md:text-xl text-right font-medium tracking-wide"
-        style="text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 4px 32px rgba(0,0,0,0.95)"
+        style="
+          text-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.9),
+            0 4px 32px rgba(0, 0, 0, 0.95);
+        "
       >
         — Henry Ford
       </p>
@@ -37,7 +46,6 @@
     </div>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="lg:w-2/3 w-full mx-auto" novalidate>
-
       <div class="flex flex-wrap -m-2">
         <!-- Nombre -->
         <div class="p-2 w-full md:w-1/2">
@@ -147,15 +155,37 @@
   <div class="modal-box">
     @if (modalType === 'success') {
       <div class="flex items-center gap-3 mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500 shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
         </svg>
         <h3 class="font-bold text-lg">¡Postulación enviada!</h3>
       </div>
     } @else {
       <div class="flex items-center gap-3 mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-error shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-error shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
         </svg>
         <h3 class="font-bold text-lg">Error al enviar</h3>
       </div>

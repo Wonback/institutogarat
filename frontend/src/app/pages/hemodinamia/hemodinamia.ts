@@ -136,23 +136,18 @@ export class Hemodinamia implements OnInit, OnDestroy {
       bioImage: 'https://ik.imagekit.io/wonback/Hemodinamia/Cristian%20Garcia.jpeg',
       bioImagePosition: 'center 20%',
       cv: `
-        <div class="space-y-4">
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Cargo Actual</h4>
-             <ul class="list-none text-gray-700">
-               <li><span class="font-semibold">Jefe del Servicio de Hemodinamia y Terapéutica por Cateterismo</span></li>
-               <li>Instituto Médico Quirúrgico Garat – Concordia, Entre Ríos</li>
-             </ul>
-          </div>
-
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Especialidades</h4>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>Cardiología</li>
-              <li>Cardiología Intervencionista y Terapéutica Endovascular</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Especialista en Cardiología (Universidad Nacional de Rosario).</li>
+          <li>Especialista en Hemodinamia, Angiografía y Cardioangiología Intervencionista (Universidad de Buenos Aires – Colegio Argentino de Cardioangiólogos Intervencionistas).</li>
+          <li>Rotación Departamento de Cardiología Intervencionista Fundación Favaloro (CABA).</li>
+          <li>Fellow Hemodinamia Hospital Universitario Austral (Pilar).</li>
+          <li>ProEducar-SOLACI Fellows Course for iterventionists-in-Training held in Buenos Aires.</li>
+          <li>Ex Médico Asistente Unidad Médica Presidencial.</li>
+          <li>SOLACI-CACI partnership with TCT (CABA).</li>
+          <li>Evento Aorta Endovascular Rosario.</li>
+          <li>Simposio ENDOLIMB Rosario.</li>
+          <li>Taller Curso casos de cuello en aorta CHEvar-Esar (CABA).</li>
+        </ul>
       `,
     },
     {
@@ -164,25 +159,13 @@ export class Hemodinamia implements OnInit, OnDestroy {
       bioImage: 'https://ik.imagekit.io/wonback/Hemodinamia/Sebastian%20Gallino.jpeg',
       bioImagePosition: 'center',
       cv: `
-        <div class="space-y-4">
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Cargo Actual</h4>
-             <ul class="list-none text-gray-700">
-               <li><span class="font-semibold">Jefe de Electrofisiología</span></li>
-               <li>Instituto Médico Quirúrgico Garat – Concordia, Entre Ríos</li>
-             </ul>
-          </div>
-
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Especialidades</h4>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>Cardiología</li>
-              <li>Especialista en Electrofisiología</li>
-              <li>Estudios electrofisiológicos y ablaciones</li>
-              <li>Implante de dispositivos cardíacos</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Especialista en Cardiología (Universidad de Buenos Aires)</li>
+          <li>Especialista en Electrofisiología y Marcapasos. Certificación de la Sociedad Argentina de Cardiología, la Federación Argentina de Cardiología, Sociedad Argentina de Estimulación Cardiaca.</li>
+          <li>Ex-Staff Hospital Cosme Argerich (CABA)</li>
+          <li>Fellowship en Electrofisiología en el Hospital Juan Fernández (CABA)</li>
+          <li>Rotación por Hospital Sant Pau (Barcelona), Henry Ford Hospital (Detroit USA), Cleveland Clinic (Weston Miami USA).</li>
+        </ul>
       `,
     },
     {
@@ -194,23 +177,16 @@ export class Hemodinamia implements OnInit, OnDestroy {
       bioImage: 'https://ik.imagekit.io/wonback/Hemodinamia/Sofia%20Krause.jpeg',
       bioImagePosition: 'center',
       cv: `
-        <div class="space-y-4">
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Cargo Actual</h4>
-             <ul class="list-none text-gray-700">
-               <li><span class="font-semibold">Staff del Servicio de Hemodinamia</span></li>
-               <li>Instituto Médico Quirúrgico Garat – Concordia, Entre Ríos</li>
-             </ul>
-          </div>
-
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Especialidades</h4>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>Cardiología</li>
-              <li>Cardiología Intervencionista</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Especialista en Cardiología (Hospital Universitario Austral)</li>
+          <li>Especialista en Hemodinamia, Angiografía y Cardioangiología Intervencionista (Universidad de Buenos Aires – Colegio Argentino de Cardioangiólogos Intervencionistas).</li>
+          <li>Miembro de comité de Hemodinamia – Federación Argentina de Cardiología</li>
+          <li>Programa CLIMB 2025 – Entrenamiento virtual en Habilidades en Intervenciones Estructurales, Women as One.</li>
+          <li>Programa Pathfinder EMBRACE en Isquemia Crítica que Amenaza la Extremidad (ICAE) –Carolina del Norte, Estados Unidos.</li>
+          <li>Programa WE EMBRACE en ICAE – Buffalo, Nueva York, Estados Unidos.</li>
+          <li>Rotación en Cardiología Intervencionista con Prof. Flavio Ribichini – Azienda Ospedaliera Universitaria Integrata Verona, Italia.</li>
+          <li>Miembro de Sociedad Latinoamericana de Cardiología Intervencionista.</li>
+        </ul>
       `,
     },
     {
@@ -222,23 +198,12 @@ export class Hemodinamia implements OnInit, OnDestroy {
       bioImage: 'https://ik.imagekit.io/wonback/Hemodinamia/Luis%20Garcia%20Bourquin.jpeg',
       bioImagePosition: 'top',
       cv: `
-        <div class="space-y-4">
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Cargo Actual</h4>
-             <ul class="list-none text-gray-700">
-               <li><span class="font-semibold">Staff del Servicio de Hemodinamia</span></li>
-               <li>Instituto Médico Quirúrgico Garat – Concordia, Entre Ríos</li>
-             </ul>
-          </div>
-
-          <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Especialidades</h4>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>Cardiología</li>
-              <li>Cardiología Intervencionista</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Especialista en Cardiología - Sanatorio de la Trinidad Mitre (Universidad de Buenos Aires – Sociedad Argentina de Cardiología).</li>
+          <li>Especialista en Hemodinamia, Angiografía y Cardioangiología Intervencionista (Universidad de Buenos Aires – Colegio Argentino de Cardioangiólogos Intervencionistas).</li>
+          <li>Implantador certificado de válvulas apáticas percutáneas.</li>
+          <li>Rotación en cardiología intervencionista hospital 12 de octubre de Madrid.</li>
+        </ul>
       `,
     }
   ];

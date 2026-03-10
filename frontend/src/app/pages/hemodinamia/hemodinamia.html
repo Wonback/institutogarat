@@ -121,13 +121,13 @@
               </h3>
               
               <div class="mb-8">
-                 <button class="btn btn-ghost text-gray-400 hover:text-green-500 transition-colors flex items-center gap-2 px-4 cursor-pointer" (click)="cvModal.showModal()" title="Ver CV">
+                 <button class="btn btn-ghost text-gray-400 hover:text-green-500 transition-colors flex items-center gap-2 px-4 cursor-pointer" (click)="stopRotation(); cvModal.showModal()" title="Ver CV">
                    <span class="font-medium">Mi CV</span>
                    <lucide-icon name="file-user" [size]="20"></lucide-icon>
                  </button>
               </div>
   
-              <dialog #cvModal id="cv_modal" class="modal">
+              <dialog #cvModal id="cv_modal" class="modal" (close)="startRotation()">
                 <div class="modal-box bg-base-100 text-gray-800">
                   <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
