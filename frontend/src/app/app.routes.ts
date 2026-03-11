@@ -46,6 +46,11 @@ export const routes: Routes = [
       import('./pages/traumatologia/traumatologia').then((m) => m.Traumatologia),
   },
   {
+    path: 'obstetricia',
+    loadComponent: () =>
+      import('./pages/obstetricia/obstetricia').then((m) => m.Obstetricia),
+  },
+  {
     path: 'guardia',
     loadComponent: () => import('./pages/guardia/guardia').then((m) => m.Guardia),
   },
