@@ -4,62 +4,69 @@ Este repositorio contiene el código fuente para el sitio web del Instituto Méd
 
 ## 🛠️ Tecnologías Utilizadas
 
-El proyecto utiliza un stack tecnológico moderno enfocado en el rendimiento, la mantenibilidad y la experiencia de usuario:
-
-- **Angular:** Framework principal para la construcción de la aplicación (SPA).
-- **Tailwind CSS:** Framework de utilidades para el diseño y estilizado rápido y responsivo.
-- **DaisyUI:** Componentes de interfaz de usuario para Tailwind CSS.
-- **Lucide Angular:** Biblioteca de iconos ligera y flexible.
-- **Motion (Motion One):** Biblioteca de animaciones para interacciones fluidas y efectos visuales.
+- **Angular 21** con SSR (Server-Side Rendering via Express)
+- **Tailwind CSS 4** + **DaisyUI 5** para estilos y componentes UI
+- **Motion One** para animaciones
+- **Lucide Angular** para iconos
+- **Vercel** para el deploy (frontend + backend serverless)
 
 ## 📂 Estructura del Proyecto
 
-El código fuente se encuentra organizado de manera modular en `src/app`:
+```
+institutogarat/
+├── frontend/       # Aplicación Angular 21 con SSR
+└── backend/        # API serverless en Vercel (Node.js)
+```
 
-### `src/app/core`
-Contiene los componentes fundamentales y estructurales de la aplicación:
-- **Navbar:** Barra de navegación responsiva con menú móvil.
-- **Footer:** Pie de página con información legal y de contacto.
-- **Landing:** Página de inicio principal con secciones de presentación, especialidades y accesos rápidos.
+### `frontend/src/app/core`
+Componentes base cargados en todas las rutas:
+- **Navbar** — Barra de navegación responsiva con menú móvil (DaisyUI drawer)
+- **Footer** — Pie de página
+- **Landing** — Página de inicio con secciones de presentación, especialidades y animaciones
 
-### `src/app/pages`
-Contiene los módulos específicos para cada especialidad médica, donde se detalla la información del servicio y el equipo profesional:
-- `cirugia`
-- `clinica`
-- `gastro`
-- `guardia`
-- `hemodinamia`
-- `neonatologia`
-- `nutricion`
-- `terapia`
-- `traumatologia`
-- `urologia`
+### `frontend/src/app/pages`
+Páginas de especialidades médicas (todas lazy-loaded):
+
+| Página | Ruta | Estado |
+|---|---|---|
+| Cirugía | `/cirugia` | ❌ Sin desarrollar |
+| Clínica | `/clinica` | ❌ Sin desarrollar |
+| Gastroenterología | `/gastro` | ❌ Sin desarrollar |
+| Guardia | `/guardia` | ❌ Sin desarrollar |
+| Hemodinamia | `/hemodinamia` | ✅ Terminada |
+| Neonatología | `/neonatologia` | ✅ Terminada |
+| Nutrición | `/nutricion` | ❌ Sin desarrollar |
+| Obstetricia | `/obstetricia` | ❌ Sin desarrollar |
+| Terapia Intensiva | `/terapia` | ❌ Sin desarrollar |
+| Traumatología | `/traumatologia` | ✅ Terminada |
+| Urología | `/urologia` | ❌ Sin desarrollar |
+| Trabajá con nosotros | `/contacto` | ✅ Terminada |
+
+#### Estructura de una página terminada
+Las páginas completas siguen este patrón:
+1. **Hero banner** con imagen de fondo y overlay degradado
+2. **Nosotros** — descripción del servicio (misión/visión o texto libre)
+3. **Equipo de profesionales** — selector de miembros con foto, bio y modal de CV
+4. **Tratamientos / Procedimientos** — lista clickeable con modal de detalle
+5. **FAB de WhatsApp** flotante
+
+### `backend/api`
+- `cv.js` — Endpoint `POST /api/cv` para recibir postulaciones laborales (form multipart + PDF)
 
 ## 🚀 Instalación y Ejecución
 
-Para correr el proyecto localmente:
-
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone <url-del-repositorio>
-    ```
-
-2.  **Instalar dependencias:**
-    Navegar a la carpeta del frontend e instalar los paquetes necesarios:
-    ```bash
-    cd frontend
-    npm install
-    ```
-
-3.  **Ejecutar el servidor de desarrollo:**
-    ```bash
-    ng serve
-    ```
-    La aplicación estará disponible en `http://localhost:4200/`.
+```bash
+cd frontend
+npm install
+npm start         # Dev server en http://localhost:4200
+npm run build     # Build de producción con SSR
+```
 
 ## ✨ Características Principales
 
-- **Diseño Responsivo:** Adaptado para móviles, tablets y escritorio.
-- **Navegación Fluida:** Transiciones suaves entre secciones y páginas.
-- **Integraciones:** Enlaces directos a WhatsApp para turnos y Google Maps para ubicación.
-- **Animaciones:** Efectos visuales en la carga de elementos y hover para mejorar la interactividad.
+- **Diseño Responsivo** — Mobile-first con Tailwind
+- **SSR** — Angular Universal + Express para mejor SEO y rendimiento
+- **Animaciones** — Motion One con efectos de entrada en scroll y hover
+- **Temas** — Light (default), Dark y Nord (DaisyUI)
+- **Integraciones** — WhatsApp para turnos, Google Maps para ubicación
+- **Formulario de RRHH** — Envío de CV en PDF con validación y email automático

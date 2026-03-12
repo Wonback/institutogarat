@@ -1,4 +1,4 @@
-<header class="text-gray-600 body-font">
+<header class="text-gray-600 body-font bg-base-300">
   <div class="drawer">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" #drawerCheckbox />
     <div class="drawer-content flex flex-col">
@@ -7,7 +7,7 @@
         class="navbar bg-base-300 w-full lg:hidden min-h-20 py-3 flex justify-between items-center"
       >
         <div class="flex-none z-20">
-          <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
+          <label for="my-drawer-2" aria-label="Abrir menú" class="btn btn-square btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -32,7 +32,7 @@
         <div class="w-[48px] flex-none"></div>
       </div>
       <!-- Desktop Navbar -->
-      <header class="text-gray-600 body-font shadow-lg hidden lg:flex flex-col bg-base-300">
+      <div class="text-gray-600 body-font shadow-lg hidden lg:flex flex-col bg-base-300">
         <div class="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
           <a routerLink="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer">
             <img
@@ -44,16 +44,40 @@
               priority
             />
           </a>
+          <!-- Dropdown centrado: solo lg hasta 2xl -->
+          <div class="hidden lg:flex 2xl:hidden flex-1 justify-center">
+            <div class="dropdown dropdown-hover">
+              <div tabindex="0" role="button" class="btn btn-ghost text-base gap-1.5 font-normal">
+                Especialidades
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div tabindex="0" class="dropdown-content bg-base-100 rounded-box z-50 shadow-lg p-2 grid grid-cols-2 gap-x-1 w-80 mt-1">
+                <a routerLink="/cirugia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Cirugía</a>
+                <a routerLink="/gastro" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Gastro</a>
+                <a routerLink="/urologia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Urología</a>
+                <a routerLink="/neonatologia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Neonatología</a>
+                <a routerLink="/hemodinamia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Hemodinamia</a>
+                <a routerLink="/clinica" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Clínica</a>
+                <a routerLink="/nutricion" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Nutrición</a>
+                <a routerLink="/terapia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">U.T.I.</a>
+                <a routerLink="/traumatologia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Traumatología</a>
+                <a routerLink="/obstetricia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Obstetricia</a>
+                <a routerLink="/guardia" routerLinkActive="text-green-500 font-medium" class="px-3 py-2 rounded hover:bg-base-200 transition-colors">Guardia</a>
+              </div>
+            </div>
+          </div>
           <a
             routerLink="/contacto"
-            class="btn btn-outline btn-primary nav-item-glow glow-from-left"
-            (mouseenter)="animateButton($event)"
+            class="btn bg-green-500 hover:bg-green-600 text-white border-0"
           >
-            Contacto
+            RRHH
             <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>
           </a>
         </div>
-        <div class="w-full border-t border-gray-300/50">
+        <!-- Fila de links: solo 2xl y superior (≥1536px) -->
+        <div class="hidden 2xl:block w-full border-t border-gray-300/50">
           <nav class="container mx-auto py-3 flex flex-wrap items-center text-lg justify-center gap-8">
             <a
               routerLink="/cirugia"
@@ -77,13 +101,13 @@
               routerLink="/neonatologia"
               routerLinkActive="text-green-500 after:w-full"
               class="hover:text-gray-900 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all after:duration-300 hover:after:w-full"
-              >Neo</a
+              >Neonatología</a
             >
             <a
               routerLink="/hemodinamia"
               routerLinkActive="text-green-500 after:w-full"
               class="hover:text-gray-900 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all after:duration-300 hover:after:w-full"
-              >Hemodinámia</a
+              >Hemodinamia</a
             >
             <a
               routerLink="/clinica"
@@ -101,7 +125,7 @@
               routerLink="/terapia"
               routerLinkActive="text-green-500 after:w-full"
               class="hover:text-gray-900 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all after:duration-300 hover:after:w-full"
-              >Terapia</a
+              >U.T.I.</a
             >
             <a
               routerLink="/traumatologia"
@@ -123,39 +147,33 @@
             >
           </nav>
         </div>
-      </header>
+      </div>
       <!-- Page content here -->
     </div>
     <div class="drawer-side">
-      <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+      <label for="my-drawer-2" aria-label="Cerrar menú" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 min-h-full w-80 px-4 pt-25 text-xl gap-1">
-        <!-- Sidebar content here -->
         <li><a routerLink="/" class="font-bold" (click)="drawerCheckbox.checked = false">Volver a inicio</a></li>
-        <div class="flex w-full flex-col">
-  
-  <div class="divider"></div>
-  
-</div>
+        <li class="flex w-full flex-col"><div class="divider"></div></li>
         <li><a routerLink="/cirugia" (click)="drawerCheckbox.checked = false">Cirugía</a></li>
         <li><a routerLink="/gastro" (click)="drawerCheckbox.checked = false">Gastro</a></li>
         <li><a routerLink="/urologia" (click)="drawerCheckbox.checked = false">Urología</a></li>
-        <li><a routerLink="/neonatologia" (click)="drawerCheckbox.checked = false">Neo</a></li>
-        <li><a routerLink="/hemodinamia" (click)="drawerCheckbox.checked = false">Hemodinámia</a></li>
+        <li><a routerLink="/neonatologia" (click)="drawerCheckbox.checked = false">Neonatología</a></li>
+        <li><a routerLink="/hemodinamia" (click)="drawerCheckbox.checked = false">Hemodinamia</a></li>
         <li><a routerLink="/clinica" (click)="drawerCheckbox.checked = false">Clínica</a></li>
         <li><a routerLink="/nutricion" (click)="drawerCheckbox.checked = false">Nutrición</a></li>
-        <li><a routerLink="/terapia" (click)="drawerCheckbox.checked = false">Terapia</a></li>
+        <li><a routerLink="/terapia" (click)="drawerCheckbox.checked = false">U.T.I.</a></li>
         <li><a routerLink="/traumatologia" (click)="drawerCheckbox.checked = false">Traumatología</a></li>
         <li><a routerLink="/obstetricia" (click)="drawerCheckbox.checked = false">Obstetricia</a></li>
         <li><a routerLink="/guardia" (click)="drawerCheckbox.checked = false">Guardia</a></li>
-        <div class="divider"></div>
+        <li class="flex w-full flex-col"><div class="divider"></div></li>
         <li>
           <a
             routerLink="/contacto"
             (click)="drawerCheckbox.checked = false"
-            class="btn btn-outline btn-primary w-full mt-2"
-            (mouseenter)="animateButton($event)"
+            class="btn bg-green-500 hover:bg-green-600 text-white border-0 w-full mt-2"
           >
-            Contacto
+            RRHH
             <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>
           </a>
         </li>

@@ -54,6 +54,10 @@ export class Landing implements AfterViewInit {
       return;
     }
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     // 1. Hero Content Entrance
     const heroContent = this.el.nativeElement.querySelector('.hero-content');
     if (heroContent) {

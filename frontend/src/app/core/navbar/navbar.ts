@@ -28,6 +28,10 @@ export class Navbar implements AfterViewInit {
       return;
     }
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     // 1. Logo Animation
     const logo = this.el.nativeElement.querySelector('.title-font');
     if (logo) {
