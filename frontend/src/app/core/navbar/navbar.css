@@ -36,7 +36,7 @@
     right: 0;
     left: auto;
     /* Gradient from solid/transparent #00AC52 on right to transparent on left */
-    background: linear-gradient(to left, rgba(0, 172, 82, 0.25), transparent);
+    background: linear-gradient(to left, rgba(0, 201, 80, 0.25), transparent);
     transform: translateX(100%);
 }
 
@@ -51,7 +51,7 @@
     left: 0;
     right: auto;
     /* Gradient from solid/transparent #00AC52 on left to transparent on right */
-    background: linear-gradient(to right, rgba(0, 172, 82, 0.25), transparent);
+    background: linear-gradient(to right, rgba(0, 201, 80, 0.25), transparent);
     transform: translateX(-100%);
 }
 

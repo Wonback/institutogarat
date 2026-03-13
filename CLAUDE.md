@@ -65,35 +65,82 @@ Backend secrets (`backend/.env`): `MAIL_USER`, `MAIL_PASS`, `MAIL_TO`, `ALLOWED_
 
 ### Paleta de colores
 
-| Uso | Clase Tailwind | Hex |
-|---|---|---|
-| Color principal (acento, botones, íconos, bordes activos) | `green-500` | `#22c55e` |
-| Hover de botones principales | `green-600` | `#16a34a` |
-| Títulos de sección en modales y CV | `green-700` | `#15803d` |
-| Overlay de hero banner | `green-900/90` → `green-800/40` | — |
-| Glow del navbar (hover) | `rgba(0, 172, 82, 0.25)` | `#00AC52` a 25% |
-| Textos base | `gray-900`, `gray-700`, `gray-600`, `gray-500` | — |
-| Borde de inputs en foco | `#22c55e` (2px solid) | — |
-| Patologías / errores (solo Hemodinamia) | `red-500` / `red-600` | — |
+El color verde característico de la marca es **`#00c950`**. Todos los verdes del diseño deben derivarse de esta paleta. No usar las clases `green-*` de Tailwind por defecto — usar los valores hex directos o variables CSS.
+
+#### Verde base
+| Rol | Hex |
+|---|---|
+| **Base (principal)** | `#00c950` |
+
+#### Tintes (más claros)
+| Nivel | Hex |
+|---|---|
+| Tinte 1 | `#4fd26a` |
+| Tinte 2 | `#75da83` |
+| Tinte 3 | `#94e29b` |
+| Tinte 4 | `#b0eab4` |
+| Tinte 5 (más suave) | `#cbf1cd` |
+
+#### Shades (más oscuros)
+| Nivel | Hex |
+|---|---|
+| Shade 1 | `#15aa45` |
+| Shade 2 | `#1c8b3b` |
+| Shade 3 | `#1d6e30` |
+| Shade 4 | `#1c5226` |
+| Shade 5 (más oscuro) | `#17381c` |
+
+#### Hues (variaciones de matiz)
+`#14c700` · `#00c70d` · `#00c72e` · `#00c950` · `#00c771` · `#00c792`
+
+#### Transparencias
+| Alpha | Hex |
+|---|---|
+| 86% | `#00c950db` |
+| 71% | `#00c950b6` |
+| 57% | `#00c95092` |
+| 43% | `#00c9506d` |
+| 29% | `#00c95049` |
+
+#### Colores complementarios y triángulo
+| Rol | Hex |
+|---|---|
+| Complementario base | `#c70077` (magenta/rosa) |
+| Complementario hover | `#a90065` (shade −15%) |
+| Triángulo 1 | `#5000c7` (violeta) |
+| Triángulo 2 | `#c75000` (naranja) |
+
+#### Usos semánticos
+| Uso | Valor |
+|---|---|
+| Color principal (acento, botones, íconos, bordes activos) | `#00c950` |
+| Hover de botones principales | `#15aa45` (Shade 1) |
+| Títulos de sección en modales y CV | `#1c8b3b` (Shade 2) |
+| Fondo suave / franja trust | `#cbf1cd` (Tinte 5) |
+| Overlay de hero banner | `#1d6e30cc` → `#1c8b3b66` (Shade 3/2 con alpha) |
+| Glow del navbar (hover) | `#00c95040` (Transparencia ~25%) |
+| Borde de inputs en foco | `#00c950` (2px solid) |
+| Textos base | `gray-900`, `gray-700`, `gray-600`, `gray-500` |
+| Errores / alertas | `#c70077` (complementario) / hover: `#a90065` |
 
 ### Componentes UI — convenciones
 
 **Botones principales:**
 ```html
-<button class="btn bg-green-500 hover:bg-green-600 text-white border-0">...</button>
+<button class="btn bg-[#00c950] hover:bg-[#15aa45] text-white border-0">...</button>
 <!-- Pill shape para CTAs -->
-<a class="... bg-green-500 border-0 py-2 px-8 rounded-full hover:bg-green-600 text-white">...</a>
+<a class="... bg-[#00c950] border-0 py-2 px-8 rounded-full hover:bg-[#15aa45] text-white">...</a>
 ```
 
 **Separador de sección (underline verde):**
 ```html
-<div class="h-1 w-20 bg-green-500 rounded"></div>
+<div class="h-1 w-20 bg-[#00c950] rounded"></div>
 ```
 
 **Hero banner de página de especialidad:**
 ```html
 <div class="hero min-h-[60vh] relative" style="background-image: url(...)">
-  <div class="absolute inset-0 bg-gradient-to-r from-green-900/90 to-green-800/40 mix-blend-multiply"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[#17381c]/90 to-[#1c5226]/40 mix-blend-multiply"></div>
   <div class="hero-content text-white w-full justify-start px-8 md:px-16 z-10">
     <div class="max-w-2xl text-left mt-32 md:mt-0">
       <h1 class="mb-2 text-4xl md:text-5xl font-black uppercase leading-tight tracking-tight">...</h1>
@@ -105,12 +152,12 @@ Backend secrets (`backend/.env`): `MAIL_USER`, `MAIL_PASS`, `MAIL_TO`, `ALLOWED_
 **Títulos de sección:**
 ```html
 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 uppercase">TÍTULO</h1>
-<div class="h-1 w-20 bg-green-500 rounded mx-auto mb-4"></div>
+<div class="h-1 w-20 bg-[#00c950] rounded mx-auto mb-4"></div>
 ```
 
 **Tarjeta de tratamiento / procedimiento (clickeable):**
 ```html
-<button class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex p-4 h-full items-center justify-start w-full text-left transition-all duration-300 hover:shadow-md hover:scale-[1.02] cursor-pointer hover:border-green-300">
+<button class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex p-4 h-full items-center justify-start w-full text-left transition-all duration-300 hover:shadow-md hover:scale-[1.02] cursor-pointer hover:border-[#75da83]">
   <!-- ícono SVG checkmark verde -->
   <span class="title-font font-medium text-gray-900">...</span>
 </button>
@@ -118,21 +165,21 @@ Backend secrets (`backend/.env`): `MAIL_USER`, `MAIL_PASS`, `MAIL_TO`, `ALLOWED_
 
 **Bio de profesional (quote):**
 ```html
-<p class="leading-relaxed text-lg text-gray-600 italic border-l-4 border-green-500 pl-4">
+<p class="leading-relaxed text-lg text-gray-600 italic border-l-4 border-[#00c950] pl-4">
   "{{ selectedMember().bio }}"
 </p>
 ```
 
 **Nombre de profesional (gradient):**
 ```html
-<h2 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-400 mb-2">
+<h2 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2">
 ```
 
 **FAB de WhatsApp (presente en todas las páginas terminadas):**
 ```html
 <div class="fab">
   <a href="https://api.whatsapp.com/send/?phone=54345402..." target="_blank"
-     class="border-0 bg-green-500 btn btn-xl btn-circle btn-primary">
+     class="border-0 bg-[#00c950] btn btn-xl btn-circle btn-primary">
     <!-- SVG de WhatsApp -->
   </a>
 </div>
@@ -154,7 +201,7 @@ Backend secrets (`backend/.env`): `MAIL_USER`, `MAIL_PASS`, `MAIL_TO`, `ALLOWED_
 - **Qué:** Franja de obras sociales y prepagas con cobertura (logos o nombres en fila con checkmarks)
 - **Dónde:** Entre el hero y "Nuestras Especialidades" en `core/landing/landing.html`
 - **Estado:** Esperando lista de obras sociales del cliente
-- **Patrón sugerido:** `✓ PAMI  ✓ OSDE  ✓ Swiss Medical  ✓ Galeno  ...` con fondo sutil (bg-green-50 o base-200)
+- **Patrón sugerido:** `✓ PAMI  ✓ OSDE  ✓ Swiss Medical  ✓ Galeno  ...` con fondo sutil (`bg-[#cbf1cd]` Tinte 5 o `base-200`)
 
 ## Plugins instalados
 
