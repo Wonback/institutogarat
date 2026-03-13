@@ -6,18 +6,18 @@
 
 .input:hover,
 .input:focus {
-  border: 2px solid #22c55e;
+  border: 2px solid #00c950;
   outline: none;
 }
 
 .select:hover,
 .select:focus {
-  border: 2px solid #22c55e;
+  border: 2px solid #00c950;
   outline: none;
 }
 
 .file-input:hover,
 .file-input:focus {
-  border: 2px solid #22c55e;
+  border: 2px solid #00c950;
   outline: none;
 }

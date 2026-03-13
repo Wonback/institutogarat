@@ -96,7 +96,7 @@ export class Traumatologia {
       cv: `
         <div class="space-y-4">
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Datos Personales y Profesionales</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Datos Personales y Profesionales</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Matrícula Nacional: 66.839</li>
               <li>Matrícula Provincial: 6.731</li>
@@ -106,7 +106,7 @@ export class Traumatologia {
           </div>
           
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Formación y Residencia</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Formación y Residencia</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Ex Residente – Hospital Español de Buenos Aires</li>
               <li>Jefe de Residentes – Hospital Español de Buenos Aires</li>
@@ -115,7 +115,7 @@ export class Traumatologia {
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Cargo Actual</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Cargo Actual</h4>
              <ul class="list-none text-gray-700">
                <li><span class="font-semibold">Jefe del Servicio de Ortopedia y Traumatología</span></li>
                <li>Sanatorio Garat – Concordia, Entre Ríos</li>
@@ -123,7 +123,7 @@ export class Traumatologia {
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Subespecialidades</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Subespecialidades</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Cirugía Artroscópica de Rodilla, Hombro y Tobillo</li>
               <li>Tratamiento de Lesiones Deportivas</li>
@@ -146,7 +146,7 @@ export class Traumatologia {
       cv: `
         <div class="space-y-4">
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Títulos de Especialista</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Títulos de Especialista</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Especialista en Ortopedia y Traumatología – UBA</li>
               <li>Especialista en Cirugía Artroscópica – AAA</li>
@@ -154,7 +154,7 @@ export class Traumatologia {
           </div>
           
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Formación y Acreditaciones</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Formación y Acreditaciones</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Especialista en Ortopedia y Traumatología – Universidad de Buenos Aires (UBA)</li>
               <li>Especialista en Ortopedia y Traumatología – Asociación Argentina de Ortopedia y Traumatología (AAOT)</li>
@@ -165,7 +165,7 @@ export class Traumatologia {
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Formación Internacional y Perfeccionamiento</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Formación Internacional y Perfeccionamiento</h4>
              <ul class="list-disc list-inside text-gray-700 space-y-1">
                <li>Beca en Ortopedia y Traumatología otorgada por concurso – Fundación MAPFRE</li>
                <li>Servicio de Cadera y Rodilla – Hospital Dexeus, Barcelona, España</li>
@@ -176,7 +176,7 @@ export class Traumatologia {
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Residencias y Posgrados</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Residencias y Posgrados</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Posgrado en Traumatología del Deporte – AATD</li>
               <li>Ex Residente – Hospital de Agudos Dr. Cosme Argerich (CABA)</li>
@@ -196,7 +196,7 @@ export class Traumatologia {
       cv: `
         <div class="space-y-4">
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Formación Universitaria</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Formación Universitaria</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Médico – Facultad de Ciencias Médicas, Universidad Nacional de Rosario</li>
               <li>Promedio académico e histórico: 8,53</li>
@@ -204,7 +204,7 @@ export class Traumatologia {
           </div>
           
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Formación de Posgrado</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Formación de Posgrado</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Especialista en Ortopedia y Traumatología – Universidad Nacional de Rosario (2010–2013)</li>
               <li>Hospital Escuela Eva Perón – Granadero Baigorria, Santa Fe</li>
@@ -213,10 +213,10 @@ export class Traumatologia {
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Experiencia Laboral</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Experiencia Laboral</h4>
              <ul class="list-none text-gray-700 space-y-3">
                <li>
-                 <span class="font-semibold block text-green-600">2014 – Actualidad</span>
+                 <span class="font-semibold block text-[#15aa45]">2014 – Actualidad</span>
                  <ul class="list-disc list-inside ml-4 mt-1">
                     <li><span class="font-medium">Instituto Médico Quirúrgico Garat – Concordia:</span> Cirugías, procedimientos, consultorio externo y guardias traumatológicas</li>
                     <li><span class="font-medium">Hospital San José – Federación, Entre Ríos:</span> Consultorios externos, internación y urgencias</li>
@@ -224,7 +224,7 @@ export class Traumatologia {
                  </ul>
                </li>
                <li>
-                 <span class="font-semibold block text-green-600">2013 – 2014</span>
+                 <span class="font-semibold block text-[#15aa45]">2013 – 2014</span>
                  <ul class="list-disc list-inside ml-4 mt-1">
                     <li><span class="font-medium">Jefe de Residentes – Especialización en Ortopedia y Traumatología, Hospital Escuela Eva Perón:</span> Actividad asistencial, quirúrgica, docente y organizativa</li>
                  </ul>
@@ -233,7 +233,7 @@ export class Traumatologia {
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Actividades Académicas y Congresos</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Actividades Académicas y Congresos</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Participación continua en Congresos Argentinos de Ortopedia y Traumatología (47° a 52°)</li>
               <li>Cursos y jornadas oficiales de patología y cirugía de cadera y rodilla</li>
@@ -255,12 +255,12 @@ export class Traumatologia {
       bioImagePosition: 'center',
       cv: `
         <div class="space-y-4">
-          <div class="text-sm text-green-600 font-semibold uppercase tracking-wide mb-2">
+          <div class="text-sm text-[#15aa45] font-semibold uppercase tracking-wide mb-2">
             Médico Traumatólogo – Concordia, Entre Ríos
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Datos Profesionales</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Datos Profesionales</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Matrícula Nacional: 101.577</li>
               <li>Matrícula Provincial: 9.199</li>
@@ -269,14 +269,14 @@ export class Traumatologia {
           </div>
           
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Formación</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Formación</h4>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Residencia completa – Hospital Militar Central, Buenos Aires</li>
             </ul>
           </div>
 
           <div>
-            <h4 class="font-bold text-green-700 text-lg mb-2">Cargos Actuales</h4>
+            <h4 class="font-bold text-[#1c8b3b] text-lg mb-2">Cargos Actuales</h4>
              <ul class="list-disc list-inside text-gray-700 space-y-1">
                <li>Profesional Asistente Interino – Servicio de Ortopedia y Traumatología, Hospital D.C. Masvernat – Concordia</li>
                <li>Miembro del Servicio de Ortopedia y Traumatología – Sanatorio Garat, desde el 2024</li>
