@@ -156,6 +156,27 @@ Backend secrets (`backend/.env`): `MAIL_USER`, `MAIL_PASS`, `MAIL_TO`, `ALLOWED_
 - **Estado:** Esperando lista de obras sociales del cliente
 - **Patrón sugerido:** `✓ PAMI  ✓ OSDE  ✓ Swiss Medical  ✓ Galeno  ...` con fondo sutil (bg-green-50 o base-200)
 
+## Plugins instalados
+
+| Plugin | Cuándo usarlo |
+|---|---|
+| **context7** | Antes de usar APIs de Angular, DaisyUI 5, Tailwind 4, Motion One o cualquier librería — busca docs actualizadas en vez de depender del conocimiento interno |
+| **ui-ux-pro-max** | Al diseñar o mejorar componentes UI: paletas, estilos, layout, tipografía, animaciones |
+| **github** | Para trabajar con PRs, issues y releases del repositorio |
+| **claude-md-management** | Para auditar y actualizar este CLAUDE.md con aprendizajes de la sesión |
+
+### Uso de Context7
+
+Cuando vayas a trabajar con una librería, resolvé su ID primero y luego consultá la documentación relevante:
+
+```
+# Ejemplo: antes de usar una API de Angular o DaisyUI
+1. resolve-library-id("angular") → /angular/angular
+2. query-docs("/angular/angular", "standalone components signals")
+```
+
+Librerías clave de este proyecto: `angular`, `daisyui`, `tailwindcss`, `motion` (Motion One).
+
 ## Key Patterns
 
 - **CV form** (`pages/contacto/contacto.ts`): Reactive Forms con validator custom `soloLetras` (`/^[a-zA-ZÀ-ÿ\s'\-]+$/`), validación de PDF/4MB en cliente, loading state, modales success/error.
