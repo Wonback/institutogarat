@@ -27,6 +27,15 @@ export class Contacto {
   modalMessage = '';
   loading = false;
 
+  rrhhFunciones = [
+    'Selección de personal',
+    'Motivación, capacitación y desarrollo',
+    'Resolución de conflictos interpersonales',
+    'Construcción de equipos armónicos',
+    'Identificación de fortalezas y áreas de mejora',
+    'Reconocimiento y retención de talentos',
+  ];
+
   sectores = [
     'Cirugía',
     'Gastroenterología',
