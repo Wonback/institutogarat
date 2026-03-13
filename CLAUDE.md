@@ -175,6 +175,28 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 <h2 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2">
 ```
 
+**Título de sección dividido (título izq + descripción der):**
+```html
+<div class="flex flex-wrap w-full mb-12">
+  <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 uppercase">TÍTULO</h1>
+    <div class="h-1 w-20 bg-[#00c950] rounded"></div>
+  </div>
+  <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg self-center">Descripción...</p>
+</div>
+```
+Usar cuando hay suficiente texto descriptivo para justificar el layout 50/50. Alternativa al header centrado.
+
+**Banner full-width con espaciado exterior (ej. Supervisión de Menús):**
+```html
+<div class="bg-base-100 py-12 md:py-24">
+  <section class="bg-gradient-to-r from-[#1d6e30] to-[#15aa45] py-20 md:py-28">
+    <div class="container mx-auto px-8 md:px-16">...</div>
+  </section>
+</div>
+```
+El wrapper blanco actúa como separador — no agregar dividers adicionales alrededor.
+
 **FAB de WhatsApp (presente en todas las páginas terminadas):**
 ```html
 <div class="fab">
@@ -187,6 +209,20 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 
 **Imágenes:** todas hosteadas en ImageKit (`https://ik.imagekit.io/wonback/...`).
 
+**Separadores entre secciones:**
+
+El espaciado vertical entre secciones lo controlan **exclusivamente los separadores**. Las secciones de contenido no deben tener `py-*`. El divider siempre usa `py` simétrico (igual arriba y abajo):
+
+```html
+<div class="container px-5 py-12 md:py-24 mx-auto flex w-full flex-col">
+  <div class="divider"></div>
+</div>
+```
+
+El separador puede ir como elemento independiente entre secciones, o dentro de una sección al final (antes del `</section>`). En ambos casos siempre `py-12 md:py-24`, nunca solo `pt-*`.
+
+La única excepción es la primera sección después del hero, que puede tener `pt-12 md:pt-24` ya que no hay separador arriba.
+
 ### CSS personalizado reutilizable
 
 `landing.css` define `.hero-mask-fade` (fade inferior del hero) y `.hero-bottom-fade`.
@@ -194,6 +230,10 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 `navbar.css` define `.nav-item-glow`, `.glow-from-right`, `.glow-from-left` para el efecto hover del navbar.
 
 `contacto.css` define el borde verde en foco para `.input`, `.select` y `.file-input`.
+
+## README — Estado de páginas
+
+`README.md` raíz tiene una tabla de estado por página (✅ Terminada / 🚧 En desarrollo / ❌ Sin desarrollar). Actualizar cuando cambie el estado de una página.
 
 ## Pendientes
 
