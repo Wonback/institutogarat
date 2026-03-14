@@ -1,4 +1,4 @@
-import { Component, signal, NgModule } from '@angular/core';
+import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, FileUser } from 'lucide-angular';
 
@@ -30,7 +30,7 @@ interface Treatment {
   templateUrl: './traumatologia.html',
   styleUrl: './traumatologia.css',
 })
-export class Traumatologia {
+export class Traumatologia implements OnInit, OnDestroy {
   treatments: Treatment[] = [
     {
       title: 'CIRUGÍAS ARTROSCÓPICAS',
@@ -287,14 +287,35 @@ export class Traumatologia {
     },
   ];
 
-  selectedMember = signal<TeamMember>(this.teamMembers[2]); // Default to Justin (index 0 in preview, but 2 here just for variety, let's actually default to the first one defined in the list which is Justin in the mockup, but here I mapped Justin to index 0 logic essentially. Wait, in my array Justin is index 0. So I will init with index 0).
-  
-  constructor() {
-    this.selectedMember.set(this.teamMembers[0]);
+  selectedMember = signal<TeamMember>(this.teamMembers[0]);
+  private rotationInterval: any;
+
+  ngOnInit() {
+    this.startRotation();
+  }
+
+  ngOnDestroy() {
+    this.stopRotation();
+  }
+
+  startRotation() {
+    this.rotationInterval = setInterval(() => {
+      const currentIndex = this.teamMembers.findIndex(m => m.id === this.selectedMember().id);
+      const nextIndex = (currentIndex + 1) % this.teamMembers.length;
+      this.selectedMember.set(this.teamMembers[nextIndex]);
+    }, 5000);
+  }
+
+  stopRotation() {
+    if (this.rotationInterval) {
+      clearInterval(this.rotationInterval);
+    }
   }
 
   selectMember(member: TeamMember) {
     this.selectedMember.set(member);
+    this.stopRotation();
+    this.startRotation();
   }
 
   selectTreatment(treatment: Treatment) {

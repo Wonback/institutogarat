@@ -269,3 +269,33 @@ Librerías clave de este proyecto: `angular`, `daisyui`, `tailwindcss`, `motion`
 - **CV form** (`pages/contacto/contacto.ts`): Reactive Forms con validator custom `soloLetras` (`/^[a-zA-ZÀ-ÿ\s'\-]+$/`), validación de PDF/4MB en cliente, loading state, modales success/error.
 - **SSR**: `app.config.server.ts` + `server.ts` (Express). Server routes en `app.routes.server.ts`.
 - **TypeScript**: Strict mode (`noImplicitAny`, `strictNullChecks`). Target ES2022.
+
+## Páginas de Especialidad — Convenciones
+
+**Orden canónico de secciones:**
+Hero → Nosotros → [Contenido específico: tratamientos / procedimientos / patologías] → Equipo de Profesionales (al final, como "créditos"). No invertir este orden — el equipo siempre cierra la página.
+
+**Hero con CTA (patrón completo):**
+```html
+<div class="hero min-h-[60vh] relative" style="background-image: url(...)">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#17381c]/90 to-[#1c5226]/40 mix-blend-multiply"></div>
+  <div class="hero-content text-white w-full justify-start px-8 md:px-16 z-10">
+    <div class="max-w-2xl text-left mt-32 md:mt-0">
+      <h1 class="mb-6 text-4xl md:text-5xl font-black uppercase leading-tight tracking-tight">...</h1>
+      <a href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
+         target="_blank"
+         class="inline-flex items-center gap-3 bg-[#00c950] hover:bg-[#15aa45] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 shadow-lg drop-shadow-lg text-lg">
+        Solicitar turno
+        <!-- SVG WhatsApp -->
+      </a>
+    </div>
+  </div>
+</div>
+```
+Nota: `mb-6` en el `<h1>` (no `mb-2`) cuando hay botón debajo.
+
+**Teléfono WhatsApp por defecto:** `543454021218` (el mismo del landing). Usar este número en todas las páginas salvo que se indique explícitamente un número distinto al arrancar el desarrollo de una página nueva. Excepción conocida: Hemodinamia usa `543454021217`.
+
+**Auto-rotación del equipo de profesionales:** Todas las páginas con sección de equipo usan `setInterval` de 5000ms (`OnInit`/`OnDestroy`). Patrón: `stopRotation()` en el click que abre el modal CV, `(close)="startRotation()"` en el elemento `<dialog>`, y `stopRotation()` + `startRotation()` al hacer click manual en un miembro. Ver `hemodinamia.ts` como referencia canónica.
+
+**Footer:** Lleva `mt-12 md:mt-24` propio — ninguna página necesita agregar espacio antes del footer. `footer.css` define `box-shadow` hacia arriba (espejo de `shadow-lg` de Tailwind).

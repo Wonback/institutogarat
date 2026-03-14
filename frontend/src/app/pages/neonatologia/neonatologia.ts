@@ -1,4 +1,4 @@
-import { Component, signal, NgModule } from '@angular/core';
+import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, Baby, HeartHandshake, FileUser } from 'lucide-angular';
 
@@ -30,7 +30,7 @@ export class NeonatologiaIconsModule {}
   templateUrl: './neonatologia.html',
   styleUrl: './neonatologia.css',
 })
-export class Neonatologia {
+export class Neonatologia implements OnInit, OnDestroy {
   treatments: Treatment[] = [
     {
       title: 'ATENCIÓN AL RECIÉN NACIDO PREMATURO',
@@ -151,9 +151,34 @@ export class Neonatologia {
   ];
 
   selectedMember = signal<TeamMember>(this.teamMembers[0]);
+  private rotationInterval: any;
+
+  ngOnInit() {
+    this.startRotation();
+  }
+
+  ngOnDestroy() {
+    this.stopRotation();
+  }
+
+  startRotation() {
+    this.rotationInterval = setInterval(() => {
+      const currentIndex = this.teamMembers.findIndex(m => m.id === this.selectedMember().id);
+      const nextIndex = (currentIndex + 1) % this.teamMembers.length;
+      this.selectedMember.set(this.teamMembers[nextIndex]);
+    }, 5000);
+  }
+
+  stopRotation() {
+    if (this.rotationInterval) {
+      clearInterval(this.rotationInterval);
+    }
+  }
 
   selectMember(member: TeamMember) {
     this.selectedMember.set(member);
+    this.stopRotation();
+    this.startRotation();
   }
 
   selectTreatment(treatment: Treatment) {

@@ -1,4 +1,4 @@
-import { Component, signal, NgModule } from '@angular/core';
+import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, FileUser } from 'lucide-angular';
 
@@ -25,7 +25,7 @@ export class NutricionIconsModule {}
   templateUrl: './nutricion.html',
   styleUrl: './nutricion.css',
 })
-export class Nutricion {
+export class Nutricion implements OnInit, OnDestroy {
   teamMembers: TeamMember[] = [
     {
       id: 1,
@@ -48,8 +48,33 @@ export class Nutricion {
   ];
 
   selectedMember = signal<TeamMember>(this.teamMembers[0]);
+  private rotationInterval: any;
+
+  ngOnInit() {
+    this.startRotation();
+  }
+
+  ngOnDestroy() {
+    this.stopRotation();
+  }
+
+  startRotation() {
+    this.rotationInterval = setInterval(() => {
+      const currentIndex = this.teamMembers.findIndex(m => m.id === this.selectedMember().id);
+      const nextIndex = (currentIndex + 1) % this.teamMembers.length;
+      this.selectedMember.set(this.teamMembers[nextIndex]);
+    }, 5000);
+  }
+
+  stopRotation() {
+    if (this.rotationInterval) {
+      clearInterval(this.rotationInterval);
+    }
+  }
 
   selectMember(member: TeamMember) {
     this.selectedMember.set(member);
+    this.stopRotation();
+    this.startRotation();
   }
 }
