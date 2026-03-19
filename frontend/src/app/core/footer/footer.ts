@@ -1,18 +1,17 @@
 import { Component, NgModule } from '@angular/core';
-import { LucideAngularModule, Cross } from 'lucide-angular';
+import { RouterLink } from '@angular/router';
+import { LucideAngularModule, Cross, MapPin, Phone, Mail, Clock } from 'lucide-angular';
 
 @NgModule({
-  imports: [LucideAngularModule.pick({ Cross })],
+  imports: [LucideAngularModule.pick({ Cross, MapPin, Phone, Mail, Clock })],
   exports: [LucideAngularModule],
 })
-export class LandingIconsModule {}
+export class FooterIconsModule {}
 
 @Component({
   selector: 'app-footer',
-  imports: [LandingIconsModule],
+  imports: [FooterIconsModule, RouterLink],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
-export class Footer {
-
-}
+export class Footer {}
