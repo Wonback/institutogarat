@@ -32,8 +32,10 @@ export class Nutricion implements OnInit, OnDestroy {
       name: 'Lic. María Julieta Negri',
       role: 'Licenciada en Nutrición',
       bio: 'Integrante del Servicio de Nutrición y Alimentación del Sanatorio Garat. Con sólida formación académica y experiencia en soporte nutricional clínico, trabaja para garantizar una atención nutricional segura, personalizada y basada en evidencia científica.',
-      thumbnail: 'https://ik.imagekit.io/wonback/Nutricion/negri-thumb.jpg',
-      bioImage: 'https://ik.imagekit.io/wonback/Nutricion/negri.jpg',
+      thumbnail:
+        'https://ik.imagekit.io/wonback/Nutricion/Lic.%20Mar%C3%ADa%20Julieta%20Negri.HEIC?updatedAt=1774092304374',
+      bioImage:
+        'https://ik.imagekit.io/wonback/Nutricion/Lic.%20Mar%C3%ADa%20Julieta%20Negri.HEIC?updatedAt=1774092304374',
       bioImagePosition: 'center',
     },
     {
@@ -41,8 +43,10 @@ export class Nutricion implements OnInit, OnDestroy {
       name: 'Lic. Natalia Cicerone',
       role: 'Licenciada en Nutrición',
       bio: 'Integrante del Servicio de Nutrición y Alimentación del Sanatorio Garat. Con sólida formación académica y experiencia en soporte nutricional clínico, trabaja para garantizar una atención nutricional segura, personalizada y basada en evidencia científica.',
-      thumbnail: 'https://ik.imagekit.io/wonback/Nutricion/cicerone-thumb.jpg',
-      bioImage: 'https://ik.imagekit.io/wonback/Nutricion/cicerone.jpg',
+      thumbnail:
+        'https://ik.imagekit.io/wonback/Nutricion/Lic.%20Natalia%20Cicerone?updatedAt=1774093346777',
+      bioImage:
+        'https://ik.imagekit.io/wonback/Nutricion/Lic.%20Natalia%20Cicerone?updatedAt=1774093346777',
       bioImagePosition: 'center',
     },
   ];
@@ -60,7 +64,7 @@ export class Nutricion implements OnInit, OnDestroy {
 
   startRotation() {
     this.rotationInterval = setInterval(() => {
-      const currentIndex = this.teamMembers.findIndex(m => m.id === this.selectedMember().id);
+      const currentIndex = this.teamMembers.findIndex((m) => m.id === this.selectedMember().id);
       const nextIndex = (currentIndex + 1) % this.teamMembers.length;
       this.selectedMember.set(this.teamMembers[nextIndex]);
     }, 5000);

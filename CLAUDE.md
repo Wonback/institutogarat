@@ -237,6 +237,12 @@ La única excepción es la primera sección después del hero, que puede tener `
 
 ## Pendientes
 
+### Bug conocido — Dropdown navbar en pantalla mediana
+- **Qué:** En `lg` (≥1024px hasta <1536px), el dropdown "Especialidades" se activa al hacer hover en un área invisible debajo del botón.
+- **Causa probable:** DaisyUI v5 `dropdown-hover` usa `:hover` CSS puro; el `dropdown-content` oculto parece seguir interceptando eventos de mouse.
+- **Intentado sin éxito:** `items-center` en el wrapper `flex-1`; reemplazar `dropdown-hover` por `[class.dropdown-open]` + `mouseenter`/`mouseleave` Angular.
+- **Estado:** Sin resolver. Requiere inspeccionar qué hace DaisyUI v5 con `pointer-events` en `.dropdown-content` oculto antes de intentar otro parche.
+
 ### Sección Trust/Social Proof — Landing
 - **Qué:** Franja de obras sociales y prepagas con cobertura (logos o nombres en fila con checkmarks)
 - **Dónde:** Entre el hero y "Nuestras Especialidades" en `core/landing/landing.html`
