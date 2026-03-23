@@ -33,45 +33,47 @@
       </div>
       <!-- Desktop Navbar -->
       <div class="text-gray-600 body-font shadow-lg hidden lg:flex flex-col bg-base-300">
-        <div class="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
+        <div class="container mx-auto flex flex-wrap lg:py-3 lg:px-16 2xl:p-5 flex-row items-center justify-between">
           <a routerLink="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer">
             <img
               ngSrc="assets/images/garatlogo.png"
               alt="Instituto Garat"
               width="400"
               height="100"
-              class="w-[30vw] max-w-[350px] h-auto"
+              class="w-[30vw] lg:max-w-[270px] 2xl:max-w-[350px] h-auto"
               priority
             />
           </a>
           <!-- Dropdown centrado: solo lg hasta 2xl -->
           <div class="hidden lg:flex 2xl:hidden flex-1 justify-center">
-            <div class="dropdown dropdown-hover">
-              <div tabindex="0" role="button" class="btn btn-ghost text-base gap-1.5 font-normal">
+            <div class="relative specialties-dropdown pb-1" (mouseenter)="dropdownOpen.set(true)" (mouseleave)="dropdownOpen.set(false)">
+              <button type="button" class="btn btn-ghost text-base gap-1.5 font-normal">
                 Especialidades
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-              </div>
-              <div tabindex="0" class="dropdown-content bg-base-100 rounded-box z-50 shadow-lg p-2 grid grid-cols-2 gap-x-1 w-80 mt-1">
-                <a routerLink="/cirugia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Cirugía</a>
-                <a routerLink="/gastro" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Gastro</a>
-                <a routerLink="/urologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Urología</a>
-                <a routerLink="/neonatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Neonatología</a>
-                <a routerLink="/hemodinamia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Hemodinamia</a>
-                <a routerLink="/clinica" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Clínica</a>
-                <a routerLink="/nutricion" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Nutrición</a>
-                <a routerLink="/terapia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">U.T.I.</a>
-                <a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Traumatología</a>
-                <a routerLink="/obstetricia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Obstetricia</a>
-                <a routerLink="/guardia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors">Guardia</a>
-              </div>
+              </button>
+              @if (dropdownOpen()) {
+                <div class="absolute top-full left-1/2 -translate-x-1/2 bg-base-100 rounded-box z-50 shadow-lg p-2 grid grid-cols-2 gap-x-1 w-80">
+                  <a routerLink="/cirugia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Cirugía</a>
+                  <a routerLink="/gastro" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Gastro</a>
+                  <a routerLink="/urologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Urología</a>
+                  <a routerLink="/neonatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Neonatología</a>
+                  <a routerLink="/hemodinamia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Hemodinamia</a>
+                  <a routerLink="/clinica" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Clínica</a>
+                  <a routerLink="/nutricion" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Nutrición</a>
+                  <a routerLink="/terapia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">U.T.I.</a>
+                  <a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Traumatología</a>
+                  <a routerLink="/obstetricia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Obstetricia</a>
+                  <a routerLink="/guardia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Guardia</a>
+                </div>
+              }
             </div>
           </div>
           <a
             routerLink="/contacto"
             (click)="animateButton($event)"
-            class="btn bg-[#00c950] hover:bg-[#15aa45] text-white border-0"
+            class="btn lg:btn-sm 2xl:btn-md bg-[#00c950] hover:bg-[#15aa45] text-white border-0"
           >
             RRHH
             <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>

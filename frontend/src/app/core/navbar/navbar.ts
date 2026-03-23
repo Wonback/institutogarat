@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { NgOptimizedImage, isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { animate, stagger } from 'motion';
@@ -18,6 +18,8 @@ import { LucideAngularModule, Mail, Cross, LucideIconProvider, LUCIDE_ICONS } fr
   styleUrl: './navbar.css',
 })
 export class Navbar implements AfterViewInit {
+  dropdownOpen = signal(false);
+
   constructor(
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object,

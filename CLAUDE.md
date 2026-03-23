@@ -235,13 +235,23 @@ La única excepción es la primera sección después del hero, que puede tener `
 
 `README.md` raíz tiene una tabla de estado por página (✅ Terminada / 🚧 En desarrollo / ❌ Sin desarrollar). Actualizar cuando cambie el estado de una página.
 
+### Patrón responsive lg (1024–1535px) vs 2xl (1536px+)
+
+La versión mediana usa `lg:` para reducir escala y `2xl:` para restaurar al tamaño full. Aplicar siempre este par — no usar solo `lg:` sin restaurar en `2xl:`.
+
+- **Espacio lateral:** `px-5 lg:px-16 2xl:px-5` en todos los containers del landing y navbar.
+- **Separadores:** `py-8 md:py-16 2xl:py-24` — no usar `md:py-24` solo (aplica desde 768px, excesivo en lg).
+- **Títulos de sección:** `text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl`
+- **Textos descriptivos:** `text-lg lg:text-base 2xl:text-lg`
+- **Navbar padding:** `lg:py-3 lg:px-16 2xl:p-5` en el container; logo `lg:max-w-[270px] 2xl:max-w-[350px]`.
+
 ## Pendientes
 
-### Bug conocido — Dropdown navbar en pantalla mediana
-- **Qué:** En `lg` (≥1024px hasta <1536px), el dropdown "Especialidades" se activa al hacer hover en un área invisible debajo del botón.
-- **Causa probable:** DaisyUI v5 `dropdown-hover` usa `:hover` CSS puro; el `dropdown-content` oculto parece seguir interceptando eventos de mouse.
-- **Intentado sin éxito:** `items-center` en el wrapper `flex-1`; reemplazar `dropdown-hover` por `[class.dropdown-open]` + `mouseenter`/`mouseleave` Angular.
-- **Estado:** Sin resolver. Requiere inspeccionar qué hace DaisyUI v5 con `pointer-events` en `.dropdown-content` oculto antes de intentar otro parche.
+### Dropdown navbar en pantalla mediana — RESUELTO
+- **Causa raíz:** DaisyUI `dropdown-content` vive siempre en el DOM aunque esté oculto — los links interceptan clicks/hover aunque no se vean. `[class.dropdown-open]` no soluciona esto.
+- **Solución:** Reemplazar el componente `dropdown` de DaisyUI con un `div relative` propio + `@if (dropdownOpen())` de Angular. Cuando cerrado, los links no existen en el DOM → hitbox invisible imposible.
+- **Hover gap fix:** `mt-*` en el dropdown crea un gap fuera del bounding box del contenedor que dispara `mouseleave`. Fix: `pb-[mismo valor]` en el contenedor + quitar el `mt-*` del dropdown.
+- **Implementación:** `(mouseenter)`/`(mouseleave)` en el contenedor, `dropdownOpen = signal(false)` en `navbar.ts`. Ver `navbar.html` bloque `specialties-dropdown`.
 
 ### Sección Trust/Social Proof — Landing
 - **Qué:** Franja de obras sociales y prepagas con cobertura (logos o nombres en fila con checkmarks)
