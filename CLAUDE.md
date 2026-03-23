@@ -244,6 +244,9 @@ La versión mediana usa `lg:` para reducir escala y `2xl:` para restaurar al tam
 - **Títulos de sección:** `text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl`
 - **Textos descriptivos:** `text-lg lg:text-base 2xl:text-lg`
 - **Navbar padding:** `lg:py-3 lg:px-16 2xl:p-5` en el container; logo `lg:max-w-[270px] 2xl:max-w-[350px]`.
+- **Páginas con patrón lg/2xl aplicado:** contacto, hemodinamia, nutricion, traumatologia, neonatologia. Usar `hemodinamia.html` como referencia canónica del patrón completo.
+
+**Modales DaisyUI:** Siempre agregar `max-h-[80vh] overflow-y-auto` al `modal-box` cuando el contenido es variable (CVs, descripciones de tratamientos). Sin esto el modal se pega a los bordes de la pantalla.
 
 ## Pendientes
 

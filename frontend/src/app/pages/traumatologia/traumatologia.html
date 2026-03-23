@@ -79,7 +79,7 @@
     </div>
 
     <dialog #treatmentModal id="treatment_modal" class="modal">
-      <div class="modal-box bg-base-100 text-gray-800">
+      <div class="modal-box bg-base-100 text-gray-800 max-h-[80vh] overflow-y-auto">
         <form method="dialog">
           <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
@@ -162,7 +162,7 @@
               </div>
 
               <dialog #cvModal id="cv_modal" class="modal" (close)="startRotation()">
-                <div class="modal-box bg-base-100 text-gray-800">
+                <div class="modal-box bg-base-100 text-gray-800 max-h-[80vh] overflow-y-auto">
                   <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                   </form>
