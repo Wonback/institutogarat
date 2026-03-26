@@ -151,7 +151,9 @@
           >
             <div class="relative w-18 h-18 md:w-22 md:h-22 mb-3 rounded-full overflow-hidden border-4 transition-all duration-300"
                  [ngClass]="selectedMember().id === member.id ? 'border-[#00c950] shadow-lg shadow-[#94e29b]' : 'border-transparent group-hover:border-[#94e29b]'">
-              <img [src]="member.thumbnail || member.bioImage" [alt]="member.name" class="w-full h-full object-cover">
+              <img [src]="member.thumbnail || member.bioImage" [alt]="member.name" class="w-full h-full object-cover"
+                   [style.object-position]="member.thumbnailPosition || 'center'"
+                   [style.transform]="member.thumbnailZoom ? 'scale(' + member.thumbnailZoom + ')' : 'none'">
             </div>
             <h3 class="font-bold text-sm text-gray-900 group-hover:text-[#15aa45] transition-colors text-center max-w-[120px]"
                 [class.text-[#15aa45]]="selectedMember().id === member.id">

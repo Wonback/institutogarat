@@ -10,6 +10,8 @@ interface TeamMember {
   thumbnail: string;
   bioImage: string;
   bioImagePosition?: string;
+  thumbnailPosition?: string;
+  thumbnailZoom?: number;
   cv?: string;
 }
 
@@ -100,53 +102,69 @@ export class Neonatologia implements OnInit, OnDestroy {
   teamMembers: TeamMember[] = [
     {
       id: 1,
-      name: 'Médico 1',
-      role: 'Neonatólogo/a',
-      bio: 'Información del profesional próximamente.',
-      thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
-      bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
-      bioImagePosition: 'center',
-      cv: 'Información curricular no disponible.',
+      name: 'Dra. Giuliana Martínez',
+      role: 'Médica Neonatóloga',
+      bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Comprometida con la atención integral del recién nacido y el acompañamiento cercano a las familias durante el proceso de internación.',
+      thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/giuliana.jpeg',
+      thumbnailPosition: 'center',
+      thumbnailZoom: 1.1,
+      bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/giuliana.jpeg',
+      bioImagePosition: 'center 30%',
     },
     {
       id: 2,
-      name: 'Médico 2',
-      role: 'Neonatólogo/a',
-      bio: 'Información del profesional próximamente.',
+      name: 'Dra. Karina Cordobés',
+      role: 'Médica Neonatóloga',
+      bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Dedicada al cuidado del recién nacido prematuro y de término, con énfasis en la lactancia materna y los cuidados centrados en la familia.',
       thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
+      thumbnailPosition: 'center',
+      thumbnailZoom: 1,
       bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
       bioImagePosition: 'center',
-      cv: 'Información curricular no disponible.',
     },
     {
       id: 3,
-      name: 'Médico 3',
-      role: 'Neonatólogo/a',
-      bio: 'Información del profesional próximamente.',
+      name: 'Dra. Magali Pérez Garnier',
+      role: 'Médica Neonatóloga',
+      bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Especializada en el seguimiento del recién nacido de riesgo y en el abordaje interdisciplinario para una atención humanizada y basada en evidencia.',
       thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
+      thumbnailPosition: 'center',
+      thumbnailZoom: 1,
       bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
       bioImagePosition: 'center',
-      cv: 'Información curricular no disponible.',
     },
     {
       id: 4,
-      name: 'Médico 4',
-      role: 'Neonatólogo/a',
-      bio: 'Información del profesional próximamente.',
+      name: 'Dr. Roberto Mega',
+      role: 'Médico Neonatólogo',
+      bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Con experiencia en el manejo de patologías neonatales complejas y en la atención inmediata del recién nacido en sala de partos.',
       thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
+      thumbnailPosition: 'center',
+      thumbnailZoom: 1,
       bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
       bioImagePosition: 'center',
-      cv: 'Información curricular no disponible.',
     },
     {
       id: 5,
-      name: 'Médico 5',
-      role: 'Neonatólogo/a',
-      bio: 'Información del profesional próximamente.',
+      name: 'Dr. Francisco José Olivera Seitz',
+      role: 'Médico Neonatólogo',
+      bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Comprometido con la reanimación neonatal avanzada y con el concepto de maternidades seguras y centradas en la familia.',
+      thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/olivera.jpeg',
+      thumbnailPosition: 'center',
+      thumbnailZoom: 1.2,
+      bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/olivera.jpeg',
+      bioImagePosition: 'center 35%',
+    },
+    {
+      id: 6,
+      name: 'Dra. Celeste Pérez Trejo',
+      role: 'Médica Neonatóloga',
+      bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Dedicada al cuidado integral del recién nacido y al acompañamiento humanizado de las familias durante cada etapa de la internación.',
       thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
+      thumbnailPosition: 'center',
+      thumbnailZoom: 1,
       bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
       bioImagePosition: 'center',
-      cv: 'Información curricular no disponible.',
     },
   ];
 
@@ -163,7 +181,7 @@ export class Neonatologia implements OnInit, OnDestroy {
 
   startRotation() {
     this.rotationInterval = setInterval(() => {
-      const currentIndex = this.teamMembers.findIndex(m => m.id === this.selectedMember().id);
+      const currentIndex = this.teamMembers.findIndex((m) => m.id === this.selectedMember().id);
       const nextIndex = (currentIndex + 1) % this.teamMembers.length;
       this.selectedMember.set(this.teamMembers[nextIndex]);
     }, 5000);
