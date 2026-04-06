@@ -117,6 +117,7 @@ export class Nutricion implements OnInit, OnDestroy {
   ];
 
   selectedMember = signal<TeamMember>(this.teamMembers[0]);
+  currentGallerySlide = signal(0);
   private rotationInterval: any;
 
   ngOnInit() {
@@ -145,5 +146,15 @@ export class Nutricion implements OnInit, OnDestroy {
     this.selectedMember.set(member);
     this.stopRotation();
     this.startRotation();
+  }
+
+  onGalleryScroll(event: Event) {
+    const el = event.target as HTMLElement;
+    const index = Math.round(el.scrollLeft / el.clientWidth);
+    this.currentGallerySlide.set(index);
+  }
+
+  scrollToSlide(container: HTMLElement, index: number) {
+    container.scrollTo({ left: container.clientWidth * index, behavior: 'smooth' });
   }
 }

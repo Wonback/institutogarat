@@ -51,7 +51,7 @@ Todas las páginas bajo `pages/` son lazy-loaded.
 | Gastroenterología | `/gastro` | ❌ Sin desarrollar |
 | Guardia | `/guardia` | ❌ Sin desarrollar |
 | Hemodinamia | `/hemodinamia` | ✅ Terminada |
-| Neonatología | `/neonatologia` | 🚧 En desarrollo |
+| Neonatología | `/neonatologia` | ✅ Terminada |
 | Nutrición | `/nutricion` | 🚧 En desarrollo |
 | Obstetricia | `/obstetricia` | ❌ Sin desarrollar |
 | Terapia Intensiva | `/terapia` | ❌ Sin desarrollar |

@@ -1,0 +1,7 @@
+.gallery-scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.gallery-scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

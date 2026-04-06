@@ -321,7 +321,9 @@ Nota: `mb-6` en el `<h1>` (no `mb-2`) cuando hay botón debajo.
 - `bioImagePosition` — `object-position` de la foto grande. Siempre dos valores: `'center 30%'` (horizontal vertical). Un solo valor (ej. `'50%'`) no cambia nada porque CSS usa `center` como segundo valor por defecto.
 - `thumbnailPosition` — `object-position` del avatar circular. Mismo formato.
 - `thumbnailZoom` — número (ej. `1.2`). Aplica `transform: scale()` dentro del contenedor `overflow-hidden`.
-- `cv` — string HTML. Títulos con `<p class="font-semibold text-[#1c8b3b] mb-1">`, listas con `<ul class="list-disc list-inside space-y-1 mb-4">`.
+- `cv` — string HTML. Títulos con `<p class="font-semibold text-[#1c8b3b] mb-1">`, listas con `<ul class="list-disc list-inside space-y-1 mb-4">`. Secciones típicas: Matrícula (`<p class="mb-4">MP XXXXX</p>`), Formación, Ocupación actual.
 - **Gotcha:** Al agregar un campo nuevo a la interfaz TypeScript, siempre añadir el valor en **cada objeto del array** en el mismo paso.
 
 **Footer:** Lleva `mt-12 md:mt-24` propio — ninguna página necesita agregar espacio antes del footer. `footer.css` define `box-shadow` hacia arriba (espejo de `shadow-lg` de Tailwind).
+
+**Carrusel mobile de galería (scroll-snap + dots):** Para galerías de imágenes que en desktop muestran grid y en mobile carrusel. Patrón: wrapper `md:hidden` con `flex overflow-x-auto snap-x snap-mandatory gallery-scrollbar-hide` + `(scroll)="onGalleryScroll($event)"`, cada item `snap-center w-full shrink-0 aspect-square`. Dots con `[style.background-color]` binding a signal `currentGallerySlide`. Desktop: `hidden md:block` con grid normal. En TS: `currentGallerySlide = signal(0)`, `onGalleryScroll(e)` calcula `Math.round(scrollLeft / clientWidth)`, `scrollToSlide(container, index)` usa `scrollTo({ left: clientWidth * index, behavior: 'smooth' })`. En CSS del componente: clase `.gallery-scrollbar-hide` con `scrollbar-width: none` + `::-webkit-scrollbar { display: none }`. Ver `nutricion.html/.ts/.css` como referencia.

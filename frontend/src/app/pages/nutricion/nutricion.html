@@ -677,7 +677,60 @@
 
   <!-- GALERÍA SUPERVISIÓN -->
   <div class="bg-base-100">
-    <div class="container mx-auto px-5 lg:px-16 2xl:px-5">
+
+    <!-- Mobile: carrusel horizontal -->
+    <div class="md:hidden">
+      <div
+        #galleryCarousel
+        class="flex overflow-x-auto snap-x snap-mandatory gallery-scrollbar-hide"
+        (scroll)="onGalleryScroll($event)"
+      >
+        <button
+          class="snap-center w-full shrink-0 aspect-square overflow-hidden cursor-pointer focus:outline-none"
+          (click)="gal1.showModal()"
+        >
+          <img
+            src="https://ik.imagekit.io/wonback/Nutricion/IMG_4248.HEIC"
+            alt="Supervisión de menús"
+            class="w-full h-full object-cover"
+          />
+        </button>
+        <button
+          class="snap-center w-full shrink-0 aspect-square overflow-hidden cursor-pointer focus:outline-none"
+          (click)="gal2.showModal()"
+        >
+          <img
+            src="https://ik.imagekit.io/wonback/Nutricion/IMG_4241.HEIC"
+            alt="Supervisión de menús"
+            class="w-full h-full object-cover"
+          />
+        </button>
+        <button
+          class="snap-center w-full shrink-0 aspect-square overflow-hidden cursor-pointer focus:outline-none"
+          (click)="gal3.showModal()"
+        >
+          <img
+            src="https://ik.imagekit.io/wonback/Nutricion/IMG_4245.HEIC"
+            alt="Supervisión de menús"
+            class="w-full h-full object-cover"
+          />
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 py-4">
+        @for (dot of [0, 1, 2]; track dot) {
+          <button
+            class="w-2 h-2 rounded-full transition-colors duration-200 focus:outline-none"
+            [style.background-color]="currentGallerySlide() === dot ? '#00c950' : '#d1d5db'"
+            (click)="scrollToSlide(galleryCarousel, dot)"
+          ></button>
+        }
+      </div>
+    </div>
+
+    <!-- Desktop: grid 3 columnas -->
+    <div class="hidden md:block container mx-auto px-5 lg:px-16 2xl:px-5">
       <div class="grid grid-cols-3 gap-3 md:gap-4">
         <button
           class="aspect-square overflow-hidden rounded-xl cursor-pointer group focus:outline-none"
@@ -689,7 +742,6 @@
             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </button>
-
         <button
           class="aspect-square overflow-hidden rounded-xl cursor-pointer group focus:outline-none"
           (click)="gal2.showModal()"
@@ -700,7 +752,6 @@
             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </button>
-
         <button
           class="aspect-square overflow-hidden rounded-xl cursor-pointer group focus:outline-none"
           (click)="gal3.showModal()"
@@ -713,6 +764,7 @@
         </button>
       </div>
     </div>
+
   </div>
 
   <!-- MODALES GALERÍA -->

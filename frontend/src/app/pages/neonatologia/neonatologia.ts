@@ -110,17 +110,48 @@ export class Neonatologia implements OnInit, OnDestroy {
       thumbnailZoom: 1.1,
       bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/giuliana.jpeg',
       bioImagePosition: 'center 30%',
+      cv: `
+        <p class="font-semibold text-[#1c8b3b] mb-1">Matrícula</p>
+        <p class="mb-4">MP 11687</p>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Formación</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica — Universidad de Buenos Aires</li>
+          <li>Concurrencia en Servicio de Neonatología — HDCM Concordia</li>
+          <li>Posgrado en ecografía</li>
+        </ul>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Ocupación actual</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica de guardia y planta — Hospital D.C. Masvernat</li>
+          <li>Médica de guardia — Hospital Villaguay, E.R.</li>
+          <li>Médica de planta, Sanatorio Garat (desde 2023)</li>
+        </ul>
+      `,
     },
     {
       id: 2,
       name: 'Dra. Karina Cordobés',
       role: 'Médica Neonatóloga',
       bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Dedicada al cuidado del recién nacido prematuro y de término, con énfasis en la lactancia materna y los cuidados centrados en la familia.',
-      thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
+      thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/Karina%20Cordobes.jpeg',
       thumbnailPosition: 'center',
       thumbnailZoom: 1,
-      bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
-      bioImagePosition: 'center',
+      bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/Karina%20Cordobes.jpeg',
+      bioImagePosition: 'center 40%',
+      cv: `
+        <p class="font-semibold text-[#1c8b3b] mb-1">Matrícula</p>
+        <p class="mb-4">MP 12223</p>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Formación</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica — Universidad de Venezuela, Maracay (Hosp. José Carabaño Tosta)</li>
+          <li>Residencia de Pediatría — Puericultora</li>
+          <li>Residencia de Neonatología — Hospital DCM Concordia</li>
+        </ul>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Ocupación actual</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica de guardia — Hospital de Villaguay y Hosp. D.C. Masvernat</li>
+          <li>Médica de planta, Sanatorio Garat (desde 2024)</li>
+        </ul>
+      `,
     },
     {
       id: 3,
@@ -133,6 +164,21 @@ export class Neonatologia implements OnInit, OnDestroy {
       bioImage:
         'https://ik.imagekit.io/wonback/Neonatologia/Magali%20Perez.png?updatedAt=1774612409897',
       bioImagePosition: 'center 10%',
+      cv: `
+        <p class="font-semibold text-[#1c8b3b] mb-1">Matrícula</p>
+        <p class="mb-4">MP 10528</p>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Formación</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica — Universidad Nacional de Rosario</li>
+          <li>Residencia de Pediatría — HDCM Concordia</li>
+          <li>Residencia de Neonatología — HDCM Concordia</li>
+        </ul>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Ocupación actual</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica de planta y guardia — Hosp. D.C. Masvernat</li>
+          <li>Médica de planta, Sanatorio Garat (desde 2016)</li>
+        </ul>
+      `,
     },
     {
       id: 4,
@@ -144,6 +190,21 @@ export class Neonatologia implements OnInit, OnDestroy {
       thumbnailZoom: 1.5,
       bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/Mega.png?updatedAt=1774612353700',
       bioImagePosition: 'center 10%',
+      cv: `
+        <p class="font-semibold text-[#1c8b3b] mb-1">Matrícula</p>
+        <p class="mb-4">MP 78836</p>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Formación</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médico — Universidad Nacional de Córdoba</li>
+          <li>Residencia de Pediatría — Buenos Aires</li>
+          <li>Residencia de Neonatología</li>
+        </ul>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Ocupación actual</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médico de guardia — Hospital Santollani, Buenos Aires</li>
+          <li>Médico Coordinador del Servicio de Neonatología, Sanatorio Garat (desde 2008)</li>
+        </ul>
+      `,
     },
     {
       id: 5,
@@ -155,17 +216,41 @@ export class Neonatologia implements OnInit, OnDestroy {
       thumbnailZoom: 1.2,
       bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/olivera.jpeg',
       bioImagePosition: 'center 35%',
+      cv: `
+        <p class="font-semibold text-[#1c8b3b] mb-1">Matrícula</p>
+        <p class="mb-4">MP 9882</p>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Formación</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médico — Universidad Nacional de Córdoba</li>
+          <li>Especialista en Pediatría</li>
+          <li>Ex residente — Hospital de Niños Santísima Trinidad, Córdoba</li>
+        </ul>
+      `,
     },
     {
       id: 6,
       name: 'Dra. Celeste Pérez Trejo',
       role: 'Médica Neonatóloga',
       bio: 'Integrante del Servicio de Neonatología del Instituto Garat. Dedicada al cuidado integral del recién nacido y al acompañamiento humanizado de las familias durante cada etapa de la internación.',
-      thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
+      thumbnail: 'https://ik.imagekit.io/wonback/Neonatologia/Celeste%20Perez.jpeg',
       thumbnailPosition: 'center',
       thumbnailZoom: 1,
-      bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/neonatologia-hero.jpg',
+      bioImage: 'https://ik.imagekit.io/wonback/Neonatologia/Celeste%20Perez.jpeg',
       bioImagePosition: 'center',
+      cv: `
+        <p class="font-semibold text-[#1c8b3b] mb-1">Matrícula</p>
+        <p class="mb-4">MP 9981</p>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Formación</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica — Universidad de Córdoba</li>
+          <li>Residencia de Pediatría — HDCM Concordia</li>
+        </ul>
+        <p class="font-semibold text-[#1c8b3b] mb-1">Ocupación actual</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Médica pediatra — Consultorios CIPEC y Centro de Salud Constitución (desde 2012)</li>
+          <li>Médica de planta, Sanatorio Garat (desde 2011)</li>
+        </ul>
+      `,
     },
   ];
 
