@@ -35,10 +35,10 @@ export class Landing implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Instituto Garat | Centro Médico Concordia');
-    const desc = 'Instituto Garat — Centro médico especializado en Hemodinamia, Neonatología, Nutrición, Traumatología y más. Atención de excelencia en Concordia, Entre Ríos.';
+    this.titleService.setTitle('Instituto Médico Quirúrgico Garat | Concordia, Entre Ríos');
+    const desc = 'Instituto Médico Quirúrgico Garat — Centro especializado en Hemodinamia, Neonatología, Nutrición, Traumatología y más. Atención de excelencia en Concordia, Entre Ríos.';
     this.meta.updateTag({ name: 'description', content: desc });
-    this.meta.updateTag({ property: 'og:title', content: 'Instituto Garat | Centro Médico Concordia' });
+    this.meta.updateTag({ property: 'og:title', content: 'Instituto Médico Quirúrgico Garat | Concordia, Entre Ríos' });
     this.meta.updateTag({ property: 'og:description', content: desc });
     this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/' });
     let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
