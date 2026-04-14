@@ -151,7 +151,7 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 
 **Títulos de sección:**
 ```html
-<h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 uppercase">TÍTULO</h1>
+<h2 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 uppercase">TÍTULO</h2>
 <div class="h-1 w-20 bg-[#00c950] rounded mx-auto mb-4"></div>
 ```
 
@@ -179,7 +179,7 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 ```html
 <div class="flex flex-wrap w-full mb-12">
   <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 uppercase">TÍTULO</h1>
+    <h2 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 uppercase">TÍTULO</h2>
     <div class="h-1 w-20 bg-[#00c950] rounded"></div>
   </div>
   <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg self-center">Descripción...</p>
@@ -200,7 +200,7 @@ El wrapper blanco actúa como separador — no agregar dividers adicionales alre
 **FAB de WhatsApp (presente en todas las páginas terminadas):**
 ```html
 <div class="fab">
-  <a href="https://api.whatsapp.com/send/?phone=54345402..." target="_blank"
+  <a href="https://api.whatsapp.com/send/?phone=54345402..." target="_blank" rel="noopener noreferrer"
      class="border-0 bg-[#00c950] btn btn-xl btn-circle btn-primary">
     <!-- SVG de WhatsApp -->
   </a>
@@ -283,6 +283,29 @@ Cuando vayas a trabajar con una librería, resolvé su ID primero y luego consul
 
 Librerías clave de este proyecto: `angular`, `daisyui`, `tailwindcss`, `motion` (Motion One).
 
+## SEO
+
+**Meta y título dinámico por página:** Cada componente inyecta `Meta` y `Title` en `ngOnInit`. Patrón canónico:
+
+```typescript
+private meta = inject(Meta);   // from '@angular/platform-browser'
+private title = inject(Title); // from '@angular/platform-browser'
+
+ngOnInit() {
+  this.title.setTitle('Especialidad | Instituto Garat');
+  this.meta.updateTag({ name: 'description', content: 'Descripción de ~155 chars.' });
+}
+```
+
+**Jerarquía de encabezados — un único `<h1>` por página:**
+- Hero → `<h1>` (único en la página; keyword principal debe coincidir con `title` y `meta description`)
+- Secciones (Nosotros, Tratamientos, Equipo) → `<h2>`
+- Sub-secciones (Misión, Visión, Quiénes somos) → `<h3>`
+
+**Links externos:** Todo `target="_blank"` requiere `rel="noopener noreferrer"`.
+
+**Google Fonts:** Cargar con `rel="preload" as="style"` + `onload` — ya configurado en `index.html`.
+
 ## Key Patterns
 
 - **CV form** (`pages/contacto/contacto.ts`): Reactive Forms con validator custom `soloLetras` (`/^[a-zA-ZÀ-ÿ\s'\-]+$/`), validación de PDF/4MB en cliente, loading state, modales success/error.
@@ -303,6 +326,7 @@ Hero → Nosotros → [Contenido específico: tratamientos / procedimientos / pa
       <h1 class="mb-6 text-4xl md:text-5xl font-black uppercase leading-tight tracking-tight">...</h1>
       <a href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
          target="_blank"
+         rel="noopener noreferrer"
          class="inline-flex items-center gap-3 bg-[#00c950] hover:bg-[#15aa45] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 shadow-lg drop-shadow-lg text-lg">
         Solicitar turno
         <!-- SVG WhatsApp -->
