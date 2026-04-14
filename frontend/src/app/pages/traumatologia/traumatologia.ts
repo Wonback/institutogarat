@@ -1,5 +1,6 @@
-import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, FileUser } from 'lucide-angular';
 
 interface TeamMember {
@@ -289,8 +290,12 @@ export class Traumatologia implements OnInit, OnDestroy {
 
   selectedMember = signal<TeamMember>(this.teamMembers[0]);
   private rotationInterval: any;
+  private meta = inject(Meta);
+  private title = inject(Title);
 
   ngOnInit() {
+    this.title.setTitle('Traumatología | Instituto Garat');
+    this.meta.updateTag({ name: 'description', content: 'Servicio de Traumatología en Instituto Garat. Cirugía ortopédica, tratamiento de fracturas, artroscopia y reemplazos articulares. Gualeguaychú, Entre Ríos.' });
     this.startRotation();
   }
 

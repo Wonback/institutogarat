@@ -1,5 +1,6 @@
-import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, FileUser } from 'lucide-angular';
 
 interface TeamMember {
@@ -119,8 +120,12 @@ export class Nutricion implements OnInit, OnDestroy {
   selectedMember = signal<TeamMember>(this.teamMembers[0]);
   currentGallerySlide = signal(0);
   private rotationInterval: any;
+  private meta = inject(Meta);
+  private title = inject(Title);
 
   ngOnInit() {
+    this.title.setTitle('Nutrición | Instituto Garat');
+    this.meta.updateTag({ name: 'description', content: 'Servicio de Nutrición en Instituto Garat. Planes alimentarios personalizados, nutrición clínica y supervisión de menús institucionales. Gualeguaychú, Entre Ríos.' });
     this.startRotation();
   }
 

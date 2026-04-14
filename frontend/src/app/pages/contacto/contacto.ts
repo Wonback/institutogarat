@@ -1,7 +1,8 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Meta, Title } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment';
 
 function soloLetras(control: AbstractControl): ValidationErrors | null {
@@ -16,7 +17,7 @@ function soloLetras(control: AbstractControl): ValidationErrors | null {
   templateUrl: './contacto.html',
   styleUrl: './contacto.css',
 })
-export class Contacto {
+export class Contacto implements OnInit {
   @ViewChild('modal') modal!: ElementRef<HTMLDialogElement>;
 
   form: FormGroup;
@@ -52,12 +53,17 @@ export class Contacto {
     'Enfermería',
   ];
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private meta: Meta, private titleService: Title) {
     this.form = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), soloLetras]],
       apellido: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), soloLetras]],
       sector: ['', Validators.required],
     });
+  }
+
+  ngOnInit() {
+    this.titleService.setTitle('Trabajá con Nosotros | Instituto Garat');
+    this.meta.updateTag({ name: 'description', content: 'Enviá tu CV a Instituto Garat. Sumamos profesionales de la salud comprometidos con la excelencia médica. Gualeguaychú, Entre Ríos.' });
   }
 
   onFileChange(event: Event) {

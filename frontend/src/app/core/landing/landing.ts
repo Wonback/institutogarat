@@ -1,6 +1,7 @@
-import { Component, NgModule, ElementRef, AfterViewInit, Inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
+import { Component, NgModule, ElementRef, AfterViewInit, OnInit, Inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router'; // Import RouterLink
+import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight, Check } from 'lucide-angular';
 import { animate, inView, stagger, hover } from 'motion';
 
@@ -17,7 +18,7 @@ export class LandingIconsModule {}
     templateUrl: './landing.html',
   styleUrl: './landing.css',
 })
-export class Landing implements AfterViewInit {
+export class Landing implements OnInit, AfterViewInit {
   emailCopied = signal(false);
 
   @ViewChild('mailIconRef') mailIconRef!: ElementRef;
@@ -27,8 +28,15 @@ export class Landing implements AfterViewInit {
 
   constructor(
     private el: ElementRef,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private titleService: Title
   ) {}
+
+  ngOnInit() {
+    this.titleService.setTitle('Instituto Garat | Centro Médico Gualeguaychú');
+    this.meta.updateTag({ name: 'description', content: 'Instituto Garat — Centro médico especializado en Hemodinamia, Neonatología, Nutrición, Traumatología y más. Atención de excelencia en Gualeguaychú, Entre Ríos.' });
+  }
 
   copyEmail() {
     if (this.emailCopied()) return;

@@ -1,5 +1,6 @@
-import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, FileUser, Eye, Goal, CircleAlert } from 'lucide-angular';
 
 interface TeamMember {
@@ -210,12 +211,16 @@ export class Hemodinamia implements OnInit, OnDestroy {
 
   selectedMember = signal<TeamMember>(this.teamMembers[0]);
   private rotationInterval: any;
-  
+  private meta = inject(Meta);
+  private title = inject(Title);
+
   constructor() {
     this.selectedMember.set(this.teamMembers[0]);
   }
 
   ngOnInit() {
+    this.title.setTitle('Hemodinamia | Instituto Garat');
+    this.meta.updateTag({ name: 'description', content: 'Servicio de Hemodinamia en Instituto Garat. Cardiología intervencionista, angioplastia coronaria, cateterismos y tratamiento del infarto. Gualeguaychú, Entre Ríos.' });
     this.startRotation();
   }
 

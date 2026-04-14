@@ -1,5 +1,6 @@
-import { Component, signal, NgModule, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, Baby, HeartHandshake, FileUser } from 'lucide-angular';
 
 interface TeamMember {
@@ -256,8 +257,12 @@ export class Neonatologia implements OnInit, OnDestroy {
 
   selectedMember = signal<TeamMember>(this.teamMembers[0]);
   private rotationInterval: any;
+  private meta = inject(Meta);
+  private title = inject(Title);
 
   ngOnInit() {
+    this.title.setTitle('Neonatología | Instituto Garat');
+    this.meta.updateTag({ name: 'description', content: 'Servicio de Neonatología en Instituto Garat. Cuidados intensivos neonatales, atención del recién nacido y seguimiento pediátrico. Gualeguaychú, Entre Ríos.' });
     this.startRotation();
   }
 
