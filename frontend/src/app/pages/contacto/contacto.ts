@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { Component, ViewChild, ElementRef, OnInit, Inject } from '@angular/core';
+import { NgClass, DOCUMENT } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Meta, Title } from '@angular/platform-browser';
@@ -53,7 +53,7 @@ export class Contacto implements OnInit {
     'Enfermería',
   ];
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private meta: Meta, private titleService: Title) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc: Document) {
     this.form = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), soloLetras]],
       apellido: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), soloLetras]],
@@ -63,7 +63,15 @@ export class Contacto implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Trabajá con Nosotros | Instituto Garat');
-    this.meta.updateTag({ name: 'description', content: 'Enviá tu CV a Instituto Garat. Sumamos profesionales de la salud comprometidos con la excelencia médica. Gualeguaychú, Entre Ríos.' });
+    const desc = 'Enviá tu CV a Instituto Garat. Sumamos profesionales de la salud comprometidos con la excelencia médica. Concordia, Entre Ríos.';
+    this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:title', content: 'Trabajá con Nosotros | Instituto Garat' });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/contacto' });
+    let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
+    if (!link) { link = this.doc.createElement('link'); this.doc.head.appendChild(link); }
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', 'https://institutogarat.vercel.app/contacto');
   }
 
   onFileChange(event: Event) {

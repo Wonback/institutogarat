@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://institutogarat.vercel.app/sitemap.xml

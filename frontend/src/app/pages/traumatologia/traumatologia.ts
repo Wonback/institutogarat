@@ -1,5 +1,5 @@
 import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, FileUser } from 'lucide-angular';
 
@@ -292,10 +292,19 @@ export class Traumatologia implements OnInit, OnDestroy {
   private rotationInterval: any;
   private meta = inject(Meta);
   private title = inject(Title);
+  private doc = inject(DOCUMENT);
 
   ngOnInit() {
     this.title.setTitle('Traumatología | Instituto Garat');
-    this.meta.updateTag({ name: 'description', content: 'Servicio de Traumatología en Instituto Garat. Cirugía ortopédica, tratamiento de fracturas, artroscopia y reemplazos articulares. Gualeguaychú, Entre Ríos.' });
+    const desc = 'Servicio de Traumatología en Instituto Garat. Cirugía ortopédica, tratamiento de fracturas, artroscopia y reemplazos articulares. Concordia, Entre Ríos.';
+    this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:title', content: 'Traumatología | Instituto Garat' });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/traumatologia' });
+    let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
+    if (!link) { link = this.doc.createElement('link'); this.doc.head.appendChild(link); }
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', 'https://institutogarat.vercel.app/traumatologia');
     this.startRotation();
   }
 

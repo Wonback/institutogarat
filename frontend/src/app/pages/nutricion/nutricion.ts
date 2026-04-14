@@ -1,5 +1,5 @@
 import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, FileUser } from 'lucide-angular';
 
@@ -122,10 +122,19 @@ export class Nutricion implements OnInit, OnDestroy {
   private rotationInterval: any;
   private meta = inject(Meta);
   private title = inject(Title);
+  private doc = inject(DOCUMENT);
 
   ngOnInit() {
     this.title.setTitle('Nutrición | Instituto Garat');
-    this.meta.updateTag({ name: 'description', content: 'Servicio de Nutrición en Instituto Garat. Planes alimentarios personalizados, nutrición clínica y supervisión de menús institucionales. Gualeguaychú, Entre Ríos.' });
+    const desc = 'Servicio de Nutrición en Instituto Garat. Planes alimentarios personalizados, nutrición clínica y supervisión de menús institucionales. Concordia, Entre Ríos.';
+    this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:title', content: 'Nutrición | Instituto Garat' });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/nutricion' });
+    let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
+    if (!link) { link = this.doc.createElement('link'); this.doc.head.appendChild(link); }
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', 'https://institutogarat.vercel.app/nutricion');
     this.startRotation();
   }
 

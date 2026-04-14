@@ -1,5 +1,5 @@
 import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, FileUser, Eye, Goal, CircleAlert } from 'lucide-angular';
 
@@ -213,6 +213,7 @@ export class Hemodinamia implements OnInit, OnDestroy {
   private rotationInterval: any;
   private meta = inject(Meta);
   private title = inject(Title);
+  private doc = inject(DOCUMENT);
 
   constructor() {
     this.selectedMember.set(this.teamMembers[0]);
@@ -220,7 +221,15 @@ export class Hemodinamia implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.title.setTitle('Hemodinamia | Instituto Garat');
-    this.meta.updateTag({ name: 'description', content: 'Servicio de Hemodinamia en Instituto Garat. Cardiología intervencionista, angioplastia coronaria, cateterismos y tratamiento del infarto. Gualeguaychú, Entre Ríos.' });
+    const desc = 'Servicio de Hemodinamia en Instituto Garat. Cardiología intervencionista, angioplastia coronaria, cateterismos y tratamiento del infarto. Concordia, Entre Ríos.';
+    this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:title', content: 'Hemodinamia | Instituto Garat' });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/hemodinamia' });
+    let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
+    if (!link) { link = this.doc.createElement('link'); this.doc.head.appendChild(link); }
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', 'https://institutogarat.vercel.app/hemodinamia');
     this.startRotation();
   }
 

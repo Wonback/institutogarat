@@ -1,5 +1,5 @@
 import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, Baby, HeartHandshake, FileUser } from 'lucide-angular';
 
@@ -259,10 +259,19 @@ export class Neonatologia implements OnInit, OnDestroy {
   private rotationInterval: any;
   private meta = inject(Meta);
   private title = inject(Title);
+  private doc = inject(DOCUMENT);
 
   ngOnInit() {
     this.title.setTitle('Neonatología | Instituto Garat');
-    this.meta.updateTag({ name: 'description', content: 'Servicio de Neonatología en Instituto Garat. Cuidados intensivos neonatales, atención del recién nacido y seguimiento pediátrico. Gualeguaychú, Entre Ríos.' });
+    const desc = 'Servicio de Neonatología en Instituto Garat. Cuidados intensivos neonatales, atención del recién nacido y seguimiento pediátrico. Concordia, Entre Ríos.';
+    this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:title', content: 'Neonatología | Instituto Garat' });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/neonatologia' });
+    let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
+    if (!link) { link = this.doc.createElement('link'); this.doc.head.appendChild(link); }
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', 'https://institutogarat.vercel.app/neonatologia');
     this.startRotation();
   }
 

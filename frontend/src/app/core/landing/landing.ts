@@ -1,5 +1,5 @@
 import { Component, NgModule, ElementRef, AfterViewInit, OnInit, Inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterLink } from '@angular/router'; // Import RouterLink
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight, Check } from 'lucide-angular';
@@ -29,13 +29,22 @@ export class Landing implements OnInit, AfterViewInit {
   constructor(
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private doc: Document,
     private meta: Meta,
     private titleService: Title
   ) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Instituto Garat | Centro Médico Gualeguaychú');
-    this.meta.updateTag({ name: 'description', content: 'Instituto Garat — Centro médico especializado en Hemodinamia, Neonatología, Nutrición, Traumatología y más. Atención de excelencia en Gualeguaychú, Entre Ríos.' });
+    this.titleService.setTitle('Instituto Garat | Centro Médico Concordia');
+    const desc = 'Instituto Garat — Centro médico especializado en Hemodinamia, Neonatología, Nutrición, Traumatología y más. Atención de excelencia en Concordia, Entre Ríos.';
+    this.meta.updateTag({ name: 'description', content: desc });
+    this.meta.updateTag({ property: 'og:title', content: 'Instituto Garat | Centro Médico Concordia' });
+    this.meta.updateTag({ property: 'og:description', content: desc });
+    this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/' });
+    let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
+    if (!link) { link = this.doc.createElement('link'); this.doc.head.appendChild(link); }
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', 'https://institutogarat.vercel.app/');
   }
 
   copyEmail() {
