@@ -36,7 +36,7 @@ export class Landing implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.titleService.setTitle('Instituto Médico Quirúrgico Garat | Concordia, Entre Ríos');
-    const desc = 'Instituto Médico Quirúrgico Garat — Centro especializado en Hemodinamia, Neonatología, Nutrición, Traumatología y más. Atención de excelencia en Concordia, Entre Ríos.';
+    const desc = 'Centro médico en Concordia, Entre Ríos. Especialistas en Hemodinamia, Neonatología, Nutrición, Traumatología y más. Instituto Médico Quirúrgico Garat.';
     this.meta.updateTag({ name: 'description', content: desc });
     this.meta.updateTag({ property: 'og:title', content: 'Instituto Médico Quirúrgico Garat | Concordia, Entre Ríos' });
     this.meta.updateTag({ property: 'og:description', content: desc });

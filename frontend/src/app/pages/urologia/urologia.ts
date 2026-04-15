@@ -15,7 +15,7 @@ export class Urologia implements OnInit {
 
   ngOnInit() {
     this.title.setTitle('Urología | Instituto Garat');
-    const desc = 'Servicio de Urología en Instituto Garat. Diagnóstico y tratamiento de enfermedades del tracto urinario y sistema reproductor masculino. Concordia, Entre Ríos.';
+    const desc = 'Urología en Instituto Garat. Diagnóstico y tratamiento de enfermedades urinarias y del sistema reproductor masculino. Concordia, Entre Ríos.';
     this.meta.updateTag({ name: 'description', content: desc });
     this.meta.updateTag({ property: 'og:title', content: 'Urología | Instituto Garat' });
     this.meta.updateTag({ property: 'og:description', content: desc });

@@ -302,6 +302,12 @@ ngOnInit() {
 - Secciones (Nosotros, Tratamientos, Equipo) → `<h2>`
 - Sub-secciones (Misión, Visión, Quiénes somos) → `<h3>`
 
+**Reglas SEO adicionales (validadas con analizador externo):**
+- **Meta description:** máximo ~155 caracteres (Google renderiza ~1000px). Superar ese límite dispara advertencia de "too long".
+- **Keywords del H1 en el cuerpo:** las palabras clave del `<h1>` deben aparecer al menos una vez en el texto del cuerpo (`<p>`, `<h2>`, etc.). Si el `<h1>` es el nombre institucional, incluir el adjetivo compuesto en el primer párrafo del hero.
+- **Headings semánticos:** no usar `<h2>`/`<h3>` para etiquetas decorativas (ej. "ESPECIALIDAD", "PASO 1"), contadores estadísticos (+50, +100) ni números que no sean títulos reales. Usar `<span>` o `<p>` con las mismas clases de estilo.
+- **Anchor text único:** cuando múltiples links comparten el mismo texto visible (ej. "Más información" × N), agregar `aria-label` descriptivo al `<a>` sin cambiar el texto visible. Ej: `aria-label="Más información sobre Cirugía General"`.
+
 **Links externos:** Todo `target="_blank"` requiere `rel="noopener noreferrer"`.
 
 **Google Fonts:** Cargar con `rel="preload" as="style"` + `onload` — ya configurado en `index.html`.

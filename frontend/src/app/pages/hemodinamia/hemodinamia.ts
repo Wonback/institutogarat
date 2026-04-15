@@ -221,7 +221,7 @@ export class Hemodinamia implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.title.setTitle('Hemodinamia | Instituto Garat');
-    const desc = 'Servicio de Hemodinamia en Instituto Garat. Cardiología intervencionista, angioplastia coronaria, cateterismos y tratamiento del infarto. Concordia, Entre Ríos.';
+    const desc = 'Hemodinamia en Instituto Garat. Cardiología intervencionista, angioplastia coronaria, cateterismos y tratamiento del infarto. Concordia, Entre Ríos.';
     this.meta.updateTag({ name: 'description', content: desc });
     this.meta.updateTag({ property: 'og:title', content: 'Hemodinamia | Instituto Garat' });
     this.meta.updateTag({ property: 'og:description', content: desc });
