@@ -43,7 +43,7 @@ export class Contacto implements OnInit {
     'Urología',
     'Neonatología',
     'Hemodinamia',
-    'Clínica Médica',
+    'Clínica e Infectología',
     'Nutrición',
     'Terapia Intensiva (U.T.I.)',
     'Traumatología',

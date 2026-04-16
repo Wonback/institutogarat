@@ -219,9 +219,16 @@ El espaciado vertical entre secciones lo controlan **exclusivamente los separado
 </div>
 ```
 
-El separador puede ir como elemento independiente entre secciones, o dentro de una sección al final (antes del `</section>`). En ambos casos siempre `py-12 md:py-24`, nunca solo `pt-*`.
+El separador puede ir como elemento independiente entre secciones, o dentro de una sección al final (antes del `</section>`). En páginas con patrón lg/2xl: `py-8 md:py-16 2xl:py-24`. En páginas sin ese patrón: `py-12 md:py-24`. Nunca solo `pt-*`.
 
 La única excepción es la primera sección después del hero, que puede tener `pt-12 md:pt-24` ya que no hay separador arriba.
+
+### Hero landing — z-index gotcha
+
+`landing.css` sets `.hero-content { z-index: 2 }`. Tailwind `z-10`+ on overlays inside the hero will render **above** content despite DOM order. Rule: overlay `div`s inside `.hero` must use `z-0` + `pointer-events-none`. Never use `z-10` or higher on an overlay inside the landing hero.
+
+**Landing hero (patrón actual — `core/landing/landing.html`):**
+Dark gradient overlay (left→right: 0.72→0.15 opacity), left-aligned content, split-weight H1 (`font-light` top line + `font-extrabold` bottom line), gradient CTA button. Overlay: `z-0 pointer-events-none`. Hero uses `h-[80vh]` with `hero-mask-fade` class. Do not redesign unless explicitly asked.
 
 ### CSS personalizado reutilizable
 

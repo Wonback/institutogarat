@@ -1,35 +1,34 @@
-Cuerpo Médico Neonatología
-    • Roberto Mega. MP 
-Medico de universal Nacional de Cordoba
-Residencia de Pediatria en …. B.Aires
-Residencia de Neonatología….
-Ocupacion actual: Medico de guardia de Hospital Santollani B.Aires
-                             Medico Cordinador del Servicio de Neonatologia S. Garat desde 2008
-          
-    • Dra.Yubeydis Karina Cordobes Milano. MP 12223
-Medica de Univ.  De Venezuela. Maracay. Hosp Jose Carabaño Tosta
-Residencia de  Pediatría- Puericultora
-Residencia de Neonatología Hospital DCM. Concordia. 
-Ocupación actual: Medica de guardia Hospital de Villaguay y Hosp. D.C. Masvernat
-                              Medica de planta S. Garat desde 2024
-    
-    • Perez Garnier Magali. MP 10528
-Medica de Universidad Nacional de Rosario.
-Residencia De Pediatría HDCM Concordia. 
-Residencia de Neonatología  HDCM Concordia.
-Ocupación actual: Medica de planta y guardia Hosp. D.C. Masvernat
-                             Medica de planta del S. Garat desde 2016.
+💡 Instrucciones de Refactorización: Hero Section "Sanatorio Garat"
 
-    • Perez Trejo María Celeste. MP 9981
-Medica de Universidad de Córdoba
-Residencia de Pediatría HDCM. Concordia.
-Ocupación actual: Medica pediatra de consultorios CIPEC y Centro de Salud Constitución desde 2012.
-                             Medica de planta del S. Garat desde 2011
+Objetivo: Modernizar el componente Hero del landing page para mejorar la confianza del usuario y la conversión de turnos, optimizando la jerarquía visual y la limpieza del código.
+1. Refactorización del Header y Navegación
 
-    • Martínez Mengeon Giuliana. MP 11687
-Medica de Universidad de Buenos Aires
-Concurrencia en Servicio de Neonatología HDCM. Concordia.
-Posgrado en ecografía
-Ocupación actual: Medica de guardia y planta del Hospital D.C.Masvernat 
-                              Medica de guardia Hospital Villaguay E.R.
-                              Medica de planta de Sanatorio Garat desde 2023
+    Simplificación de Especialidades: No renderizar los 11 links de especialidades directamente. Agruparlos en un componente <Dropdown /> o <MegaMenu /> bajo el sello "Especialidades".
+
+    Prioridad de Acceso: Mantener visibles únicamente los links de: "Guardia", "Especialidades", "Institucional" y el botón de "RRHH".
+
+    Sticky Behavior: Implementar una transición de fondo de transparente a blanco sólido (bg-white/95) con backdrop-filter: blur(8px) al hacer scroll hacia abajo.
+
+2. Estilización del Hero (Layout & Visuals)
+
+    Layout Shift: Cambiar la alineación de text-center a text-left. El contenido debe ocupar el 50% izquierdo de la pantalla (usar grid-cols-1 md:grid-cols-2).
+
+    Tratamiento de Imagen: * Sustituir el filtro de desenfoque gris por un gradiente lineal técnico: linear-gradient(to right, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%).
+
+        La imagen de fondo debe ser nítida, preferentemente una foto de alta calidad de equipamiento médico o profesionales (no solo la fachada).
+
+    Tipografía:
+
+        H1: Aumentar el font-size a un mínimo de 3.5rem (text-5xl o text-6xl). Usar un font-weight: 300 para "INSTITUTO MÉDICO" y font-weight: 800 para "QUIRÚRGICO GARAT".
+
+        Leading: Ajustar el line-height a 1.1 para que el título se sienta compacto y moderno.
+
+3. Componente Call to Action (CTA)
+
+    Botón de Turnos:
+
+        Eliminar el verde plano actual. Usar un degradado suave o un color sólido con más profundidad.
+
+        Añadir box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1).
+
+        Asegurar que el icono de WhatsApp esté alineado correctamente con gap-2 y items-center.

@@ -1,25 +1,17 @@
-<header class="text-gray-600 body-font bg-base-300">
+<header
+  class="text-gray-600 body-font sticky top-0 z-50 transition-all duration-300 shadow-sm"
+  [ngClass]="scrolled() ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-base-300'"
+>
   <div class="drawer">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" #drawerCheckbox />
     <div class="drawer-content flex flex-col">
+
       <!-- Mobile Navbar -->
-      <div
-        class="navbar bg-base-300 w-full lg:hidden min-h-20 py-3 flex justify-between items-center"
-      >
+      <div class="navbar w-full lg:hidden min-h-[80px] py-3 flex justify-between items-center">
         <div class="flex-none z-20">
           <label for="my-drawer-2" aria-label="Abrir menú" class="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="inline-block h-6 w-6 stroke-current"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-6 w-6 stroke-current">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </label>
         </div>
@@ -31,150 +23,130 @@
         </div>
         <div class="w-[48px] flex-none"></div>
       </div>
-      <!-- Desktop Navbar -->
-      <div class="text-gray-600 body-font shadow-lg hidden lg:flex flex-col bg-base-300">
-        <div class="container mx-auto flex flex-wrap lg:py-3 lg:px-16 2xl:p-5 flex-row items-center justify-between">
-          <a routerLink="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer">
+
+      <!-- Desktop Navbar: 3 columnas -->
+      <div class="hidden lg:flex flex-row items-center min-h-[80px] container mx-auto lg:px-16 2xl:px-5">
+
+        <!-- Columna 1: Logo (w-1/4) -->
+        <div class="w-1/4">
+          <a routerLink="/" class="flex title-font font-medium items-center text-gray-900 cursor-pointer">
             <img
               ngSrc="assets/images/garatlogo.png"
               alt="Instituto Garat"
               width="400"
               height="100"
-              class="w-[30vw] lg:max-w-[270px] 2xl:max-w-[350px] h-auto"
+              class="lg:max-w-[220px] 2xl:max-w-[300px] h-auto"
               priority
             />
           </a>
-          <!-- Dropdown centrado: solo lg hasta 2xl -->
-          <div class="hidden lg:flex 2xl:hidden flex-1 justify-center">
-            <div class="relative specialties-dropdown pb-1" (mouseenter)="dropdownOpen.set(true)" (mouseleave)="dropdownOpen.set(false)">
-              <button type="button" class="btn btn-ghost text-base gap-1.5 font-normal">
-                Especialidades
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              @if (dropdownOpen()) {
-                <div class="absolute top-full left-1/2 -translate-x-1/2 bg-base-100 rounded-box z-50 shadow-lg p-2 grid grid-cols-2 gap-x-1 w-80">
-                  <a routerLink="/cirugia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Cirugía</a>
-                  <a routerLink="/gastro" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Gastro</a>
-                  <a routerLink="/urologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Urología</a>
-                  <a routerLink="/neonatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Neonatología</a>
-                  <a routerLink="/hemodinamia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Hemodinamia</a>
-                  <a routerLink="/clinica" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Clínica</a>
-                  <a routerLink="/nutricion" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Nutrición</a>
-                  <a routerLink="/terapia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">U.T.I.</a>
-                  <a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Traumatología</a>
-                  <a routerLink="/obstetricia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Obstetricia</a>
-                  <a routerLink="/guardia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors" (click)="dropdownOpen.set(false)">Guardia</a>
-                </div>
-              }
-            </div>
+        </div>
+
+        <!-- Columna 2: Nav links (w-1/2, centrado) -->
+        <div class="w-1/2 flex justify-center items-center gap-1">
+
+          <!-- Institucional (sin ruta aún) -->
+          <a class="btn btn-ghost text-sm font-normal cursor-pointer">
+            Institucional
+          </a>
+
+          <!-- Obras Sociales (sin ruta aún) -->
+          <a class="btn btn-ghost text-sm font-normal cursor-pointer">
+            Obras Sociales
+          </a>
+
+          <!-- Especialidades dropdown -->
+          <div
+            class="relative specialties-dropdown pb-1"
+            (mouseenter)="dropdownOpen.set(true)"
+            (mouseleave)="dropdownOpen.set(false)"
+          >
+            <button type="button" class="btn btn-ghost text-sm font-normal gap-1">
+              Especialidades
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="opacity-50"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            @if (dropdownOpen()) {
+              <div class="absolute top-full left-1/2 -translate-x-1/2 bg-base-100 rounded-box z-50 shadow-lg p-2 grid grid-cols-2 gap-x-1 w-80">
+                <a routerLink="/cirugia"       routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Cirugía</a>
+                <a routerLink="/gastro"        routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Gastro</a>
+                <a routerLink="/urologia"      routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Urología</a>
+                <a routerLink="/neonatologia"  routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Neonatología</a>
+                <a routerLink="/hemodinamia"   routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Hemodinamia</a>
+                <a routerLink="/clinica"       routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Clínica e Infectología</a>
+                <a routerLink="/nutricion"     routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Nutrición</a>
+                <a routerLink="/terapia"       routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">U.T.I.</a>
+                <a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Traumatología</a>
+                <a routerLink="/obstetricia"   routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Obstetricia</a>
+                <a routerLink="/guardia"       routerLinkActive="text-[#1c8b3b] font-semibold" class="px-3 py-2 rounded hover:bg-[#cbf1cd]/50 transition-colors text-sm" (click)="dropdownOpen.set(false)">Guardia</a>
+              </div>
+            }
           </div>
+
+          <!-- Guardia: link directo -->
+          <a
+            routerLink="/guardia"
+            routerLinkActive="text-[#1c8b3b] font-semibold"
+            class="btn btn-ghost text-sm font-normal"
+          >
+            Guardia
+          </a>
+
+        </div>
+
+        <!-- Columna 3: Actions (w-1/4, derecha) -->
+        <div class="w-1/4 flex justify-end">
           <a
             routerLink="/contacto"
             (click)="animateButton($event)"
-            class="btn lg:btn-sm 2xl:btn-md bg-[#00c950] hover:bg-[#15aa45] text-white border-0"
+            class="inline-flex items-center gap-1.5 border border-slate-300 text-slate-600 hover:bg-slate-50 bg-transparent rounded-lg px-4 py-2 text-sm font-medium transition-colors cursor-pointer"
           >
             RRHH
-            <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>
+            <lucide-icon name="mail" class="w-4 h-4"></lucide-icon>
           </a>
         </div>
-        <!-- Fila de links: solo 2xl y superior (≥1536px) -->
-        <div class="hidden 2xl:block w-full border-t border-gray-300/50">
-          <nav class="container mx-auto py-3 flex flex-wrap items-center text-lg justify-center gap-8">
-            <a
-              routerLink="/cirugia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Cirugía</a
-            >
-            <a
-              routerLink="/gastro"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Gastro</a
-            >
-            <a
-              routerLink="/urologia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Urología</a
-            >
-            <a
-              routerLink="/neonatologia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Neonatología</a
-            >
-            <a
-              routerLink="/hemodinamia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Hemodinamia</a
-            >
-            <a
-              routerLink="/clinica"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Clínica</a
-            >
-            <a
-              routerLink="/nutricion"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Nutrición</a
-            >
-            <a
-              routerLink="/terapia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >U.T.I.</a
-            >
-            <a
-              routerLink="/traumatologia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Traumatología</a
-            >
-            <a
-              routerLink="/obstetricia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Obstetricia</a
-            >
-            <a
-              routerLink="/guardia"
-              routerLinkActive="text-[#1c8b3b] font-semibold"
-              class="hover:text-gray-900 cursor-pointer"
-              >Guardia</a
-            >
-          </nav>
-        </div>
+
       </div>
       <!-- Page content here -->
     </div>
+
+    <!-- Mobile Drawer -->
     <div class="drawer-side">
       <label for="my-drawer-2" aria-label="Cerrar menú" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 min-h-full w-80 px-4 pt-25 text-xl gap-1">
         <li><a routerLink="/" routerLinkActive="text-[#1c8b3b] font-semibold" [routerLinkActiveOptions]="{exact: true}" class="font-bold" (click)="drawerCheckbox.checked = false">Volver a inicio</a></li>
         <li class="flex w-full flex-col"><div class="divider"></div></li>
-        <li><a routerLink="/cirugia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Cirugía</a></li>
-        <li><a routerLink="/gastro" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Gastro</a></li>
-        <li><a routerLink="/urologia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Urología</a></li>
-        <li><a routerLink="/neonatologia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Neonatología</a></li>
-        <li><a routerLink="/hemodinamia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Hemodinamia</a></li>
-        <li><a routerLink="/clinica" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Clínica</a></li>
-        <li><a routerLink="/nutricion" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Nutrición</a></li>
-        <li><a routerLink="/terapia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">U.T.I.</a></li>
+        <li><a class="cursor-pointer" (click)="drawerCheckbox.checked = false">Institucional</a></li>
+        <li><a class="cursor-pointer" (click)="drawerCheckbox.checked = false">Obras Sociales</a></li>
+        <li class="flex w-full flex-col"><div class="divider"></div></li>
+        <li><a routerLink="/cirugia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Cirugía</a></li>
+        <li><a routerLink="/gastro"        routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Gastro</a></li>
+        <li><a routerLink="/urologia"      routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Urología</a></li>
+        <li><a routerLink="/neonatologia"  routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Neonatología</a></li>
+        <li><a routerLink="/hemodinamia"   routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Hemodinamia</a></li>
+        <li><a routerLink="/clinica"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Clínica e Infectología</a></li>
+        <li><a routerLink="/nutricion"     routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Nutrición</a></li>
+        <li><a routerLink="/terapia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">U.T.I.</a></li>
         <li><a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Traumatología</a></li>
-        <li><a routerLink="/obstetricia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Obstetricia</a></li>
-        <li><a routerLink="/guardia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Guardia</a></li>
+        <li><a routerLink="/obstetricia"   routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Obstetricia</a></li>
+        <li><a routerLink="/guardia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Guardia</a></li>
         <li class="flex w-full flex-col"><div class="divider"></div></li>
         <li>
           <a
             routerLink="/contacto"
             (click)="animateButton($event); drawerCheckbox.checked = false"
-            class="btn bg-[#00c950] hover:bg-[#15aa45] text-white border-0 w-full mt-2"
+            class="btn bg-transparent border border-slate-300 text-slate-600 hover:bg-slate-50 w-full mt-2"
           >
             RRHH
             <lucide-icon name="mail" class="w-4 h-4 ml-1"></lucide-icon>

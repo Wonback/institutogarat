@@ -1,12 +1,12 @@
-import { Component, ElementRef, AfterViewInit, Inject, PLATFORM_ID, signal } from '@angular/core';
-import { NgOptimizedImage, isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, AfterViewInit, Inject, PLATFORM_ID, signal, HostListener } from '@angular/core';
+import { NgOptimizedImage, isPlatformBrowser, NgClass } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { animate, stagger } from 'motion';
 import { LucideAngularModule, Mail, Cross, LucideIconProvider, LUCIDE_ICONS } from 'lucide-angular';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgOptimizedImage, RouterLink, RouterLinkActive, LucideAngularModule],
+  imports: [NgOptimizedImage, NgClass, RouterLink, RouterLinkActive, LucideAngularModule],
   providers: [
     {
       provide: LUCIDE_ICONS,
@@ -19,6 +19,14 @@ import { LucideAngularModule, Mail, Cross, LucideIconProvider, LUCIDE_ICONS } fr
 })
 export class Navbar implements AfterViewInit {
   dropdownOpen = signal(false);
+  scrolled = signal(false);
+
+  @HostListener('window:scroll')
+  onScroll() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.scrolled.set(window.scrollY > 10);
+    }
+  }
 
   constructor(
     private el: ElementRef,

@@ -1,15 +1,28 @@
-<div
-  class="hero h-[80vh] hero-mask-fade"
-  style="background-image: url(https://ik.imagekit.io/wonback/IMG_3954.jpg)"
->
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-bottom-fade"></div>
-  <div class="hero-content text-white text-center">
-    <div class="max-w-full md:max-w-[30vw]">
-      <h1 class="mb-5 text-3xl md:text-5xl lg:text-4xl 2xl:text-5xl font-bold drop-shadow-lg">
-        INSTITUTO MEDICO QUIRURGICO GARAT
+<div class="hero h-[80vh] hero-mask-fade relative overflow-hidden">
+  <!-- Imagen de fondo -->
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url(https://ik.imagekit.io/wonback/salida.webp)"
+  ></div>
+  <!-- Overlay oscuro degradado: izquierda opaco → derecha semitransparente -->
+  <div
+    class="absolute inset-0 z-0 pointer-events-none"
+    style="background: linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.15) 100%)"
+  ></div>
+  <!-- Contenido: mitad izquierda -->
+  <div class="hero-content w-full justify-start px-8 md:px-16">
+    <div class="w-full md:w-1/2 max-w-xl">
+      <h1
+        class="mb-5 text-5xl md:text-6xl lg:text-5xl 2xl:text-6xl leading-[1.1] tracking-tight"
+        style="text-shadow: 0 2px 12px rgba(0,0,0,0.5);"
+      >
+        <span class="font-light text-white/80">INSTITUTO MÉDICO</span><br />
+        <span class="font-extrabold text-white">QUIRÚRGICO GARAT</span>
       </h1>
-      <p class="mb-8 text-xl lg:text-base 2xl:text-xl drop-shadow-md">
+      <p
+        class="mb-8 text-xl lg:text-base 2xl:text-xl text-white/80"
+        style="text-shadow: 0 1px 6px rgba(0,0,0,0.4);"
+      >
         Centro médico-quirúrgico líder en Concordia, combinando tecnología de vanguardia y un equipo
         humano de excelencia para tu bienestar y el de tu familia.
       </p>
@@ -17,7 +30,8 @@
         href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 bg-[#00c950] hover:bg-[#15aa45] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 shadow-lg drop-shadow-lg text-lg"
+        class="inline-flex items-center gap-2 bg-gradient-to-br from-[#00c950] to-[#15aa45] hover:from-[#15aa45] hover:to-[#1c8b3b] text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 text-lg"
+        style="box-shadow: 0 10px 15px -3px rgba(0,0,0,0.15);"
       >
         Solicitar turno
         <svg
@@ -187,16 +201,16 @@
         <summary
           class="collapse-title font-medium text-gray-900 group-open:text-[#00c950] transition-colors list-none cursor-pointer"
         >
-          Clínica
+          Clínica e Infectología
         </summary>
         <div class="collapse-content text-base text-gray-600 flex flex-col">
           <p>
-            Atención médica clínica integral e internación, enfocada en el diagnóstico, tratamiento
-            y prevención de patologías generales.
+            Atención médica integral del adulto, control de infecciones hospitalarias y programa
+            de optimización de antimicrobianos (PROA).
           </p>
           <a
             routerLink="/clinica"
-            aria-label="Más información sobre Clínica Médica"
+            aria-label="Más información sobre Clínica e Infectología"
             class="mt-3 text-[#00c950] inline-flex items-center cursor-pointer font-medium text-sm self-end relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#00c950] after:transition-all after:duration-300 hover:after:w-full"
           >
             Más información
@@ -443,14 +457,14 @@
           <img
             class="lg:h-28 2xl:h-40 rounded w-full object-cover object-center lg:mb-3 2xl:mb-6"
             src="https://ik.imagekit.io/wonback/Clinica.png"
-            alt="Clínica"
+            alt="Clínica e Infectología"
           />
           <span class="tracking-widest text-[#00c950] text-xs font-medium title-font block"
             >ESPECIALIDAD</span
           >
-          <h3 class="text-lg text-gray-900 font-medium title-font mb-4">Clínica</h3>
+          <h3 class="text-lg text-gray-900 font-medium title-font mb-4">Clínica e Infectología</h3>
           <p class="leading-relaxed text-base flex-grow">
-            Atención médica clínica general e internación.
+            Atención integral del adulto y control de infecciones hospitalarias.
           </p>
           <span
             class="mt-4 text-[#00c950] inline-flex items-center font-medium text-sm self-end relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#00c950] after:transition-all after:duration-300 group-hover:after:w-full"
@@ -752,7 +766,7 @@
   </div>
 </section>
 
-<div class="container px-5 lg:px-16 2xl:px-5 py-12 md:py-6 mx-auto flex w-full flex-col">
+<div class="container px-5 lg:px-16 2xl:px-5 py-8 md:py-16 2xl:py-24 mx-auto flex w-full flex-col">
   <div class="divider"></div>
 </div>
 
