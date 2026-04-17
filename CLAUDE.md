@@ -43,6 +43,7 @@ Backend has no local dev server — it runs as Vercel Functions. Test locally by
 Key directories:
 - `core/` — Navbar, Footer, Landing (always-loaded components)
 - `pages/` — Specialty pages + `contacto/` (CV form, lazy-loaded)
+- `shared/` — Componentes reutilizables. Actualmente: `carousel3d` — carrusel 3D con `perspective`/`preserve-3d`, drag + snap, click sin drag vía `@Output() imageClick`. `PANEL_W` en el `.ts` debe coincidir con `--panel-w` en el `.css`.
 
 ### Backend (`backend/`)
 
@@ -201,11 +202,12 @@ El wrapper blanco actúa como separador — no agregar dividers adicionales alre
 ```html
 <div class="fab">
   <a href="https://api.whatsapp.com/send/?phone=54345402..." target="_blank" rel="noopener noreferrer"
-     class="border-0 bg-[#00c950] btn btn-xl btn-circle btn-primary">
+     class="border-0 bg-[#00c950] btn btn-xl btn-circle btn-primary text-white">
     <!-- SVG de WhatsApp -->
   </a>
 </div>
 ```
+**Gotcha FAB:** Siempre incluir `text-white` en el `<a>`. El SVG usa `fill="currentColor"` y sin esa clase hereda el color del tema, quedando el ícono oscuro.
 
 **Imágenes:** todas hosteadas en ImageKit (`https://ik.imagekit.io/wonback/...`).
 
@@ -308,6 +310,8 @@ ngOnInit() {
 - Hero → `<h1>` (único en la página; keyword principal debe coincidir con `title` y `meta description`)
 - Secciones (Nosotros, Tratamientos, Equipo) → `<h2>`
 - Sub-secciones (Misión, Visión, Quiénes somos) → `<h3>`
+
+**H1 del landing vs. páginas internas:** El H1 y title del landing son "Instituto Médico Quirúrgico Garat" — ninguna otra página debe replicarlos. Las páginas internas usan un H1 que describe su propio contenido (`Quiénes Somos`, `Servicio de Nutrición`, etc.). El nombre de la institución puede ir como eyebrow decorativo (`<p>` sobre el H1) o en el sufijo del title (`| Instituto Garat`).
 
 **Reglas SEO adicionales (validadas con analizador externo):**
 - **Meta description:** máximo ~155 caracteres (Google renderiza ~1000px). Superar ese límite dispara advertencia de "too long".

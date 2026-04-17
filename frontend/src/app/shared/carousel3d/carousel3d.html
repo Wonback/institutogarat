@@ -1,0 +1,39 @@
+<div
+  class="c3d-wrapper"
+  (mousemove)="onMouseMove($event)"
+  (mouseup)="onMouseUp()"
+  (mouseleave)="onMouseUp()"
+>
+  <!-- Stage (perspective lives here) -->
+  <div class="c3d-stage">
+    <div
+      class="c3d-scene"
+      [class.c3d-scene--dragging]="dragging()"
+      [ngStyle]="sceneStyle()"
+      (mousedown)="onMouseDown($event)"
+      (touchstart)="onTouchStart($event)"
+      (touchmove)="onTouchMove($event)"
+      (touchend)="onTouchEnd()"
+    >
+      @for (img of images; track img; let i = $index) {
+        <figure class="c3d-panel" [ngStyle]="panelStyle(i)" (click)="onPanelClick(i)">
+          <img [src]="img" alt="Foto institucional {{i + 1}}" draggable="false" />
+        </figure>
+      }
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <button class="c3d-arrow c3d-arrow--left" (click)="rotate(1)" aria-label="Anterior">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+         stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+  <button class="c3d-arrow c3d-arrow--right" (click)="rotate(-1)" aria-label="Siguiente">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+         stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+</div>

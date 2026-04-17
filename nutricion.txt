@@ -1,34 +1,25 @@
-💡 Instrucciones de Refactorización: Hero Section "Sanatorio Garat"
+## Historia y Origen
+* [cite_start]**Fundación**: El centro de salud fue fundado originalmente bajo el nombre de **Sanatorio Garat** en el año **1943**[cite: 808].
+* **Fundador**: Su creación fue obra del **Dr. [cite_start]Néstor Ramón Garat Pierrestegui**[cite: 808].
+* **Evolución del nombre**: Con el paso de los años, la institución evolucionó hasta su denominación actual: **Instituto Médico Quirúrgico Garat**[cite: 808].
 
-Objetivo: Modernizar el componente Hero del landing page para mejorar la confianza del usuario y la conversión de turnos, optimizando la jerarquía visual y la limpieza del código.
-1. Refactorización del Header y Navegación
+---
 
-    Simplificación de Especialidades: No renderizar los 11 links de especialidades directamente. Agruparlos en un componente <Dropdown /> o <MegaMenu /> bajo el sello "Especialidades".
+## Perfil del Fundador: Dr. Néstor Ramón Garat
+El prestigio de la institución se basa en la trayectoria de su fundador:
+* [cite_start]**Formación académica**: Se graduó como médico a los **23 años** en la Facultad de Medicina[cite: 807].
+* **Excelencia profesional**: Se formó al lado del prestigioso **Dr. [cite_start]Guillermo Zorraquín** y tuvo una destacada actuación profesional en la región[cite: 807, 808].
+* **Colaboración médica**: Compartió la práctica de la medicina en el Sanatorio con su hermano, el **Dr. [cite_start]Juan Antonio Garat Pierrestegui**, quien fuera Director del Instituto Argentino del Diagnóstico[cite: 747, 808].
+* **Legado en la ciudad**: Por su contribución a la salud y su labor como concejal en 1963, una calle de la ciudad de Concordia lleva hoy su nombre en su homenaje[cite: 811].
 
-    Prioridad de Acceso: Mantener visibles únicamente los links de: "Guardia", "Especialidades", "Institucional" y el botón de "RRHH".
+---
 
-    Sticky Behavior: Implementar una transición de fondo de transparente a blanco sólido (bg-white/95) con backdrop-filter: blur(8px) al hacer scroll hacia abajo.
+## Compromiso con la Comunidad
+Desde sus inicios, los profesionales del Instituto han estado vinculados al desarrollo de la salud pública:
+* [cite_start]**Aporte hospitalario**: El Dr. Garat brindó su aporte técnico y profesional a instituciones clave como el **Hospital Felipe Heras**, el **Hospital Ferroviario** y el **Colegio Médico**[cite: 809].
+* [cite_start]**Vínculos institucionales**: La familia fundadora ha participado activamente en la creación de la **Ayuda Psicosomática San Antonio de la Concordia** y ha presidido cooperadoras de centros materno-infantiles de la zona[cite: 153, 810].
 
-2. Estilización del Hero (Layout & Visuals)
+---
 
-    Layout Shift: Cambiar la alineación de text-center a text-left. El contenido debe ocupar el 50% izquierdo de la pantalla (usar grid-cols-1 md:grid-cols-2).
-
-    Tratamiento de Imagen: * Sustituir el filtro de desenfoque gris por un gradiente lineal técnico: linear-gradient(to right, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%).
-
-        La imagen de fondo debe ser nítida, preferentemente una foto de alta calidad de equipamiento médico o profesionales (no solo la fachada).
-
-    Tipografía:
-
-        H1: Aumentar el font-size a un mínimo de 3.5rem (text-5xl o text-6xl). Usar un font-weight: 300 para "INSTITUTO MÉDICO" y font-weight: 800 para "QUIRÚRGICO GARAT".
-
-        Leading: Ajustar el line-height a 1.1 para que el título se sienta compacto y moderno.
-
-3. Componente Call to Action (CTA)
-
-    Botón de Turnos:
-
-        Eliminar el verde plano actual. Usar un degradado suave o un color sólido con más profundidad.
-
-        Añadir box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1).
-
-        Asegurar que el icono de WhatsApp esté alineado correctamente con gap-2 y items-center.
+## Ubicación y Contexto Histórico
+* **Emplazamiento**: El Sanatorio se encuentra ubicado en terrenos que pertenecieron a la casa de la familia de **Juan Garat (Mayor)**, una de las familias pioneras de la ciudad, en el barrio conocido históricamente como "La Cuchilla"[cite: 534, 808].

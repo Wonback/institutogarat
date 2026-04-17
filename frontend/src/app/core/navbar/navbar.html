@@ -44,8 +44,12 @@
         <!-- Columna 2: Nav links (w-1/2, centrado) -->
         <div class="w-1/2 flex justify-center items-center gap-1">
 
-          <!-- Institucional (sin ruta aún) -->
-          <a class="btn btn-ghost text-sm font-normal cursor-pointer">
+          <!-- Institucional -->
+          <a
+            routerLink="/institucional"
+            routerLinkActive="text-[#1c8b3b] font-semibold"
+            class="btn btn-ghost text-sm font-normal"
+          >
             Institucional
           </a>
 
@@ -127,7 +131,7 @@
       <ul class="menu bg-base-200 min-h-full w-80 px-4 pt-25 text-xl gap-1">
         <li><a routerLink="/" routerLinkActive="text-[#1c8b3b] font-semibold" [routerLinkActiveOptions]="{exact: true}" class="font-bold" (click)="drawerCheckbox.checked = false">Volver a inicio</a></li>
         <li class="flex w-full flex-col"><div class="divider"></div></li>
-        <li><a class="cursor-pointer" (click)="drawerCheckbox.checked = false">Institucional</a></li>
+        <li><a routerLink="/institucional" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Institucional</a></li>
         <li><a class="cursor-pointer" (click)="drawerCheckbox.checked = false">Obras Sociales</a></li>
         <li class="flex w-full flex-col"><div class="divider"></div></li>
         <li><a routerLink="/cirugia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Cirugía</a></li>

@@ -1,0 +1,230 @@
+<!-- Hero -->
+<div
+  class="hero min-h-[60vh] relative"
+  style="background: linear-gradient(135deg, #17381c 0%, #1c5226 60%, #1d6e30 100%)"
+>
+  <div class="hero-content text-white w-full justify-start px-8 md:px-16 z-10">
+    <div class="max-w-2xl text-left mt-32 md:mt-0">
+      <p class="text-[#75da83] font-semibold uppercase tracking-widest text-sm mb-3">Instituto Médico Quirúrgico Garat</p>
+      <h1 class="mb-6 text-4xl md:text-5xl font-black uppercase leading-tight tracking-tight">
+        Quiénes<br>Somos
+      </h1>
+      <p class="text-white/80 text-lg max-w-lg">
+        Desde 1943, al servicio de la salud en Concordia y la región del litoral argentino.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Nuestra Historia -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 lg:px-16 2xl:px-5 pt-12 md:pt-24 mx-auto">
+
+    <!-- Header split -->
+    <div class="flex flex-wrap w-full mb-12">
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+        <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Nuestra Historia</h2>
+        <div class="h-1 w-20 bg-[#00c950] rounded"></div>
+      </div>
+      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg lg:text-base 2xl:text-lg self-center">
+        Desde sus inicios, el Instituto Médico Quirúrgico Garat ha sido referente de la medicina en Concordia y la región del litoral argentino.
+      </p>
+    </div>
+
+    <!-- Historia en dos columnas -->
+    <div class="flex flex-wrap -mx-4">
+      <div class="px-4 w-full lg:w-1/2 mb-6 lg:mb-0">
+        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg mb-4">
+          El <strong class="text-gray-800">Sanatorio Garat</strong> fue fundado en <strong class="text-gray-800">1943</strong> por el Dr. Néstor Ramón Garat Pierrestegui, médico recibido a los 23 años en la Facultad de Medicina. Formado al lado del prestigioso Dr. Guillermo Zorraquín, el Dr. Garat construyó desde el primer día una institución basada en la excelencia profesional y el compromiso con la comunidad.
+        </p>
+        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
+          Con el paso de las décadas, el Sanatorio fue ampliando su oferta de servicios hasta consolidarse como el <strong class="text-gray-800">Instituto Médico Quirúrgico Garat</strong>, referencia regional en múltiples especialidades médicas.
+        </p>
+      </div>
+      <div class="px-4 w-full lg:w-1/2">
+        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg mb-4">
+          El Instituto está emplazado en terrenos que pertenecieron a la familia Garat —una de las familias pioneras de Concordia— en el barrio históricamente conocido como <strong class="text-gray-800">"La Cuchilla"</strong>, en la ciudad de Concordia, Entre Ríos.
+        </p>
+        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
+          En reconocimiento a su aporte a la salud pública y su labor como concejal en 1963, una <strong class="text-gray-800">calle de Concordia lleva hoy su nombre</strong> en homenaje al Dr. Garat.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="container px-5 py-8 md:py-16 2xl:py-24 mx-auto flex w-full flex-col">
+    <div class="divider"></div>
+  </div>
+</section>
+
+<!-- Galería -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 lg:px-16 2xl:px-5 mx-auto">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Nuestras Instalaciones</h2>
+      <div class="h-1 w-20 bg-[#00c950] rounded mx-auto"></div>
+    </div>
+    <app-carousel3d [images]="galleryImages" (imageClick)="openLightbox($event)" />
+  </div>
+
+  <!-- Divider -->
+  <div class="container px-5 py-8 md:py-16 2xl:py-24 mx-auto flex w-full flex-col">
+    <div class="divider"></div>
+  </div>
+</section>
+
+<!-- El Fundador -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 lg:px-16 2xl:px-5 mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">El Fundador</h2>
+      <div class="h-1 w-20 bg-[#00c950] rounded mx-auto mb-4"></div>
+      <p class="text-gray-500 text-lg lg:text-base 2xl:text-lg max-w-2xl mx-auto">
+        La historia del Instituto es inseparable de la vida y obra de su fundador.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-start -mx-4">
+      <!-- Bullets -->
+      <div class="px-4 w-full lg:w-1/2 mb-10 lg:mb-0">
+        <h3 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2">
+          Dr. Néstor Ramón Garat Pierrestegui
+        </h3>
+        <p class="leading-relaxed text-lg text-gray-600 italic border-l-4 border-[#00c950] pl-4 mb-6">
+          "Médico, concejal y pionero de la salud pública en Concordia."
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Graduado a los <strong class="text-gray-800">23 años</strong> en la Facultad de Medicina</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Formado junto al prestigioso <strong class="text-gray-800">Dr. Guillermo Zorraquín</strong></span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Trabajó junto a su hermano, el <strong class="text-gray-800">Dr. Juan Antonio Garat</strong>, Director del Instituto Argentino del Diagnóstico</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Concejal de la ciudad de Concordia en <strong class="text-gray-800">1963</strong></span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Una <strong class="text-gray-800">calle de Concordia lleva su nombre</strong> en homenaje a su legado</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Highlight card -->
+      <div class="px-4 w-full lg:w-1/2">
+        <div class="bg-gradient-to-br from-[#cbf1cd] to-[#b0eab4] rounded-2xl p-8 border border-[#94e29b]">
+          <p class="text-5xl font-black text-[#1c8b3b] mb-1">1943</p>
+          <p class="text-[#1d6e30] font-semibold text-lg mb-4">Fundación del Sanatorio Garat</p>
+          <p class="text-gray-700 leading-relaxed">
+            Lo que comenzó como el <strong>Sanatorio Garat</strong> en 1943, hoy es el
+            <strong>Instituto Médico Quirúrgico Garat</strong>: una institución con más de 80 años
+            de historia, múltiples especialidades y un equipo de profesionales comprometidos con
+            la salud de la comunidad concordiense.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="container px-5 py-8 md:py-16 2xl:py-24 mx-auto flex w-full flex-col">
+    <div class="divider"></div>
+  </div>
+</section>
+
+<!-- Compromiso con la Comunidad -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 lg:px-16 2xl:px-5 mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Compromiso con la Comunidad</h2>
+      <div class="h-1 w-20 bg-[#00c950] rounded mx-auto mb-4"></div>
+      <p class="text-gray-500 text-lg lg:text-base 2xl:text-lg max-w-2xl mx-auto">
+        Desde sus inicios, los profesionales del Instituto han estado profundamente vinculados al desarrollo de la salud pública en Concordia y la región.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap -m-4">
+      <div class="p-4 lg:w-1/3 md:w-1/2 w-full">
+        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start justify-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
+          <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center mb-4 shrink-0">
+            <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="title-font font-semibold text-gray-900 text-lg mb-2">Hospital Felipe Heras</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">El Dr. Garat brindó su aporte técnico y profesional al principal hospital público de referencia de la ciudad de Concordia.</p>
+        </div>
+      </div>
+      <div class="p-4 lg:w-1/3 md:w-1/2 w-full">
+        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start justify-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
+          <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center mb-4 shrink-0">
+            <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="title-font font-semibold text-gray-900 text-lg mb-2">Hospital Ferroviario y Colegio Médico</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Participación activa en las principales instituciones de salud y en la organización médica de la región del litoral.</p>
+        </div>
+      </div>
+      <div class="p-4 lg:w-1/3 md:w-1/2 w-full">
+        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start justify-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
+          <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center mb-4 shrink-0">
+            <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="title-font font-semibold text-gray-900 text-lg mb-2">Salud Materno-Infantil</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">La familia fundadora presidió cooperadoras de centros materno-infantiles y participó en la creación de Ayuda Psicosomática San Antonio de la Concordia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider final -->
+  <div class="container px-5 py-8 md:py-16 2xl:py-24 mx-auto flex w-full flex-col">
+    <div class="divider"></div>
+  </div>
+</section>
+
+<!-- Lightbox modal -->
+<dialog #lightboxModal class="modal">
+  <div class="modal-box w-auto max-w-[90vw] p-0 overflow-hidden">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle absolute right-2 top-2 z-10 bg-black/50 text-white border-0 hover:bg-black/70">✕</button>
+    </form>
+    <img [src]="selectedImage()" alt="Instalaciones Instituto Garat" class="block max-h-[88vh] max-w-[90vw] w-auto h-auto" />
+  </div>
+  <form method="dialog" class="modal-backdrop !bg-black/75"><button>close</button></form>
+</dialog>
+
+<!-- FAB WhatsApp -->
+<div class="fab">
+  <a
+    href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="border-0 bg-[#00c950] btn btn-xl btn-circle btn-primary text-white"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
