@@ -1,10 +1,10 @@
 import { Component, inject, OnInit, ViewChild, ElementRef, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { Carousel3d } from '../../shared/carousel3d/carousel3d';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-institucional',
-  imports: [Carousel3d],
+  imports: [RouterLink],
   templateUrl: './institucional.html',
   styleUrl: './institucional.css',
 })
@@ -17,15 +17,19 @@ export class Institucional implements OnInit {
 
   // Reemplazar con las URLs reales de ImageKit
   readonly galleryImages = [
-    'https://ik.imagekit.io/wonback/institucional/foto-1.jpg',
-    'https://ik.imagekit.io/wonback/institucional/foto-2.jpg',
-    'https://ik.imagekit.io/wonback/institucional/foto-3.jpg',
-    'https://ik.imagekit.io/wonback/institucional/foto-4.jpg',
-    'https://ik.imagekit.io/wonback/institucional/foto-5.jpg',
-    'https://ik.imagekit.io/wonback/institucional/foto-6.jpg',
-    'https://ik.imagekit.io/wonback/institucional/foto-7.jpg',
-    'https://ik.imagekit.io/wonback/institucional/foto-8.jpg',
+    'https://ik.imagekit.io/wonback/Institucional/1.webp',
+    'https://ik.imagekit.io/wonback/Institucional/2.webp',
+    'https://ik.imagekit.io/wonback/Institucional/3.webp',
+    'https://ik.imagekit.io/wonback/Institucional/4.webp',
+    'https://ik.imagekit.io/wonback/Institucional/5.webp',
+    'https://ik.imagekit.io/wonback/Institucional/6.webp',
+    'https://ik.imagekit.io/wonback/Institucional/7.webp',
+    'https://ik.imagekit.io/wonback/Institucional/8.webp',
   ];
+
+  scrollToSlide(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+  }
 
   openLightbox(index: number) {
     this.selectedImage.set(this.galleryImages[index]);

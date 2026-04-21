@@ -1,9 +1,12 @@
-import { Component, ViewChild, ElementRef, OnInit, Inject } from '@angular/core';
-import { NgClass, DOCUMENT } from '@angular/common';
+import { Component, ViewChild, ElementRef, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { NgClass, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Meta, Title } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment';
+
+const STORAGE_KEY = 'garat_cv_submitted_at';
+const COOLDOWN_MS = 24 * 60 * 60 * 1000;
 
 function soloLetras(control: AbstractControl): ValidationErrors | null {
   const value = control.value as string;
@@ -27,6 +30,8 @@ export class Contacto implements OnInit {
   modalType: 'success' | 'error' | null = null;
   modalMessage = '';
   loading = false;
+  alreadySubmitted = false;
+  cooldownRemaining = '';
 
   rrhhFunciones = [
     'Selección de personal',
@@ -53,7 +58,7 @@ export class Contacto implements OnInit {
     'Enfermería',
   ];
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc: Document) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private meta: Meta, private titleService: Title, @Inject(DOCUMENT) private doc: Document, @Inject(PLATFORM_ID) private platformId: object) {
     this.form = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), soloLetras]],
       apellido: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), soloLetras]],
@@ -62,6 +67,20 @@ export class Contacto implements OnInit {
   }
 
   ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const elapsed = Date.now() - Number(raw);
+        if (elapsed < COOLDOWN_MS) {
+          this.alreadySubmitted = true;
+          const hoursLeft = Math.ceil((COOLDOWN_MS - elapsed) / (1000 * 60 * 60));
+          this.cooldownRemaining = hoursLeft === 1 ? '1 hora' : `${hoursLeft} horas`;
+        } else {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      }
+    }
+
     this.titleService.setTitle('Trabajá con Nosotros | Instituto Garat');
     const desc = 'Enviá tu CV a Instituto Garat. Sumamos profesionales de la salud comprometidos con la excelencia médica. Concordia, Entre Ríos.';
     this.meta.updateTag({ name: 'description', content: desc });
@@ -124,6 +143,11 @@ export class Contacto implements OnInit {
         this.cvFile = null;
         this.submitted = false;
         this.cvError = '';
+        if (isPlatformBrowser(this.platformId)) {
+          localStorage.setItem(STORAGE_KEY, Date.now().toString());
+        }
+        this.alreadySubmitted = true;
+        this.cooldownRemaining = '24 horas';
         this.openModal('success', '¡Tu postulación fue enviada con éxito! Nos pondremos en contacto a la brevedad.');
       },
       error: (err) => {

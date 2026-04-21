@@ -48,7 +48,7 @@ export class Clinica implements OnInit, OnDestroy {
         </ul>
         <p class="font-semibold text-[#1c8b3b] mb-1">Ocupación actual</p>
         <ul class="list-disc list-inside space-y-1 mb-4">
-          <li>Jefa del Servicio de Clínica Médica — Instituto Garat</li>
+          <li>Jefa del Servicio de Infectología — Instituto Garat</li>
           <li>Infectología y control de infecciones hospitalarias</li>
           <li>Coordinadora del Programa de Optimización de uso de Antimicrobianos (PROA)</li>
         </ul>
