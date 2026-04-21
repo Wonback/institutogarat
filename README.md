@@ -47,7 +47,8 @@ Todas las páginas bajo `pages/` son lazy-loaded.
 | Página | Ruta | Estado |
 |---|---|---|
 | Cirugía | `/cirugia` | ❌ Sin desarrollar |
-| Clínica | `/clinica` | ❌ Sin desarrollar |
+| Clínica | `/clinica` | 🚧 En desarrollo |
+| Institucional (Quiénes Somos) | `/institucional` | ✅ Terminada |
 | Gastroenterología | `/gastro` | ❌ Sin desarrollar |
 | Guardia | `/guardia` | ❌ Sin desarrollar |
 | Hemodinamia | `/hemodinamia` | ✅ Terminada |

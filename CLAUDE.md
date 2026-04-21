@@ -368,3 +368,11 @@ Nota: `mb-6` en el `<h1>` (no `mb-2`) cuando hay botón debajo.
 **Footer:** Lleva `mt-12 md:mt-24` propio — ninguna página necesita agregar espacio antes del footer. `footer.css` define `box-shadow` hacia arriba (espejo de `shadow-lg` de Tailwind).
 
 **Carrusel mobile de galería (scroll-snap + dots):** Para galerías de imágenes que en desktop muestran grid y en mobile carrusel. Patrón: wrapper `md:hidden` con `flex overflow-x-auto snap-x snap-mandatory gallery-scrollbar-hide` + `(scroll)="onGalleryScroll($event)"`, cada item `snap-center w-full shrink-0 aspect-square`. Dots con `[style.background-color]` binding a signal `currentGallerySlide`. Desktop: `hidden md:block` con grid normal. En TS: `currentGallerySlide = signal(0)`, `onGalleryScroll(e)` calcula `Math.round(scrollLeft / clientWidth)`, `scrollToSlide(container, index)` usa `scrollTo({ left: clientWidth * index, behavior: 'smooth' })`. En CSS del componente: clase `.gallery-scrollbar-hide` con `scrollbar-width: none` + `::-webkit-scrollbar { display: none }`. Ver `nutricion.html/.ts/.css` como referencia.
+
+**Carousel DaisyUI + Angular router — gotcha:** Los `<a href="#slide-id">` de navegación son interceptados por el router y navegan a la raíz. Fix: reemplazar con `<button (click)="scrollToSlide('id')">` donde `scrollToSlide(id)` llama `document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' })`.
+
+**localStorage en SSR:** Siempre proteger con `isPlatformBrowser(this.platformId)`. Inyectar `@Inject(PLATFORM_ID) private platformId: object` y importar `isPlatformBrowser` de `@angular/common`.
+
+**Página institucional (`pages/institucional/`):** Estructura completa: Hero → Misión/Visión/Valores → Historia+Fundador (fusionadas) → Galería (carousel DaisyUI) → Compromiso con la Comunidad → CTA banner. Imágenes en `https://ik.imagekit.io/wonback/Institucional/1.webp` ... `8.webp`. Formulario de contacto tiene cooldown de 24h via `localStorage` (key: `garat_cv_submitted_at`).
+
+**Misión/Visión — patrón:** Sin cards. Dos columnas `flex-col md:flex-row`, cada columna con ícono SVG + `<h3>` en `flex items-center gap-4`, texto abajo. Ver `hemodinamia.html` como referencia canónica (usa `lucide-icon`; en páginas sin lucide usar SVG inline equivalente).
