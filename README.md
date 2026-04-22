@@ -50,7 +50,7 @@ Todas las páginas bajo `pages/` son lazy-loaded.
 | Clínica | `/clinica` | 🚧 En desarrollo |
 | Institucional (Quiénes Somos) | `/institucional` | ✅ Terminada |
 | Gastroenterología | `/gastro` | ❌ Sin desarrollar |
-| Guardia | `/guardia` | ❌ Sin desarrollar |
+| Guardia | `/guardia` | ✅ Terminada |
 | Hemodinamia | `/hemodinamia` | ✅ Terminada |
 | Neonatología | `/neonatologia` | ✅ Terminada |
 | Nutrición | `/nutricion` | 🚧 En desarrollo |

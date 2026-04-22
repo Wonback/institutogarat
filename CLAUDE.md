@@ -334,6 +334,10 @@ ngOnInit() {
 **Orden canónico de secciones:**
 Hero → Nosotros → [Contenido específico: tratamientos / procedimientos / patologías] → Equipo de Profesionales (al final, como "créditos"). No invertir este orden — el equipo siempre cierra la página.
 
+**Excepción — páginas de servicio de soporte (ej. Guardia):** No tienen sección Equipo ni sección Nosotros. Estructura libre según el servicio: ej. Hero → Capacidad instalada → Diagnóstico → Triage. Ver `guardia.html` como referencia.
+
+**Botón de emergencia (llamada telefónica):** Única excepción al verde de marca. Usar `bg-red-600 hover:bg-red-700 text-white` con `href="tel:XXXXXXX"`. No usar verde en CTAs de llamada de emergencia.
+
 **Hero con CTA (patrón completo):**
 ```html
 <div class="hero min-h-[60vh] relative" style="background-image: url(...)">

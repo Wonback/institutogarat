@@ -33,10 +33,10 @@ export class Clinica implements OnInit, OnDestroy {
     {
       id: 1,
       name: 'Dra. María Florencia Prieto',
-      role: 'Jefa del Servicio · Especialista en Clínica Médica e Infectología',
-      bio: 'TODO: frase de la doctora',
+      role: 'Infectología',
+      bio: '"Lideramos con el compromiso de brindar una atención clínica integral, donde la precisión en el diagnóstico y la vanguardia en infectología aseguren el bienestar de nuestra comunidad."',
       thumbnail: 'TODO: foto Dra. Prieto',
-      bioImage: 'TODO: foto Dra. Prieto',
+      bioImage: 'https://ik.imagekit.io/wonback/Clinica%20e%20Infectologia/florenciaprieto.webp',
       bioImagePosition: 'center',
       cv: `
         <p class="font-semibold text-[#1c8b3b] mb-1">Formación</p>
@@ -64,13 +64,23 @@ export class Clinica implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.title.setTitle('Clínica e Infectología | Instituto Garat');
-    const desc = 'Servicio de Clínica e Infectología en Instituto Garat. Diagnóstico y tratamiento integral de enfermedades del adulto. Control de infecciones y PROA. Concordia, Entre Ríos.';
+    const desc =
+      'Servicio de Clínica e Infectología en Instituto Garat. Diagnóstico y tratamiento integral de enfermedades del adulto. Control de infecciones y PROA. Concordia, Entre Ríos.';
     this.meta.updateTag({ name: 'description', content: desc });
-    this.meta.updateTag({ property: 'og:title', content: 'Clínica e Infectología | Instituto Garat' });
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Clínica e Infectología | Instituto Garat',
+    });
     this.meta.updateTag({ property: 'og:description', content: desc });
-    this.meta.updateTag({ property: 'og:url', content: 'https://institutogarat.vercel.app/clinica' });
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://institutogarat.vercel.app/clinica',
+    });
     let link: HTMLLinkElement | null = this.doc.querySelector('link[rel="canonical"]');
-    if (!link) { link = this.doc.createElement('link'); this.doc.head.appendChild(link); }
+    if (!link) {
+      link = this.doc.createElement('link');
+      this.doc.head.appendChild(link);
+    }
     link.setAttribute('rel', 'canonical');
     link.setAttribute('href', 'https://institutogarat.vercel.app/clinica');
     this.startRotation();
@@ -82,7 +92,7 @@ export class Clinica implements OnInit, OnDestroy {
 
   startRotation() {
     this.rotationInterval = setInterval(() => {
-      const currentIndex = this.teamMembers.findIndex(m => m.id === this.selectedMember().id);
+      const currentIndex = this.teamMembers.findIndex((m) => m.id === this.selectedMember().id);
       const nextIndex = (currentIndex + 1) % this.teamMembers.length;
       this.selectedMember.set(this.teamMembers[nextIndex]);
     }, 5000);

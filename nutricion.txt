@@ -1,25 +1,50 @@
-## Historia y Origen
-* [cite_start]**Fundación**: El centro de salud fue fundado originalmente bajo el nombre de **Sanatorio Garat** en el año **1943**[cite: 808].
-* **Fundador**: Su creación fue obra del **Dr. [cite_start]Néstor Ramón Garat Pierrestegui**[cite: 808].
-* **Evolución del nombre**: Con el paso de los años, la institución evolucionó hasta su denominación actual: **Instituto Médico Quirúrgico Garat**[cite: 808].
+Para estructurar la página de la guardia externa del IMQ Garat, es fundamental priorizar la información de emergencia y la facilidad de navegación desde dispositivos móviles. Un diseño efectivo debe permitir que un paciente en una situación de estrés encuentre lo que necesita en menos de 5 segundos.
 
----
+Aquí tienes una propuesta de arquitectura de información técnica y funcional:
+1. Cabecera (Header) de Respuesta Rápida
 
-## Perfil del Fundador: Dr. Néstor Ramón Garat
-El prestigio de la institución se basa en la trayectoria de su fundador:
-* [cite_start]**Formación académica**: Se graduó como médico a los **23 años** en la Facultad de Medicina[cite: 807].
-* **Excelencia profesional**: Se formó al lado del prestigioso **Dr. [cite_start]Guillermo Zorraquín** y tuvo una destacada actuación profesional en la región[cite: 807, 808].
-* **Colaboración médica**: Compartió la práctica de la medicina en el Sanatorio con su hermano, el **Dr. [cite_start]Juan Antonio Garat Pierrestegui**, quien fuera Director del Instituto Argentino del Diagnóstico[cite: 747, 808].
-* **Legado en la ciudad**: Por su contribución a la salud y su labor como concejal en 1963, una calle de la ciudad de Concordia lleva hoy su nombre en su homenaje[cite: 811].
+Esta sección debe ser estática o destacar inmediatamente al cargar la página.
 
----
+    Nombre del Servicio: Guardia.
 
-## Compromiso con la Comunidad
-Desde sus inicios, los profesionales del Instituto han estado vinculados al desarrollo de la salud pública:
-* [cite_start]**Aporte hospitalario**: El Dr. Garat brindó su aporte técnico y profesional a instituciones clave como el **Hospital Felipe Heras**, el **Hospital Ferroviario** y el **Colegio Médico**[cite: 809].
-* [cite_start]**Vínculos institucionales**: La familia fundadora ha participado activamente en la creación de la **Ayuda Psicosomática San Antonio de la Concordia** y ha presidido cooperadoras de centros materno-infantiles de la zona[cite: 153, 810].
+    Botón de Acción (CTA): Un botón rojo o de alto contraste que diga "Llamar a Emergencias" con el número vinculado (tel: 4229000) que al hacerle click debe hacer una llamada al número vinculado.
 
----
+    Dirección: Enlace directo a Google Maps que esta en el landing para facilitar la llegada mediante GPS.
 
-## Ubicación y Contexto Histórico
-* **Emplazamiento**: El Sanatorio se encuentra ubicado en terrenos que pertenecieron a la casa de la familia de **Juan Garat (Mayor)**, una de las familias pioneras de la ciudad, en el barrio conocido históricamente como "La Cuchilla"[cite: 534, 808].
+2. Propuesta de Valor y Capacidad Instalada
+
+Utiliza iconos simples para que la lectura sea rápida (escaneabilidad).
+
+    Disponibilidad: "Atención Médica y Enfermería las 24 horas, los 365 días del año."
+
+    Infraestructura:
+
+        3 Consultorios de atención simultánea.
+
+        Shock Room: 2 camas equipadas para alta complejidad (soporte vital avanzado).
+
+        Internación transitoria para observación.
+
+3. Servicios de Apoyo Crítico (Diagnóstico 24hs)
+
+Es vital separar los métodos de diagnóstico para que el paciente sepa que no será derivado a otro centro para estudios básicos.
+
+    Laboratorio de Análisis Clínicos: Disponibilidad constante.
+
+    Diagnóstico por Imágenes: * Rayos X (Rx).
+
+        Ecografía (ECO).
+
+        Tomografía Axial Computada (TAC).
+
+        Resonancia Magnética Nuclear (RMN).
+
+Sección Triage	Una breve explicación de cómo se prioriza la atención (no es por orden de llegada, sino por gravedad).
+Nivel,Categoría,Descripción de la Condición,Tiempo de Atención
+TRIAGE I,Reanimación,Condición de salud extrema que amenaza la vida del paciente. Requiere una intervención médica inmediata.,Inmediata
+TRIAGE II,Emergencia,Situación de alto riesgo que representa potencial amenaza de su estado de salud. Debe recibir una atención médica rápida.,Dentro de los siguientes 30 minutos
+TRIAGE III,Urgencia,"Condición aguda, no amenazante de la vida. Requiere consulta médica no inmediata.",Hasta 2 horas
+PRIORIDAD IV,No Urgencia,"Condición de salud que pueda ser aguda, pero no compromete el estado general del paciente y no representa un riesgo evidente.",De 2 hasta 4 horas
+PRIORIDAD V,No Urgente,Condición clínica relacionada con problemas agudos o crónicos sin evidencia de deterioro que comprometa el estado general del paciente. No representa un riesgo evidente para la vida.,Cita por consulta externa
+
+Utiliza los colores (Rojo, Naranja, Amarillo, Verde, Azul) en elementos visuales como tarjetas o bordes para que el paciente asocie rápidamente el cartel físico con la información digital.
