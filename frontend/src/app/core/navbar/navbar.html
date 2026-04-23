@@ -130,10 +130,11 @@
       <label for="my-drawer-2" aria-label="Cerrar menú" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 min-h-full w-80 px-4 pt-25 text-xl gap-1">
         <li><a routerLink="/" routerLinkActive="text-[#1c8b3b] font-semibold" [routerLinkActiveOptions]="{exact: true}" class="font-bold" (click)="drawerCheckbox.checked = false">Volver a inicio</a></li>
-        <li class="flex w-full flex-col"><div class="divider"></div></li>
+        <li><hr class="border-base-300 my-1 w-full"></li>
         <li><a routerLink="/institucional" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Institucional</a></li>
         <li><a class="cursor-pointer" (click)="drawerCheckbox.checked = false">Obras Sociales</a></li>
-        <li class="flex w-full flex-col"><div class="divider"></div></li>
+        <li><a routerLink="/guardia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Guardia</a></li>
+        <li><hr class="border-base-300 my-1 w-full"></li>
         <li><a routerLink="/cirugia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Cirugía</a></li>
         <li><a routerLink="/gastro"        routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Gastro</a></li>
         <li><a routerLink="/urologia"      routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Urología</a></li>
@@ -144,8 +145,7 @@
         <li><a routerLink="/terapia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">U.T.I.</a></li>
         <li><a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Traumatología</a></li>
         <li><a routerLink="/obstetricia"   routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Obstetricia</a></li>
-        <li><a routerLink="/guardia"       routerLinkActive="text-[#1c8b3b] font-semibold" (click)="drawerCheckbox.checked = false">Guardia</a></li>
-        <li class="flex w-full flex-col"><div class="divider"></div></li>
+        <li><hr class="border-base-300 my-1 w-full"></li>
         <li>
           <a
             routerLink="/contacto"

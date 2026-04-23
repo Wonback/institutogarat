@@ -2,6 +2,24 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+In dealing with me, you must:
+
+- Only give what is asked for and no more, no less.
+- No cute solutions unless asked.
+- Do not start with positive adjectives about my observations.
+- Respond directly without flattery.
+- Be honest and straightforward.
+- Not use emojis unless I ask for them.
+- Avoid reinforcing any negative self-talk while being truthful.
+- Be direct about what happened.
+- If guessing, say so.
+- Never take it upon yourself to delete lines, including comments, from any source provided.
+- Never use line numbers - you are never right. Instead give the exact area of code to find the location.
+- Use short 3-6 words sentences
+- Ni filler, preamble, or pleasantries.
+- Run tools first, show the result, then stop. Do not narrate.
+- Drop articles ("me fix code" no "i will fix the code")
+
 ## Project Overview
 
 This is a medical institution website for "Instituto Garat" — an Angular 21 SPA with SSR and a serverless Node.js backend on Vercel. It features specialty pages, a CV submission form with file upload, and animated UI using Motion One + DaisyUI.
@@ -41,6 +59,7 @@ Backend has no local dev server — it runs as Vercel Functions. Test locally by
 - **Styling** — Tailwind CSS 4 + DaisyUI 5. Three themes: `light` (default), `dark` (prefers-dark), `nord`. Configured in `styles.css`.
 
 Key directories:
+
 - `core/` — Navbar, Footer, Landing (always-loaded components)
 - `pages/` — Specialty pages + `contacto/` (CV form, lazy-loaded)
 - `shared/` — Componentes reutilizables. Actualmente: `carousel3d` — carrusel 3D con `perspective`/`preserve-3d`, drag + snap, click sin drag vía `@Output() imageClick`. `PANEL_W` en el `.ts` debe coincidir con `--panel-w` en el `.css`.
@@ -48,6 +67,7 @@ Key directories:
 ### Backend (`backend/`)
 
 Vercel Functions (Node.js):
+
 - `api/cv.js` — POST `/api/cv` — parses multipart form, validates, sends email
 - `lib/mailer.js` — Nodemailer via Gmail
 - `services/cv.service.js` — Busboy form parsing
@@ -55,9 +75,9 @@ Vercel Functions (Node.js):
 
 ### Environment Config
 
-| File | API URL |
-|---|---|
-| `frontend/src/environments/environment.ts` | `http://localhost:3000` |
+| File                                            | API URL                                 |
+| ----------------------------------------------- | --------------------------------------- |
+| `frontend/src/environments/environment.ts`      | `http://localhost:3000`                 |
 | `frontend/src/environments/environment.prod.ts` | `https://institutogarat-api.vercel.app` |
 
 Backend secrets (`backend/.env`): `MAIL_USER`, `MAIL_PASS`, `MAIL_TO`, `ALLOWED_ORIGIN`.
@@ -69,64 +89,72 @@ Backend secrets (`backend/.env`): `MAIL_USER`, `MAIL_PASS`, `MAIL_TO`, `ALLOWED_
 El color verde característico de la marca es **`#00c950`**. Todos los verdes del diseño deben derivarse de esta paleta. No usar las clases `green-*` de Tailwind por defecto — usar los valores hex directos o variables CSS.
 
 #### Verde base
-| Rol | Hex |
-|---|---|
+
+| Rol                  | Hex       |
+| -------------------- | --------- |
 | **Base (principal)** | `#00c950` |
 
 #### Tintes (más claros)
-| Nivel | Hex |
-|---|---|
-| Tinte 1 | `#4fd26a` |
-| Tinte 2 | `#75da83` |
-| Tinte 3 | `#94e29b` |
-| Tinte 4 | `#b0eab4` |
+
+| Nivel               | Hex       |
+| ------------------- | --------- |
+| Tinte 1             | `#4fd26a` |
+| Tinte 2             | `#75da83` |
+| Tinte 3             | `#94e29b` |
+| Tinte 4             | `#b0eab4` |
 | Tinte 5 (más suave) | `#cbf1cd` |
 
 #### Shades (más oscuros)
-| Nivel | Hex |
-|---|---|
-| Shade 1 | `#15aa45` |
-| Shade 2 | `#1c8b3b` |
-| Shade 3 | `#1d6e30` |
-| Shade 4 | `#1c5226` |
+
+| Nivel                | Hex       |
+| -------------------- | --------- |
+| Shade 1              | `#15aa45` |
+| Shade 2              | `#1c8b3b` |
+| Shade 3              | `#1d6e30` |
+| Shade 4              | `#1c5226` |
 | Shade 5 (más oscuro) | `#17381c` |
 
 #### Hues (variaciones de matiz)
+
 `#14c700` · `#00c70d` · `#00c72e` · `#00c950` · `#00c771` · `#00c792`
 
 #### Transparencias
-| Alpha | Hex |
-|---|---|
-| 86% | `#00c950db` |
-| 71% | `#00c950b6` |
-| 57% | `#00c95092` |
-| 43% | `#00c9506d` |
-| 29% | `#00c95049` |
+
+| Alpha | Hex         |
+| ----- | ----------- |
+| 86%   | `#00c950db` |
+| 71%   | `#00c950b6` |
+| 57%   | `#00c95092` |
+| 43%   | `#00c9506d` |
+| 29%   | `#00c95049` |
 
 #### Colores complementarios y triángulo
-| Rol | Hex |
-|---|---|
-| Complementario base | `#c70077` (magenta/rosa) |
-| Complementario hover | `#a90065` (shade −15%) |
-| Triángulo 1 | `#5000c7` (violeta) |
-| Triángulo 2 | `#c75000` (naranja) |
+
+| Rol                  | Hex                      |
+| -------------------- | ------------------------ |
+| Complementario base  | `#c70077` (magenta/rosa) |
+| Complementario hover | `#a90065` (shade −15%)   |
+| Triángulo 1          | `#5000c7` (violeta)      |
+| Triángulo 2          | `#c75000` (naranja)      |
 
 #### Usos semánticos
-| Uso | Valor |
-|---|---|
-| Color principal (acento, botones, íconos, bordes activos) | `#00c950` |
-| Hover de botones principales | `#15aa45` (Shade 1) |
-| Títulos de sección en modales y CV | `#1c8b3b` (Shade 2) |
-| Fondo suave / franja trust | `#cbf1cd` (Tinte 5) |
-| Overlay de hero banner | `#1d6e30cc` → `#1c8b3b66` (Shade 3/2 con alpha) |
-| Glow del navbar (hover) | `#00c95040` (Transparencia ~25%) |
-| Borde de inputs en foco | `#00c950` (2px solid) |
-| Textos base | `gray-900`, `gray-700`, `gray-600`, `gray-500` |
-| Errores / alertas | `#c70077` (complementario) / hover: `#a90065` |
+
+| Uso                                                       | Valor                                           |
+| --------------------------------------------------------- | ----------------------------------------------- |
+| Color principal (acento, botones, íconos, bordes activos) | `#00c950`                                       |
+| Hover de botones principales                              | `#15aa45` (Shade 1)                             |
+| Títulos de sección en modales y CV                        | `#1c8b3b` (Shade 2)                             |
+| Fondo suave / franja trust                                | `#cbf1cd` (Tinte 5)                             |
+| Overlay de hero banner                                    | `#1d6e30cc` → `#1c8b3b66` (Shade 3/2 con alpha) |
+| Glow del navbar (hover)                                   | `#00c95040` (Transparencia ~25%)                |
+| Borde de inputs en foco                                   | `#00c950` (2px solid)                           |
+| Textos base                                               | `gray-900`, `gray-700`, `gray-600`, `gray-500`  |
+| Errores / alertas                                         | `#c70077` (complementario) / hover: `#a90065`   |
 
 ### Componentes UI — convenciones
 
 **Botones principales:**
+
 ```html
 <button class="btn bg-[#00c950] hover:bg-[#15aa45] text-white border-0">...</button>
 <!-- Pill shape para CTAs -->
@@ -134,11 +162,13 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 ```
 
 **Separador de sección (underline verde):**
+
 ```html
 <div class="h-1 w-20 bg-[#00c950] rounded"></div>
 ```
 
 **Hero banner de página de especialidad:**
+
 ```html
 <div class="hero min-h-[60vh] relative" style="background-image: url(...)">
   <div class="absolute inset-0 bg-gradient-to-r from-[#17381c]/90 to-[#1c5226]/40 mix-blend-multiply"></div>
@@ -151,20 +181,24 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 ```
 
 **Títulos de sección:**
+
 ```html
 <h2 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 uppercase">TÍTULO</h2>
 <div class="h-1 w-20 bg-[#00c950] rounded mx-auto mb-4"></div>
 ```
 
 **Tarjeta de tratamiento / procedimiento (clickeable):**
+
 ```html
-<button class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex p-4 h-full items-center justify-start w-full text-left transition-all duration-300 hover:shadow-md hover:scale-[1.02] cursor-pointer hover:border-[#75da83]">
+<button
+  class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex p-4 h-full items-center justify-start w-full text-left transition-all duration-300 hover:shadow-md hover:scale-[1.02] cursor-pointer hover:border-[#75da83]">
   <!-- ícono SVG checkmark verde -->
   <span class="title-font font-medium text-gray-900">...</span>
 </button>
 ```
 
 **Bio de profesional (quote):**
+
 ```html
 <p class="leading-relaxed text-lg text-gray-600 italic border-l-4 border-[#00c950] pl-4">
   "{{ selectedMember().bio }}"
@@ -172,11 +206,14 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 ```
 
 **Nombre de profesional (gradient):**
+
 ```html
-<h2 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2">
+<h2
+  class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2"></h2>
 ```
 
 **Título de sección dividido (título izq + descripción der):**
+
 ```html
 <div class="flex flex-wrap w-full mb-12">
   <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -186,9 +223,11 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
   <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg self-center">Descripción...</p>
 </div>
 ```
+
 Usar cuando hay suficiente texto descriptivo para justificar el layout 50/50. Alternativa al header centrado.
 
 **Banner full-width con espaciado exterior (ej. Supervisión de Menús):**
+
 ```html
 <div class="bg-base-100 py-12 md:py-24">
   <section class="bg-gradient-to-r from-[#1d6e30] to-[#15aa45] py-20 md:py-28">
@@ -196,17 +235,23 @@ Usar cuando hay suficiente texto descriptivo para justificar el layout 50/50. Al
   </section>
 </div>
 ```
+
 El wrapper blanco actúa como separador — no agregar dividers adicionales alrededor.
 
 **FAB de WhatsApp (presente en todas las páginas terminadas):**
+
 ```html
 <div class="fab">
-  <a href="https://api.whatsapp.com/send/?phone=54345402..." target="_blank" rel="noopener noreferrer"
-     class="border-0 bg-[#00c950] btn btn-xl btn-circle btn-primary text-white">
+  <a
+    href="https://api.whatsapp.com/send/?phone=54345402..."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="border-0 bg-[#00c950] btn btn-xl btn-circle btn-primary text-white">
     <!-- SVG de WhatsApp -->
   </a>
 </div>
 ```
+
 **Gotcha FAB:** Siempre incluir `text-white` en el `<a>`. El SVG usa `fill="currentColor"` y sin esa clase hereda el color del tema, quedando el ícono oscuro.
 
 **Imágenes:** todas hosteadas en ImageKit (`https://ik.imagekit.io/wonback/...`).
@@ -257,15 +302,21 @@ La versión mediana usa `lg:` para reducir escala y `2xl:` para restaurar al tam
 
 **Modales DaisyUI:** Siempre agregar `max-h-[80vh] overflow-y-auto` al `modal-box` cuando el contenido es variable (CVs, descripciones de tratamientos). Sin esto el modal se pega a los bordes de la pantalla.
 
+**DaisyUI `.divider` en listas/drawers:** Renderiza dos líneas con gap central (pseudoelementos `::before`/`::after`), no una sola línea. Para separadores limpios usar `<hr class="border-base-300 my-1 w-full">` dentro de un `<li>`.
+
+**Botones en `flex-col`:** Hijos de `flex-col` se estiran al ancho completo. Agregar `w-fit` al botón para que tome solo el ancho de su contenido.
+
 ## Pendientes
 
 ### Dropdown navbar en pantalla mediana — RESUELTO
+
 - **Causa raíz:** DaisyUI `dropdown-content` vive siempre en el DOM aunque esté oculto — los links interceptan clicks/hover aunque no se vean. `[class.dropdown-open]` no soluciona esto.
 - **Solución:** Reemplazar el componente `dropdown` de DaisyUI con un `div relative` propio + `@if (dropdownOpen())` de Angular. Cuando cerrado, los links no existen en el DOM → hitbox invisible imposible.
 - **Hover gap fix:** `mt-*` en el dropdown crea un gap fuera del bounding box del contenedor que dispara `mouseleave`. Fix: `pb-[mismo valor]` en el contenedor + quitar el `mt-*` del dropdown.
 - **Implementación:** `(mouseenter)`/`(mouseleave)` en el contenedor, `dropdownOpen = signal(false)` en `navbar.ts`. Ver `navbar.html` bloque `specialties-dropdown`.
 
 ### Sección Trust/Social Proof — Landing
+
 - **Qué:** Franja de obras sociales y prepagas con cobertura (logos o nombres en fila con checkmarks)
 - **Dónde:** Entre el hero y "Nuestras Especialidades" en `core/landing/landing.html`
 - **Estado:** Esperando lista de obras sociales del cliente
@@ -273,12 +324,12 @@ La versión mediana usa `lg:` para reducir escala y `2xl:` para restaurar al tam
 
 ## Plugins instalados
 
-| Plugin | Cuándo usarlo |
-|---|---|
-| **context7** | Antes de usar APIs de Angular, DaisyUI 5, Tailwind 4, Motion One o cualquier librería — busca docs actualizadas en vez de depender del conocimiento interno |
-| **ui-ux-pro-max** | Al diseñar o mejorar componentes UI: paletas, estilos, layout, tipografía, animaciones |
-| **github** | Para trabajar con PRs, issues y releases del repositorio |
-| **claude-md-management** | Para auditar y actualizar este CLAUDE.md con aprendizajes de la sesión |
+| Plugin                   | Cuándo usarlo                                                                                                                                               |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **context7**             | Antes de usar APIs de Angular, DaisyUI 5, Tailwind 4, Motion One o cualquier librería — busca docs actualizadas en vez de depender del conocimiento interno |
+| **ui-ux-pro-max**        | Al diseñar o mejorar componentes UI: paletas, estilos, layout, tipografía, animaciones                                                                      |
+| **github**               | Para trabajar con PRs, issues y releases del repositorio                                                                                                    |
+| **claude-md-management** | Para auditar y actualizar este CLAUDE.md con aprendizajes de la sesión                                                                                      |
 
 ### Uso de Context7
 
@@ -307,6 +358,7 @@ ngOnInit() {
 ```
 
 **Jerarquía de encabezados — un único `<h1>` por página:**
+
 - Hero → `<h1>` (único en la página; keyword principal debe coincidir con `title` y `meta description`)
 - Secciones (Nosotros, Tratamientos, Equipo) → `<h2>`
 - Sub-secciones (Misión, Visión, Quiénes somos) → `<h3>`
@@ -314,6 +366,7 @@ ngOnInit() {
 **H1 del landing vs. páginas internas:** El H1 y title del landing son "Instituto Médico Quirúrgico Garat" — ninguna otra página debe replicarlos. Las páginas internas usan un H1 que describe su propio contenido (`Quiénes Somos`, `Servicio de Nutrición`, etc.). El nombre de la institución puede ir como eyebrow decorativo (`<p>` sobre el H1) o en el sufijo del title (`| Instituto Garat`).
 
 **Reglas SEO adicionales (validadas con analizador externo):**
+
 - **Meta description:** máximo ~155 caracteres (Google renderiza ~1000px). Superar ese límite dispara advertencia de "too long".
 - **Keywords del H1 en el cuerpo:** las palabras clave del `<h1>` deben aparecer al menos una vez en el texto del cuerpo (`<p>`, `<h2>`, etc.). Si el `<h1>` es el nombre institucional, incluir el adjetivo compuesto en el primer párrafo del hero.
 - **Headings semánticos:** no usar `<h2>`/`<h3>` para etiquetas decorativas (ej. "ESPECIALIDAD", "PASO 1"), contadores estadísticos (+50, +100) ni números que no sean títulos reales. Usar `<span>` o `<p>` con las mismas clases de estilo.
@@ -339,16 +392,18 @@ Hero → Nosotros → [Contenido específico: tratamientos / procedimientos / pa
 **Botón de emergencia (llamada telefónica):** Única excepción al verde de marca. Usar `bg-red-600 hover:bg-red-700 text-white` con `href="tel:XXXXXXX"`. No usar verde en CTAs de llamada de emergencia.
 
 **Hero con CTA (patrón completo):**
+
 ```html
 <div class="hero min-h-[60vh] relative" style="background-image: url(...)">
   <div class="absolute inset-0 bg-gradient-to-r from-[#17381c]/90 to-[#1c5226]/40 mix-blend-multiply"></div>
   <div class="hero-content text-white w-full justify-start px-8 md:px-16 z-10">
     <div class="max-w-2xl text-left mt-32 md:mt-0">
       <h1 class="mb-6 text-4xl md:text-5xl font-black uppercase leading-tight tracking-tight">...</h1>
-      <a href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="inline-flex items-center gap-3 bg-[#00c950] hover:bg-[#15aa45] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 shadow-lg drop-shadow-lg text-lg">
+      <a
+        href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 bg-[#00c950] hover:bg-[#15aa45] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 shadow-lg drop-shadow-lg text-lg">
         Solicitar turno
         <!-- SVG WhatsApp -->
       </a>
@@ -356,6 +411,7 @@ Hero → Nosotros → [Contenido específico: tratamientos / procedimientos / pa
   </div>
 </div>
 ```
+
 Nota: `mb-6` en el `<h1>` (no `mb-2`) cuando hay botón debajo.
 
 **Teléfono WhatsApp por defecto:** `543454021218` (el mismo del landing). Usar este número en todas las páginas salvo que se indique explícitamente un número distinto al arrancar el desarrollo de una página nueva. Excepción conocida: Hemodinamia usa `543454021217`.
@@ -363,6 +419,7 @@ Nota: `mb-6` en el `<h1>` (no `mb-2`) cuando hay botón debajo.
 **Auto-rotación del equipo de profesionales:** Todas las páginas con sección de equipo usan `setInterval` de 5000ms (`OnInit`/`OnDestroy`). Patrón: `stopRotation()` en el click que abre el modal CV, `(close)="startRotation()"` en el elemento `<dialog>`, y `stopRotation()` + `startRotation()` al hacer click manual en un miembro. Ver `hemodinamia.ts` como referencia canónica.
 
 **Campos de `TeamMember` — imagen y CV:**
+
 - `bioImagePosition` — `object-position` de la foto grande. Siempre dos valores: `'center 30%'` (horizontal vertical). Un solo valor (ej. `'50%'`) no cambia nada porque CSS usa `center` como segundo valor por defecto.
 - `thumbnailPosition` — `object-position` del avatar circular. Mismo formato.
 - `thumbnailZoom` — número (ej. `1.2`). Aplica `transform: scale()` dentro del contenedor `overflow-hidden`.

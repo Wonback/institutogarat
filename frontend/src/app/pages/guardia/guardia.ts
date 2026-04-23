@@ -34,7 +34,7 @@ export class Guardia implements OnInit {
       categoria: 'Reanimación',
       descripcion:
         'Condición de salud extrema que amenaza la vida del paciente. Requiere una intervención médica inmediata.',
-      tiempo: 'Inmediata',
+      tiempo: '0 Min',
       color: '#dc2626',
     },
     {
@@ -42,7 +42,7 @@ export class Guardia implements OnInit {
       categoria: 'Emergencia',
       descripcion:
         'Situación de alto riesgo que representa potencial amenaza de su estado de salud. Debe recibir una atención médica rápida.',
-      tiempo: 'Dentro de los siguientes 30 minutos',
+      tiempo: '30 Min',
       color: '#ea580c',
     },
     {
@@ -50,7 +50,7 @@ export class Guardia implements OnInit {
       categoria: 'Urgencia',
       descripcion:
         'Condición aguda, no amenazante de la vida. Requiere consulta médica no inmediata.',
-      tiempo: 'Hasta 2 horas',
+      tiempo: '2 Hs',
       color: '#ca8a04',
     },
     {
@@ -58,7 +58,7 @@ export class Guardia implements OnInit {
       categoria: 'No Urgencia',
       descripcion:
         'Condición de salud que pueda ser aguda, pero no compromete el estado general del paciente y no representa un riesgo evidente.',
-      tiempo: 'De 2 hasta 4 horas',
+      tiempo: '4 Hs',
       color: '#16a34a',
     },
     {
@@ -66,7 +66,7 @@ export class Guardia implements OnInit {
       categoria: 'No Urgente',
       descripcion:
         'Condición clínica relacionada con problemas agudos o crónicos sin evidencia de deterioro que comprometa el estado general del paciente. No representa un riesgo evidente para la vida.',
-      tiempo: 'Cita por consulta externa',
+      tiempo: 'Turno',
       color: '#2563eb',
     },
   ];
