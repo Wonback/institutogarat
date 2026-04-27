@@ -53,7 +53,7 @@ Todas las páginas bajo `pages/` son lazy-loaded.
 | Guardia | `/guardia` | ✅ Terminada |
 | Hemodinamia | `/hemodinamia` | ✅ Terminada |
 | Neonatología | `/neonatologia` | ✅ Terminada |
-| Nutrición | `/nutricion` | 🚧 En desarrollo |
+| Nutrición | `/nutricion` | ✅ Terminada |
 | Obstetricia | `/obstetricia` | ❌ Sin desarrollar |
 | Terapia Intensiva | `/terapia` | ❌ Sin desarrollar |
 | Traumatología | `/traumatologia` | ✅ Terminada |
