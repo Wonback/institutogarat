@@ -187,7 +187,17 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
 <div class="h-1 w-20 bg-[#00c950] rounded mx-auto mb-4"></div>
 ```
 
-**Tarjeta de tratamiento / procedimiento (clickeable):**
+**Taxonomía de cards — 3 variantes, no mezclar:**
+
+| Variante | Clase base | Uso |
+|----------|-----------|-----|
+| **A — Feature/highlight** | `bg-[#cbf1cd]/30 border border-[#94e29b]/50 rounded-2xl` | Características del servicio, servicios clave, confirmaciones. 2–4 items, cada uno define el servicio. |
+| **B — Lista clickeable** | `bg-base-100 border border-gray-200 shadow-sm rounded-lg` + hover | Tratamientos, patologías, procedimientos. 6+ items — verde saturaría. |
+| **C — Dato/stat** | `bg-base-100 rounded-2xl shadow-sm` | Estadísticas, capacidad instalada. No interactivo. |
+
+**Regla:** ¿es uno de 2–4 elementos que definen el servicio? → Variante A. ¿es ítem de lista larga? → Variante B.
+
+**Tarjeta de tratamiento / procedimiento (clickeable) — Variante B:**
 
 ```html
 <button
@@ -195,6 +205,16 @@ El color verde característico de la marca es **`#00c950`**. Todos los verdes de
   <!-- ícono SVG checkmark verde -->
   <span class="title-font font-medium text-gray-900">...</span>
 </button>
+```
+
+**Tarjeta de feature/highlight — Variante A:**
+
+```html
+<div class="p-6 rounded-2xl bg-[#cbf1cd]/30 border border-[#94e29b]/50 flex flex-col items-center text-center">
+  <div class="text-[#00c950] mb-3"><!-- ícono SVG --></div>
+  <h3 class="font-bold text-gray-900 mb-1">Título</h3>
+  <p class="text-gray-600 text-sm">Descripción.</p>
+</div>
 ```
 
 **Bio de profesional (quote):**

@@ -1,50 +1,18 @@
-Para estructurar la página de la guardia externa del IMQ Garat, es fundamental priorizar la información de emergencia y la facilidad de navegación desde dispositivos móviles. Un diseño efectivo debe permitir que un paciente en una situación de estrés encuentre lo que necesita en menos de 5 segundos.
+[CONTEXTO: SECCIÓN CLÍNICA MÉDICA - IMQG]
 
-Aquí tienes una propuesta de arquitectura de información técnica y funcional:
-1. Cabecera (Header) de Respuesta Rápida
+[TITULO_PRINCIPAL]
+Servicio de Clínica Médica
 
-Esta sección debe ser estática o destacar inmediatamente al cargar la página.
+[SUBTITULO/VALOR]
+Atención médica integral con un enfoque multidisciplinario, garantizando continuidad y seguridad en el cuidado del paciente las 24 horas.
 
-    Nombre del Servicio: Guardia.
+[SERVICIOS_CLAVE]
+1. Guardia Clínica Permanente: Servicio de guardia pasiva disponible las 24 horas para resolución de consultas en emergencias e internación.
+2. Gestión de Pacientes Internados: Control, monitoreo y seguimiento clínico estricto de pacientes en sala.
+3. Unidad de Interconsultas: Coordinación técnica y trabajo conjunto con especialistas de todas las áreas para diagnósticos complejos.
+4. Abordaje Multidisciplinario: Seguimiento compartido con otras especialidades para garantizar un tratamiento integral.
 
-    Botón de Acción (CTA): Un botón rojo o de alto contraste que diga "Llamar a Emergencias" con el número vinculado (tel: 4229000) que al hacerle click debe hacer una llamada al número vinculado.
-
-    Dirección: Enlace directo a Google Maps que esta en el landing para facilitar la llegada mediante GPS.
-
-2. Propuesta de Valor y Capacidad Instalada
-
-Utiliza iconos simples para que la lectura sea rápida (escaneabilidad).
-
-    Disponibilidad: "Atención Médica y Enfermería las 24 horas, los 365 días del año."
-
-    Infraestructura:
-
-        3 Consultorios de atención simultánea.
-
-        Shock Room: 2 camas equipadas para alta complejidad (soporte vital avanzado).
-
-        Internación transitoria para observación.
-
-3. Servicios de Apoyo Crítico (Diagnóstico 24hs)
-
-Es vital separar los métodos de diagnóstico para que el paciente sepa que no será derivado a otro centro para estudios básicos.
-
-    Laboratorio de Análisis Clínicos: Disponibilidad constante.
-
-    Diagnóstico por Imágenes: * Rayos X (Rx).
-
-        Ecografía (ECO).
-
-        Tomografía Axial Computada (TAC).
-
-        Resonancia Magnética Nuclear (RMN).
-
-Sección Triage	Una breve explicación de cómo se prioriza la atención (no es por orden de llegada, sino por gravedad).
-Nivel,Categoría,Descripción de la Condición,Tiempo de Atención
-TRIAGE I,Reanimación,Condición de salud extrema que amenaza la vida del paciente. Requiere una intervención médica inmediata.,Inmediata
-TRIAGE II,Emergencia,Situación de alto riesgo que representa potencial amenaza de su estado de salud. Debe recibir una atención médica rápida.,Dentro de los siguientes 30 minutos
-TRIAGE III,Urgencia,"Condición aguda, no amenazante de la vida. Requiere consulta médica no inmediata.",Hasta 2 horas
-PRIORIDAD IV,No Urgencia,"Condición de salud que pueda ser aguda, pero no compromete el estado general del paciente y no representa un riesgo evidente.",De 2 hasta 4 horas
-PRIORIDAD V,No Urgente,Condición clínica relacionada con problemas agudos o crónicos sin evidencia de deterioro que comprometa el estado general del paciente. No representa un riesgo evidente para la vida.,Cita por consulta externa
-
-Utiliza los colores (Rojo, Naranja, Amarillo, Verde, Azul) en elementos visuales como tarjetas o bordes para que el paciente asocie rápidamente el cartel físico con la información digital.
+[NOTAS_DE_DISEÑO_PARA_IA]
+- Utilizar iconos médicos modernos para cada punto de los servicios clave.
+- Mantener un estilo limpio y profesional acorde a una institución quirúrgica.
+- Implementar una estructura de Cards o Grid para los servicios.
