@@ -62,7 +62,7 @@ Key directories:
 
 - `core/` — Navbar, Footer, Landing (always-loaded components)
 - `pages/` — Specialty pages + `contacto/` (CV form, lazy-loaded)
-- `shared/` — Componentes reutilizables. Actualmente: `carousel3d` — carrusel 3D con `perspective`/`preserve-3d`, drag + snap, click sin drag vía `@Output() imageClick`. `PANEL_W` en el `.ts` debe coincidir con `--panel-w` en el `.css`.
+- `shared/` — Componentes reutilizables. Actualmente: `carousel3d` — carrusel 3D con `perspective`/`preserve-3d`, drag + snap, click sin drag vía `@Output() imageClick`. `PANEL_W` en el `.ts` debe coincidir con `--panel-w` en el `.css`. `wip` — pantalla "Próximamente" para páginas sin desarrollar, acepta `@Input() specialty: string`.
 
 ### Backend (`backend/`)
 

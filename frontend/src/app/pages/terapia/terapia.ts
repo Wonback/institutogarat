@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { Wip } from '../../shared/wip/wip';
 
 @Component({
   selector: 'app-terapia',
-  imports: [],
+  imports: [Wip],
   templateUrl: './terapia.html',
   styleUrl: './terapia.css',
 })

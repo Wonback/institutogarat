@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { Wip } from '../../shared/wip/wip';
 
 @Component({
   selector: 'app-urologia',
-  imports: [],
+  imports: [Wip],
   templateUrl: './urologia.html',
   styleUrl: './urologia.css',
 })

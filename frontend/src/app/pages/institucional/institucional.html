@@ -138,35 +138,41 @@
         <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Nuestra Historia</h2>
         <div class="h-1 w-20 bg-[#00c950] rounded"></div>
       </div>
-      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg lg:text-base 2xl:text-lg self-center">
-        Desde sus inicios, el Instituto Médico Quirúrgico Garat ha sido referente de la medicina en Concordia y la región del litoral argentino.
-      </p>
     </div>
 
-    <!-- Historia en dos columnas -->
-    <div class="flex flex-wrap -mx-4 mb-16">
-      <div class="px-4 w-full lg:w-1/2 mb-6 lg:mb-0">
-        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg mb-4">
-          El <strong class="text-gray-800">Sanatorio Garat</strong> fue fundado en <strong class="text-gray-800">1943</strong> por el Dr. Néstor Ramón Garat Pierrestegui, médico recibido a los 23 años en la Facultad de Medicina. Formado al lado del prestigioso Dr. Guillermo Zorraquín, el Dr. Garat construyó desde el primer día una institución basada en la excelencia profesional y el compromiso con la comunidad.
-        </p>
-        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
-          Con el paso de las décadas, el Sanatorio fue ampliando su oferta de servicios hasta consolidarse como el <strong class="text-gray-800">Instituto Médico Quirúrgico Garat</strong>, referencia regional en múltiples especialidades médicas.
-        </p>
-      </div>
-      <div class="px-4 w-full lg:w-1/2">
-        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg mb-4">
-          El Instituto está emplazado en terrenos que pertenecieron a la familia Garat —una de las familias pioneras de Concordia— en el barrio históricamente conocido como <strong class="text-gray-800">"La Cuchilla"</strong>, en la ciudad de Concordia, Entre Ríos.
-        </p>
-        <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
-          En reconocimiento a su aporte a la salud pública y su labor como concejal en 1963, una <strong class="text-gray-800">calle de Concordia lleva hoy su nombre</strong> en homenaje al Dr. Garat.
-        </p>
-      </div>
-    </div>
+    <div class="flex flex-wrap items-stretch -mx-4">
 
-    <!-- El Fundador -->
-    <div class="flex flex-wrap items-start -mx-4">
-      <!-- Bullets -->
-      <div class="px-4 w-full lg:w-1/2 mb-10 lg:mb-0">
+      <!-- Foto (columna izquierda, alto completo) -->
+      <div class="px-4 w-full lg:w-1/2 mb-10 lg:mb-0 relative">
+        <img
+          src="https://ik.imagekit.io/wonback/Institucional/dr-garat"
+          alt="Dr. Néstor Ramón Garat Pierrestegui"
+          class="w-full h-full object-cover object-top rounded-xl shadow-md"
+        />
+        <div class="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white rounded-b-xl px-4 py-3">
+          <p class="font-semibold text-sm leading-tight">Dr. Néstor Ramón Garat Pierrestegui</p>
+          <p class="text-white/70 text-xs mt-0.5">Fundador · 1943</p>
+        </div>
+      </div>
+
+      <!-- Columna derecha: historia arriba + fundador abajo -->
+      <div class="px-4 w-full lg:w-1/2 flex flex-col gap-8">
+
+        <!-- Historia -->
+        <div class="space-y-5">
+          <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
+            El <strong class="text-gray-800">Sanatorio Garat</strong> fue fundado en <strong class="text-gray-800">1943</strong> por el Dr. Néstor Ramón Garat Pierrestegui, quien construyó desde el primer día una institución basada en la excelencia profesional y el compromiso con la comunidad.
+          </p>
+          <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
+            Con el paso de las décadas, el Sanatorio fue ampliando su oferta de servicios hasta consolidarse como el <strong class="text-gray-800">Instituto Médico Quirúrgico Garat</strong>, referencia regional en múltiples especialidades médicas.
+          </p>
+          <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
+            El Instituto está emplazado en terrenos que pertenecieron a la familia Garat —una de las familias pioneras de Concordia— en el barrio históricamente conocido como <strong class="text-gray-800">"La Cuchilla"</strong>, en la ciudad de Concordia, Entre Ríos.
+          </p>
+        </div>
+
+        <!-- El Fundador -->
+        <div>
         <h3 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2">
           Dr. Néstor Ramón Garat Pierrestegui
         </h3>
@@ -205,21 +211,10 @@
             <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Una <strong class="text-gray-800">calle de Concordia lleva su nombre</strong> en homenaje a su legado</span>
           </li>
         </ul>
-      </div>
+        </div><!-- /fundador -->
 
-      <!-- Highlight card -->
-      <div class="px-4 w-full lg:w-1/2">
-        <div class="bg-gradient-to-br from-[#cbf1cd] to-[#b0eab4] rounded-2xl p-8 border border-[#94e29b]">
-          <p class="text-5xl font-black text-[#1c8b3b] mb-1">1943</p>
-          <p class="text-[#1d6e30] font-semibold text-lg mb-4">Fundación del Sanatorio Garat</p>
-          <p class="text-gray-700 leading-relaxed">
-            Lo que comenzó como el <strong>Sanatorio Garat</strong> en 1943, hoy es el
-            <strong>Instituto Médico Quirúrgico Garat</strong>: una institución con más de 80 años
-            de historia, múltiples especialidades y un equipo de profesionales comprometidos con
-            la salud de la comunidad concordiense.
-          </p>
-        </div>
-      </div>
+      </div><!-- /columna derecha -->
+
     </div>
 
   </div>
