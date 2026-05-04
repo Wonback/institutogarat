@@ -1,0 +1,67 @@
+<div class="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center bg-base-100 relative overflow-hidden py-24">
+
+  <!-- Fondo decorativo -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
+    <div class="absolute -top-48 -right-48 w-[500px] h-[500px] rounded-full bg-[#00c950]/5"></div>
+    <div class="absolute -bottom-48 -left-48 w-[500px] h-[500px] rounded-full bg-[#00c950]/5"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#00c950]/10"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-[#00c950]/10"></div>
+  </div>
+
+  <div class="relative z-10 text-center px-8 max-w-xl mx-auto flex flex-col items-center">
+
+    <!-- Ícono -->
+    <div class="mb-8 w-24 h-24 rounded-full bg-[#cbf1cd] flex items-center justify-center shadow-inner">
+      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"
+           stroke="#1c8b3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    </div>
+
+    <!-- Badge -->
+    <span class="inline-block bg-[#cbf1cd] text-[#1d6e30] text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-6">
+      Próximamente
+    </span>
+
+    <!-- Título -->
+    <h1 class="text-4xl md:text-5xl font-black uppercase text-gray-900 leading-tight tracking-tight mb-3">
+      {{ specialty }}
+    </h1>
+
+    <!-- Underline verde -->
+    <div class="h-1 w-20 bg-[#00c950] rounded mb-6"></div>
+
+    <!-- Descripción -->
+    <p class="text-gray-600 text-lg leading-relaxed mb-10">
+      Estamos preparando toda la información sobre este servicio.
+      Mientras tanto, podés contactarnos directamente.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+      <a
+        href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 bg-[#00c950] hover:bg-[#15aa45] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 shadow-lg text-base"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+        Consultar por WhatsApp
+      </a>
+
+      <a
+        routerLink="/"
+        class="inline-flex items-center gap-2 text-[#1c8b3b] hover:text-[#00c950] font-semibold transition-colors duration-200 text-base"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Volver al inicio
+      </a>
+    </div>
+
+  </div>
+</div>
