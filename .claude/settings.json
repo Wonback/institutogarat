@@ -1,9 +1,6 @@
 {
   "enabledPlugins": {
-    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
-    "context7@claude-plugins-official": true,
     "github@claude-plugins-official": false,
-    "claude-md-management@claude-plugins-official": true,
     "vercel@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {

@@ -326,6 +326,65 @@ La versión mediana usa `lg:` para reducir escala y `2xl:` para restaurar al tam
 
 **Botones en `flex-col`:** Hijos de `flex-col` se estiran al ancho completo. Agregar `w-fit` al botón para que tome solo el ancho de su contenido.
 
+## Seguridad — Issues pendientes
+
+### CRITICAL
+
+**1. Credenciales en `backend/.env`**
+`MAIL_PASS` expuesto en texto plano. Si el repo es/fue público, la contraseña está comprometida.
+- Revocar el app password de Gmail.
+- Mover todas las variables a Vercel Environment Variables.
+- Verificar que `.env` está en `.gitignore`.
+
+**2. XSS via `[innerHTML]` — `traumatologia.html`**
+`<div [innerHTML]="selectedTreatment().description">` sin sanitización. El contenido es hardcoded hoy; si alguna vez viene de una API es XSS directo.
+Fix: usar `DomSanitizer.sanitize(SecurityContext.HTML, ...)` o refactorizar a template binding.
+El campo `cv` de `TeamMember` también usa `[innerHTML]` — mismo riesgo latente.
+
+### HIGH
+
+**3. CORS fallback a `'*'` — `backend/api/cv.js`**
+```javascript
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || '*';
+```
+Si falta la variable de entorno, acepta cualquier origen. Quitar el fallback y lanzar error si no está definida.
+
+**4. Email header injection — `backend/lib/mailer.js`**
+```javascript
+subject: `Nueva postulación: ${nombre} ${apellido} — ${sector}`,
+```
+Sin strip de `\r\n`, un atacante puede inyectar headers. Fix: `str.replace(/[\r\n]/g, '')` en nombre, apellido y sector antes de usarlos en el subject.
+
+**5. Validación de archivo solo por MIME — `backend/validators/cv.validator.js`**
+Solo chequea `fileMime !== 'application/pdf'`. El MIME lo manda el cliente — trivial de falsificar.
+Fix: validar magic bytes del buffer (`%PDF` = `0x25 0x50 0x44 0x46`).
+
+**6. Validación de campos insuficiente — `backend/validators/cv.validator.js`**
+Solo chequea `if (!nombre)`. Sin longitud máxima, sin regex, sin whitelist para `sector`.
+Fix: replicar el regex `soloLetras` del frontend, agregar `maxLength`, y validar `sector` contra la lista del frontend.
+
+**7. Sin CSRF protection — `backend/api/cv.js`**
+El endpoint POST no valida token CSRF. CORS solo no es protección CSRF suficiente.
+
+**8. Sin rate limiting en `/api/cv`**
+Endpoint puede ser hammereado sin restricción. Implementar rate limiting (Vercel o middleware).
+
+### MEDIUM
+
+**9. Cooldown 24h solo en cliente — `contacto.ts`**
+`localStorage.setItem(STORAGE_KEY, Date.now())` — bypasseable borrando localStorage. Sin tracking server-side.
+
+**10. Sin security headers en respuestas del backend**
+Faltan: `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy`, CSP básico.
+
+### LOW
+
+**11. `FooterIconsModule` — dead code — `footer.ts`**
+NgModule declarado pero el componente es standalone. Eliminar el NgModule.
+
+**12. `setInterval` acumulable — páginas con equipo**
+`selectMember()` llama `stopRotation()` + `startRotation()` pero clicks rápidos pueden acumular intervals. Verificar que `stopRotation()` siempre limpia antes de crear uno nuevo.
+
 ## Pendientes
 
 ### Dropdown navbar en pantalla mediana — RESUELTO
