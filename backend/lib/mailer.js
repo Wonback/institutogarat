@@ -10,13 +10,17 @@ function createTransporter() {
   });
 }
 
+function sanitizeHeader(str) {
+  return String(str).replace(/[\r\n]/g, '');
+}
+
 async function sendCvEmail({ nombre, apellido, sector, fileBuffer, fileName }) {
   const transporter = createTransporter();
 
   await transporter.sendMail({
     from: `"Instituto Garat - Postulaciones" <${process.env.MAIL_USER}>`,
     to: process.env.MAIL_TO,
-    subject: `Nueva postulación: ${nombre} ${apellido} — ${sector}`,
+    subject: `Nueva postulación: ${sanitizeHeader(nombre)} ${sanitizeHeader(apellido)} — ${sanitizeHeader(sector)}`,
     html: `
       <h2>Nueva postulación recibida</h2>
       <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>

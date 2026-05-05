@@ -2,6 +2,7 @@ import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, Baby, HeartHandshake, FileUser } from 'lucide-angular';
+import { SafeHtmlPipe } from '../../shared/safe-html.pipe';
 
 interface TeamMember {
   id: number;
@@ -29,7 +30,7 @@ export class NeonatologiaIconsModule {}
 
 @Component({
   selector: 'app-neonatologia',
-  imports: [CommonModule, NeonatologiaIconsModule],
+  imports: [CommonModule, NeonatologiaIconsModule, SafeHtmlPipe],
   templateUrl: './neonatologia.html',
   styleUrl: './neonatologia.css',
 })

@@ -633,7 +633,7 @@
                     </h3>
                     <div
                       class="py-4 text-gray-600 leading-relaxed"
-                      [innerHTML]="selectedMember().cv || 'Información curricular no disponible.'"
+                      [innerHTML]="(selectedMember().cv || 'Información curricular no disponible.') | safeHtml"
                     ></div>
                     <div class="modal-action">
                       <form method="dialog">

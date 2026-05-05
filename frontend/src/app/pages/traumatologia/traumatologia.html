@@ -85,7 +85,7 @@
           <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
         <h3 class="font-bold text-xl text-[#15aa45] mb-4 uppercase">{{ selectedTreatment().title }}</h3>
-        <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedTreatment().description">
+        <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedTreatment().description | safeHtml">
         </div>
         <div class="modal-action">
           <form method="dialog">
@@ -168,7 +168,7 @@
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                   </form>
                   <h3 class="font-bold text-2xl text-[#15aa45] mb-4">{{ selectedMember().name }}</h3>
-                  <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedMember().cv || 'Información curricular no disponible.'">
+                  <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="(selectedMember().cv || 'Información curricular no disponible.') | safeHtml">
                   </div>
                   <div class="modal-action">
                     <form method="dialog">

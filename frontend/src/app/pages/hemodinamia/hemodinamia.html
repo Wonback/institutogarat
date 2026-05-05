@@ -191,7 +191,7 @@
         >
           {{ selectedP().title }}
         </h3>
-        <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedP().description"></div>
+        <div class="py-4 text-gray-600 leading-relaxed" [innerHTML]="selectedP().description | safeHtml"></div>
         <div class="modal-action">
           <form method="dialog">
             <button
@@ -309,7 +309,7 @@
                   </h3>
                   <div
                     class="py-4 text-gray-600 leading-relaxed"
-                    [innerHTML]="selectedMember().cv || 'Información curricular no disponible.'"
+                    [innerHTML]="(selectedMember().cv || 'Información curricular no disponible.') | safeHtml"
                   ></div>
                   <div class="modal-action">
                     <form method="dialog">

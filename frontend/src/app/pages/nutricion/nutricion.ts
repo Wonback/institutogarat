@@ -2,6 +2,7 @@ import { Component, signal, NgModule, OnInit, OnDestroy, inject } from '@angular
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, FileUser } from 'lucide-angular';
+import { SafeHtmlPipe } from '../../shared/safe-html.pipe';
 
 interface TeamMember {
   id: number;
@@ -22,7 +23,7 @@ export class NutricionIconsModule {}
 
 @Component({
   selector: 'app-nutricion',
-  imports: [CommonModule, NutricionIconsModule],
+  imports: [CommonModule, NutricionIconsModule, SafeHtmlPipe],
   templateUrl: './nutricion.html',
   styleUrl: './nutricion.css',
 })
