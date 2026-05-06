@@ -326,17 +326,17 @@ La versión mediana usa `lg:` para reducir escala y `2xl:` para restaurar al tam
 
 **Botones en `flex-col`:** Hijos de `flex-col` se estiran al ancho completo. Agregar `w-fit` al botón para que tome solo el ancho de su contenido.
 
+### Seguridad backend — `api/cv.js`
+
+- Rate limit: 5 req/hora por IP — `Map` en memoria (se resetea en cold start, aceptable para este proyecto).
+- Cooldown 24h por IP post-envío exitoso — `Map` en memoria, mismo criterio.
+- Security headers en toda respuesta: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Content-Security-Policy`.
+
 ## Seguridad — Issues pendientes
 
 ### HIGH
 
 ### MEDIUM
-
-**9. Cooldown 24h solo en cliente — `contacto.ts`**
-`localStorage.setItem(STORAGE_KEY, Date.now())` — bypasseable borrando localStorage. Sin tracking server-side.
-
-**10. Sin security headers en respuestas del backend**
-Faltan: `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy`, CSP básico.
 
 ### LOW
 

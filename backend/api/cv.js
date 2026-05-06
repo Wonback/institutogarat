@@ -9,7 +9,9 @@ if (!ALLOWED_ORIGIN) {
 
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hora
+const COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24 horas
 const ipRequests = new Map();
+const ipCooldowns = new Map();
 
 function isRateLimited(ip) {
   const now = Date.now();
@@ -20,6 +22,13 @@ function isRateLimited(ip) {
   return false;
 }
 
+function setSecurityHeaders(res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Content-Security-Policy', "default-src 'none'");
+}
+
 function setCorsHeaders(res) {
   res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -28,6 +37,7 @@ function setCorsHeaders(res) {
 
 module.exports = async function handler(req, res) {
   setCorsHeaders(res);
+  setSecurityHeaders(res);
 
   if (req.method === 'OPTIONS') {
     return res.status(204).end();
@@ -45,6 +55,10 @@ module.exports = async function handler(req, res) {
   const ip = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket?.remoteAddress || 'unknown';
   if (isRateLimited(ip)) {
     return res.status(429).json({ error: 'Demasiados intentos. Intentá más tarde.' });
+  }
+  const lastSubmit = ipCooldowns.get(ip);
+  if (lastSubmit && Date.now() - lastSubmit < COOLDOWN_MS) {
+    return res.status(429).json({ error: 'Ya enviaste tu CV. Podés volver a intentarlo en 24 horas.' });
   }
 
   let parsed;
@@ -72,6 +86,7 @@ module.exports = async function handler(req, res) {
       fileBuffer,
       fileName: `CV_${nombre}_${apellido}.pdf`,
     });
+    ipCooldowns.set(ip, Date.now());
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Error al enviar email:', err);
