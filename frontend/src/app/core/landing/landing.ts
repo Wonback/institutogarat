@@ -3,7 +3,8 @@ import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterLink } from '@angular/router'; // Import RouterLink
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight, Check } from 'lucide-angular';
-import { animate, inView, stagger, hover } from 'motion';
+import { animate, inView, stagger } from 'motion';
+import { OBRAS_SOCIALES } from '../../shared/data/obras-sociales';
 
 // Definición del Módulo de Iconos (Correcto)
 @NgModule({
@@ -19,6 +20,7 @@ export class LandingIconsModule {}
   styleUrl: './landing.css',
 })
 export class Landing implements OnInit, AfterViewInit {
+  readonly featuredLogos = OBRAS_SOCIALES.filter(o => o.destacada);
   emailCopied = signal(false);
 
   @ViewChild('mailIconRef') mailIconRef!: ElementRef;
@@ -98,35 +100,7 @@ export class Landing implements OnInit, AfterViewInit {
         });
     });
 
-    // 3. Specialties Cards (Staggered & Hover)
-    const specialtiesDesktopGrid = this.el.nativeElement.querySelector('.hidden.lg\\:grid');
-    if (specialtiesDesktopGrid) {
-        const cards = specialtiesDesktopGrid.querySelectorAll('.bg-base-200');
-        
-        // Entrance animation
-        inView(specialtiesDesktopGrid, () => {
-             if (cards.length > 0) {
-               animate(
-                  cards,
-                  { opacity: [0, 1], y: [30, 0] },
-                  { delay: stagger(0.1), duration: 0.6, ease: 'easeOut' }
-               );
-             }
-             return () => {
-               if (cards.length > 0) animate(cards, { opacity: 0, y: 30 }, { duration: 0 });
-             };
-        });
-
-        // Hover animation
-        cards.forEach((card: Element) => {
-            hover(card, (el) => {
-                animate(el, { scale: 1.03, y: -5 }, { duration: 0.3, ease: 'easeOut' });
-                return () => animate(el, { scale: 1, y: 0 }, { duration: 0.3, ease: 'easeOut' });
-            });
-        });
-    }
-
-    // 4. Stats Numbers
+    // 3. Stats Numbers
     // Buscamos el elemento y subimos al padre de forma segura
     const statsIcon = this.el.nativeElement.querySelector('.stats-bottom-fade');
     const statsSection = statsIcon?.parentElement; // Optional chaining por seguridad
