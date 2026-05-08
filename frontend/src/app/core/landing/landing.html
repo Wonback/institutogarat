@@ -50,10 +50,22 @@
   </div>
 </div>
 
-<section class="py-10 bg-[#cbf1cd]/30 overflow-hidden">
-  <p class="text-center text-xs font-medium tracking-widest text-gray-400 uppercase mb-8 px-4">
-    Obras sociales y prepagas con cobertura
-  </p>
+<section class="py-10 overflow-hidden">
+  <div class="flex items-center justify-center gap-3 mb-8 px-4">
+    <p class="text-xs font-medium tracking-widest text-gray-400 uppercase">
+      Obras sociales y prepagas con cobertura
+    </p>
+    <span class="text-gray-300">|</span>
+    <p class="text-xs text-gray-400">
+      La disponibilidad puede variar.
+      <a
+        href="https://api.whatsapp.com/send/?phone=543454021218&text&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-[#00c950] transition-colors"
+      >Consultá por WhatsApp</a>.
+    </p>
+  </div>
   <div class="obras-marquee-container">
     <div class="obras-marquee-track">
       @for (logo of featuredLogos; track logo.nombre) {
@@ -87,14 +99,16 @@
 <section class="text-gray-600 body-font bg-base-100 relative">
   <div class="stats-bottom-fade"></div>
   <div class="container px-5 lg:px-16 2xl:px-5 py-0 mx-auto relative z-10">
-    <div class="flex flex-col text-center w-full mb-8 lg:mb-10 2xl:mb-20">
-      <h2
-        class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900"
-      >
-        Nuestros Números
-      </h2>
-      <div class="h-1 w-20 bg-[#00c950] rounded mx-auto"></div>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base mt-4 lg:text-base 2xl:text-lg">
+    <div class="flex flex-wrap w-full mb-8 lg:mb-10 2xl:mb-20">
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+        <h2
+          class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900"
+        >
+          Nuestros Números
+        </h2>
+        <div class="h-1 w-20 bg-[#00c950] rounded"></div>
+      </div>
+      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg lg:text-base 2xl:text-lg self-center">
         Comprometidos con la salud y el bienestar de nuestra comunidad, respaldados por una sólida
         trayectoria y un equipo de excelencia.
       </p>
@@ -372,7 +386,7 @@
             </h3>
             <div class="relative overflow-hidden h-6 w-full">
               <p #emailTextRef class="text-gray-600 absolute top-0 left-0 whitespace-nowrap">
-                contacto@institutogarat.com.ar
+                institutomgarat@gmail.com
               </p>
               <p
                 #copiedTextRef

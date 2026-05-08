@@ -8,7 +8,7 @@ export const OBRAS_SOCIALES = [
   {
     nombre: 'ASOCIART ART',
     tipo: 'ART',
-    logo: 'asociart-art.svg',
+    logo: 'asociart.svg',
     destacada: true,
   },
   {
@@ -57,7 +57,7 @@ export const OBRAS_SOCIALES = [
     nombre: 'SWISS MEDICAL ART',
     tipo: 'OBRA SOCIAL',
     logo: 'swiss-medical-art.svg',
-    destacada: true,
+    destacada: false,
   },
   {
     nombre: 'ALIMENTACION - GERENCIADA POR ITER MEDICINA',
@@ -164,8 +164,8 @@ export const OBRAS_SOCIALES = [
   {
     nombre: 'JERARQUICOS SALUD',
     tipo: 'OBRA SOCIAL',
-    logo: 'jerarquicos-salud.svg',
-    destacada: false,
+    logo: 'jerarquicos.svg',
+    destacada: true,
   },
   {
     nombre: 'OSFATLyF',
