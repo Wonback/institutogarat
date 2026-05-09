@@ -70,6 +70,10 @@
     padding: 0 2rem;
 }
 
+.obras-marquee-item img {
+    mix-blend-mode: multiply;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .obras-marquee-track {
         animation: none;

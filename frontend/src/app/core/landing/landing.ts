@@ -1,6 +1,5 @@
 import { Component, NgModule, ElementRef, AfterViewInit, OnInit, Inject, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
-import { RouterLink } from '@angular/router'; // Import RouterLink
 import { Meta, Title } from '@angular/platform-browser';
 import { LucideAngularModule, Award, Stethoscope, Hospital, ShieldPlus, Calendar1, FileChartColumn, MessageCircleMore, Speech, MapPin, Phone, Mail, ArrowRight, Check } from 'lucide-angular';
 import { animate, inView, stagger } from 'motion';
@@ -15,7 +14,7 @@ export class LandingIconsModule {}
 
 @Component({
   selector: 'app-landing',
-  imports: [LandingIconsModule, RouterLink], // Add RouterLink to imports
+  imports: [LandingIconsModule],
     templateUrl: './landing.html',
   styleUrl: './landing.css',
 })

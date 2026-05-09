@@ -355,12 +355,14 @@ NgModule declarado pero el componente es standalone. Eliminar el NgModule.
 - **Hover gap fix:** `mt-*` en el dropdown crea un gap fuera del bounding box del contenedor que dispara `mouseleave`. Fix: `pb-[mismo valor]` en el contenedor + quitar el `mt-*` del dropdown.
 - **Implementación:** `(mouseenter)`/`(mouseleave)` en el contenedor, `dropdownOpen = signal(false)` en `navbar.ts`. Ver `navbar.html` bloque `specialties-dropdown`.
 
-### Sección Trust/Social Proof — Landing
+### Sección Trust/Social Proof — IMPLEMENTADA
 
-- **Qué:** Franja de obras sociales y prepagas con cobertura (logos o nombres en fila con checkmarks)
-- **Dónde:** Entre el hero y "Nuestras Especialidades" en `core/landing/landing.html`
-- **Estado:** Esperando lista de obras sociales del cliente
-- **Patrón sugerido:** `✓ PAMI  ✓ OSDE  ✓ Swiss Medical  ✓ Galeno  ...` con fondo sutil (`bg-[#cbf1cd]` Tinte 5 o `base-200`)
+Marquee animado de logos en `core/landing/landing.html`. Datos en `shared/data/obras-sociales.ts`.
+
+- **`destacada: true`** — aparece en el marquee del landing.
+- **`logo`** — nombre de archivo con extensión (`.svg`, `.png`, `.webp`). Se sirve desde `ik.imagekit.io/wonback/obras-sociales/`.
+- **`scale?: number`** — factor de escala opcional para logos que aparecen muy chicos (SVGs con viewBox grande). Ej: `scale: 1.6`. Se aplica vía `[style.transform]` en el template.
+- **Logos con fondo blanco embebido:** `mix-blend-mode: multiply` aplicado globalmente en `.obras-marquee-item img` (`landing.css`). Si el SVG tiene un `<rect fill="white">` en el markup, el multiply no lo elimina con el stacking context de `mask-image` — la solución real es editar el SVG y eliminar ese rect.
 
 ## Plugins instalados
 

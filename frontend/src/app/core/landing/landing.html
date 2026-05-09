@@ -7,21 +7,28 @@
   <!-- Overlay oscuro degradado: izquierda opaco → derecha semitransparente -->
   <div
     class="absolute inset-0 z-0 pointer-events-none"
-    style="background: linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.15) 100%)"
+    style="
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.35) 60%,
+        rgba(0, 0, 0, 0.15) 100%
+      );
+    "
   ></div>
   <!-- Contenido: mitad izquierda -->
   <div class="hero-content w-full justify-start px-8 md:px-16">
     <div class="w-full md:w-1/2 max-w-xl">
       <h1
         class="mb-5 text-5xl md:text-6xl lg:text-5xl 2xl:text-6xl leading-[1.1] tracking-tight"
-        style="text-shadow: 0 2px 12px rgba(0,0,0,0.5);"
+        style="text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5)"
       >
         <span class="font-light text-white/80">INSTITUTO MÉDICO</span><br />
         <span class="font-extrabold text-white">QUIRÚRGICO GARAT</span>
       </h1>
       <p
         class="mb-8 text-xl lg:text-base 2xl:text-xl text-white/80"
-        style="text-shadow: 0 1px 6px rgba(0,0,0,0.4);"
+        style="text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4)"
       >
         Centro médico-quirúrgico líder en Concordia, combinando tecnología de vanguardia y un equipo
         humano de excelencia para tu bienestar y el de tu familia.
@@ -31,7 +38,7 @@
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 bg-gradient-to-br from-[#00c950] to-[#15aa45] hover:from-[#15aa45] hover:to-[#1c8b3b] text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 text-lg"
-        style="box-shadow: 0 10px 15px -3px rgba(0,0,0,0.15);"
+        style="box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15)"
       >
         Solicitar turno
         <svg
@@ -53,7 +60,7 @@
 <section class="py-10 overflow-hidden">
   <div class="flex items-center justify-center gap-3 mb-8 px-4">
     <p class="text-xs font-medium tracking-widest text-gray-400 uppercase">
-      Obras sociales y prepagas con cobertura
+      +70 Obras sociales y prepagas con cobertura
     </p>
     <span class="text-gray-300">|</span>
     <p class="text-xs text-gray-400">
@@ -63,7 +70,8 @@
         target="_blank"
         rel="noopener noreferrer"
         class="underline hover:text-[#00c950] transition-colors"
-      >Consultá por WhatsApp</a>.
+        >Consultá por WhatsApp</a
+      >.
     </p>
   </div>
   <div class="obras-marquee-container">
@@ -74,6 +82,7 @@
             [src]="'https://ik.imagekit.io/wonback/obras-sociales/' + logo.logo"
             [alt]="logo.nombre"
             class="h-10 w-auto max-w-[120px] object-contain"
+            [style.transform]="logo.scale ? 'scale(' + logo.scale + ')' : null"
             loading="lazy"
           />
         </div>
@@ -84,6 +93,7 @@
             [src]="'https://ik.imagekit.io/wonback/obras-sociales/' + logo.logo"
             [alt]="logo.nombre"
             class="h-10 w-auto max-w-[120px] object-contain"
+            [style.transform]="logo.scale ? 'scale(' + logo.scale + ')' : null"
             loading="lazy"
           />
         </div>
@@ -108,7 +118,9 @@
         </h2>
         <div class="h-1 w-20 bg-[#00c950] rounded"></div>
       </div>
-      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg lg:text-base 2xl:text-lg self-center">
+      <p
+        class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg lg:text-base 2xl:text-lg self-center"
+      >
         Comprometidos con la salud y el bienestar de nuestra comunidad, respaldados por una sólida
         trayectoria y un equipo de excelencia.
       </p>

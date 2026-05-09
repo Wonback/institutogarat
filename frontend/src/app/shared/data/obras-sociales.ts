@@ -4,6 +4,7 @@ export const OBRAS_SOCIALES = [
     tipo: 'PRE PAGA',
     logo: 'osde.svg',
     destacada: true,
+    scale: 1.6,
   },
   {
     nombre: 'ASOCIART ART',
@@ -14,7 +15,7 @@ export const OBRAS_SOCIALES = [
   {
     nombre: 'OSPRERA',
     tipo: 'OBRA SOCIAL',
-    logo: 'osprera.svg',
+    logo: 'osprera.png',
     destacada: true,
   },
   {
@@ -44,7 +45,7 @@ export const OBRAS_SOCIALES = [
   {
     nombre: 'GALENO',
     tipo: 'OBRA SOCIAL',
-    logo: 'galeno.svg',
+    logo: 'galeno.png',
     destacada: true,
   },
   {
@@ -248,8 +249,8 @@ export const OBRAS_SOCIALES = [
   {
     nombre: 'OSER',
     tipo: 'OBRA SOCIAL',
-    logo: 'oser.svg',
-    destacada: false,
+    logo: 'oser.png',
+    destacada: true,
   },
   {
     nombre: 'DASUTEN',
