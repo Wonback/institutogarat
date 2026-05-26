@@ -32,6 +32,7 @@
     "@angular/platform-server": "^21.0.0",
     "@angular/router": "^21.0.0",
     "@angular/ssr": "^21.0.5",
+    "@vercel/speed-insights": "^2.0.0",
     "express": "^5.1.0",
     "lucide-angular": "^0.563.0",
     "motion": "^12.29.2",
