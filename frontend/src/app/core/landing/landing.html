@@ -58,7 +58,7 @@
   </div>
 
   <!-- Imagen derecha en marco neumórfico -->
-  <div class="flex-1 flex items-center justify-center w-full py-12 lg:py-16">
+  <div class="flex-1 hidden lg:flex items-center justify-center w-full py-12 lg:py-16">
     <div
       class="relative w-full rounded-[32px] overflow-hidden
         shadow-[12px_12px_24px_rgb(163,177,198,0.65),-12px_-12px_24px_rgba(255,255,255,0.6)]"
@@ -143,46 +143,54 @@
         trayectoria y un equipo de excelencia.
       </p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="group rounded-[32px] bg-[#E0E5EC] p-8 flex flex-col items-center text-center transition-all duration-300
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+      <div class="group rounded-[32px] bg-[#E0E5EC] p-5 md:p-8 flex flex-row items-center gap-5 md:flex-col md:items-center md:text-center transition-all duration-300
         shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
         hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
-        <div class="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center
+        <div class="w-16 h-16 rounded-2xl flex-shrink-0 md:mb-5 flex items-center justify-center
           shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
           <lucide-icon name="award" class="text-[#00c950] lg:w-7 lg:h-7 2xl:w-8 2xl:h-8"></lucide-icon>
         </div>
-        <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] mb-1">+80</p>
-        <p class="text-[#6B7280] text-sm leading-relaxed">Años de Trayectoria</p>
+        <div class="flex items-center gap-3 md:block">
+          <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] md:mb-1">+80</p>
+          <p class="text-[#6B7280] text-sm leading-relaxed">Años de Trayectoria</p>
+        </div>
       </div>
-      <div class="group rounded-[32px] bg-[#E0E5EC] p-8 flex flex-col items-center text-center transition-all duration-300
+      <div class="group rounded-[32px] bg-[#E0E5EC] p-5 md:p-8 flex flex-row items-center gap-5 md:flex-col md:items-center md:text-center transition-all duration-300
         shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
         hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
-        <div class="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center
+        <div class="w-16 h-16 rounded-2xl flex-shrink-0 md:mb-5 flex items-center justify-center
           shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
           <lucide-icon name="stethoscope" class="text-[#00c950] lg:w-7 lg:h-7 2xl:w-8 2xl:h-8"></lucide-icon>
         </div>
-        <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] mb-1">+100</p>
-        <p class="text-[#6B7280] text-sm leading-relaxed">Profesionales</p>
+        <div class="flex items-center gap-3 md:block">
+          <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] md:mb-1">+100</p>
+          <p class="text-[#6B7280] text-sm leading-relaxed">Profesionales</p>
+        </div>
       </div>
-      <div class="group rounded-[32px] bg-[#E0E5EC] p-8 flex flex-col items-center text-center transition-all duration-300
+      <div class="group rounded-[32px] bg-[#E0E5EC] p-5 md:p-8 flex flex-row items-center gap-5 md:flex-col md:items-center md:text-center transition-all duration-300
         shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
         hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
-        <div class="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center
+        <div class="w-16 h-16 rounded-2xl flex-shrink-0 md:mb-5 flex items-center justify-center
           shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
           <lucide-icon name="hospital" class="text-[#00c950] lg:w-7 lg:h-7 2xl:w-8 2xl:h-8"></lucide-icon>
         </div>
-        <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] mb-1">+10</p>
-        <p class="text-[#6B7280] text-sm leading-relaxed">Especialidades</p>
+        <div class="flex items-center gap-3 md:block">
+          <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] md:mb-1">+10</p>
+          <p class="text-[#6B7280] text-sm leading-relaxed">Especialidades</p>
+        </div>
       </div>
-      <div class="group rounded-[32px] bg-[#E0E5EC] p-8 flex flex-col items-center text-center transition-all duration-300
+      <div class="group rounded-[32px] bg-[#E0E5EC] p-5 md:p-8 flex flex-row items-center gap-5 md:flex-col md:items-center md:text-center transition-all duration-300
         shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
         hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
-        <div class="w-16 h-16 rounded-2xl mb-5 flex items-center justify-center
+        <div class="w-16 h-16 rounded-2xl flex-shrink-0 md:mb-5 flex items-center justify-center
           shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
           <lucide-icon name="shield-plus" class="text-[#00c950] lg:w-7 lg:h-7 2xl:w-8 2xl:h-8"></lucide-icon>
         </div>
-        <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] mb-1">24hs</p>
-        <p class="text-[#6B7280] text-sm leading-relaxed">Guardia Activa</p>
+        <div class="flex items-center gap-3 md:block">
+          <p class="font-extrabold text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] md:mb-1">24hs</p>
+          <p class="text-[#6B7280] text-sm leading-relaxed">Guardia Activa</p>
+        </div>
       </div>
     </div>
   </div>
@@ -285,7 +293,7 @@
       </div>
 
       <!-- Imagen en marco neumórfico -->
-      <div class="flex-1 flex items-center justify-center w-full">
+      <div class="flex-1 hidden md:flex items-center justify-center w-full">
         <div class="rounded-[32px] overflow-hidden w-full
           shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]">
           <img
@@ -334,7 +342,7 @@
         >
           <div class="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center
             shadow-[inset_4px_4px_8px_rgb(163,177,198,0.55),inset_-4px_-4px_8px_rgba(255,255,255,0.45)]">
-            <lucide-icon name="map-pin" class="text-[#00c950] w-5 h-5 mt-1"></lucide-icon>
+            <lucide-icon name="map-pin" class="text-[#00c950] w-5 h-5"></lucide-icon>
           </div>
           <div>
             <h3 class="text-sm font-semibold text-[#3D4852] group-hover:text-[#1c8b3b] transition-colors">Dirección</h3>

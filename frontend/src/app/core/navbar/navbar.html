@@ -145,34 +145,72 @@
     <!-- Mobile Drawer -->
     <div class="drawer-side">
       <label for="my-drawer-2" aria-label="Cerrar menú" class="drawer-overlay"></label>
-      <ul class="bg-[#E0E5EC] min-h-full w-80 px-4 pt-24 flex flex-col gap-1 text-base list-none m-0">
+      <div class="sticky top-0 z-10 -mb-32 h-32 w-80 pointer-events-none"
+           style="background: linear-gradient(to bottom, #E0E5EC 55%, transparent)"></div>
+      <ul class="bg-[#E0E5EC] min-h-full w-80 px-4 pt-24 pb-8 flex flex-col gap-3 text-base list-none m-0">
+
+        <!-- Volver a inicio -->
         <li>
           <a routerLink="/" routerLinkActive="text-[#1c8b3b] font-semibold" [routerLinkActiveOptions]="{exact: true}"
-            class="font-bold text-[#3D4852] block px-4 py-2.5 rounded-2xl transition-all duration-200
-              hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]"
+            class="flex items-center justify-center gap-2 py-3 px-6 rounded-2xl text-[#3D4852] font-bold transition-all duration-300
+              shadow-[5px_5px_10px_rgb(163,177,198,0.6),-5px_-5px_10px_rgba(255,255,255,0.5)]
+              hover:shadow-[7px_7px_14px_rgb(163,177,198,0.65),-7px_-7px_14px_rgba(255,255,255,0.55)] hover:-translate-y-0.5
+              active:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.5),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] active:translate-y-0"
             (click)="drawerCheckbox.checked = false">Volver a inicio</a>
         </li>
-        <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
-        <li><a routerLink="/institucional" routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Institucional</a></li>
-        <li><a class="block px-4 py-2.5 rounded-2xl text-[#3D4852] cursor-pointer transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Obras Sociales</a></li>
-        <li><a routerLink="/guardia" routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Guardia</a></li>
-        <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
-        <li><a routerLink="/cirugia"       routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Cirugía</a></li>
-        <li><a routerLink="/gastro"        routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Gastro</a></li>
-        <li><a routerLink="/urologia"      routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Urología</a></li>
-        <li><a routerLink="/neonatologia"  routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Neonatología</a></li>
-        <li><a routerLink="/hemodinamia"   routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Hemodinamia</a></li>
-        <li><a routerLink="/clinica"       routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Clínica e Infectología</a></li>
-        <li><a routerLink="/nutricion"     routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Nutrición</a></li>
-        <li><a routerLink="/terapia"       routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">U.T.I.</a></li>
-        <li><a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Traumatología</a></li>
-        <li><a routerLink="/obstetricia"   routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Obstetricia</a></li>
-        <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+
+        <li><hr class="border-[#c8cfd8] my-0 w-full"></li>
+
+        <!-- Bloque: Institucional / Obras Sociales / Guardia -->
+        <li>
+          <div class="rounded-[28px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-2">
+            <ul class="list-none m-0 flex flex-col">
+              <li><a routerLink="/institucional" routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Institucional</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a class="block px-4 py-2.5 rounded-2xl text-[#3D4852] cursor-pointer transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Obras Sociales</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/guardia" routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Guardia</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li><hr class="border-[#c8cfd8] my-0 w-full"></li>
+
+        <!-- Bloque: Especialidades -->
+        <li>
+          <div class="rounded-[28px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-2">
+            <ul class="list-none m-0 flex flex-col">
+              <li><a routerLink="/cirugia"       routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Cirugía</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/gastro"        routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Gastro</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/urologia"      routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Urología</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/neonatologia"  routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Neonatología</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/hemodinamia"   routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Hemodinamia</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/clinica"       routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Clínica e Infectología</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/nutricion"     routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Nutrición</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/terapia"       routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">U.T.I.</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/traumatologia" routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Traumatología</a></li>
+              <li><hr class="border-[#c8cfd8] my-1 w-full"></li>
+              <li><a routerLink="/obstetricia"   routerLinkActive="text-[#1c8b3b] font-semibold" class="block px-4 py-2.5 rounded-2xl text-[#3D4852] transition-all duration-200 hover:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.45),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] hover:text-[#1c8b3b]" (click)="drawerCheckbox.checked = false">Obstetricia</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li><hr class="border-[#c8cfd8] my-0 w-full"></li>
+
+        <!-- RRHH -->
         <li>
           <a
             routerLink="/contacto"
             (click)="animateButton($event); drawerCheckbox.checked = false"
-            class="flex items-center justify-center gap-2 py-3 px-6 rounded-2xl text-[#3D4852] font-medium mt-2 transition-all duration-300
+            class="flex items-center justify-center gap-2 py-3 px-6 rounded-2xl text-[#3D4852] font-medium transition-all duration-300
               shadow-[5px_5px_10px_rgb(163,177,198,0.6),-5px_-5px_10px_rgba(255,255,255,0.5)]
               hover:shadow-[7px_7px_14px_rgb(163,177,198,0.65),-7px_-7px_14px_rgba(255,255,255,0.55)] hover:-translate-y-0.5
               active:shadow-[inset_4px_4px_8px_rgb(163,177,198,0.5),inset_-4px_-4px_8px_rgba(255,255,255,0.4)] active:translate-y-0"
@@ -181,6 +219,7 @@
             <lucide-icon name="mail" class="w-4 h-4 text-[#00c950]"></lucide-icon>
           </a>
         </li>
+
       </ul>
     </div>
   </div>
