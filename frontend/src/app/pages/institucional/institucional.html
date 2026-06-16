@@ -1,28 +1,51 @@
 <!-- Hero -->
-<div
-  class="hero min-h-[60vh] relative"
-  style="background: linear-gradient(135deg, #17381c 0%, #1c5226 60%, #1d6e30 100%)"
->
-  <div class="hero-content text-white w-full justify-start px-8 md:px-16 z-10">
-    <div class="max-w-2xl text-left mt-32 md:mt-0">
-      <p class="text-[#75da83] font-semibold uppercase tracking-widest text-sm mb-3">Instituto Médico Quirúrgico Garat</p>
-      <h1 class="mb-6 text-4xl md:text-5xl font-black uppercase leading-tight tracking-tight">
-        Quiénes<br>Somos
-      </h1>
-      <p class="text-white/80 text-lg max-w-lg">
-        Desde 1943, al servicio de la salud en Concordia y la región del litoral argentino.
-      </p>
+<div class="overflow-hidden relative">
+
+  <!-- Cluster decorativo superior-izquierda (inset) -->
+  <div class="absolute -top-12 -left-12 pointer-events-none" aria-hidden="true">
+    <div class="w-72 h-72 rounded-full flex items-center justify-center
+      shadow-[inset_12px_12px_24px_rgb(163,177,198,0.4),inset_-12px_-12px_24px_rgba(255,255,255,0.35)]">
+      <div class="w-44 h-44 rounded-full flex items-center justify-center
+        shadow-[9px_9px_18px_rgb(163,177,198,0.4),-9px_-9px_18px_rgba(255,255,255,0.35)]">
+        <div class="w-20 h-20 rounded-full
+          shadow-[inset_6px_6px_12px_rgb(163,177,198,0.4),inset_-6px_-6px_12px_rgba(255,255,255,0.35)]"></div>
+      </div>
     </div>
   </div>
+
+  <!-- Cluster decorativo inferior-derecha (extruido) -->
+  <div class="absolute -bottom-10 -right-10 pointer-events-none" aria-hidden="true">
+    <div class="w-56 h-56 rounded-full flex items-center justify-center
+      shadow-[12px_12px_24px_rgb(163,177,198,0.45),-12px_-12px_24px_rgba(255,255,255,0.4)]">
+      <div class="w-32 h-32 rounded-full flex items-center justify-center
+        shadow-[inset_8px_8px_16px_rgb(163,177,198,0.4),inset_-8px_-8px_16px_rgba(255,255,255,0.35)]">
+        <div class="w-14 h-14 rounded-full
+          shadow-[6px_6px_12px_rgb(163,177,198,0.4),-6px_-6px_12px_rgba(255,255,255,0.35)]"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container px-5 lg:px-16 2xl:px-5 mx-auto flex flex-col items-center justify-center min-h-[60vh] relative z-10 text-center py-24">
+    <p class="text-xs font-semibold tracking-[0.2em] text-[#00c950] uppercase mb-5">
+      Instituto Médico Quirúrgico Garat · Concordia, Entre Ríos
+    </p>
+    <h1 class="mb-6 text-5xl md:text-6xl lg:text-5xl 2xl:text-6xl leading-[1.1] tracking-tight text-[#3D4852]">
+      <span class="font-light" style="opacity: 0.6">QUIÉNES </span><span class="font-extrabold">SOMOS</span>
+    </h1>
+    <p class="text-xl lg:text-base 2xl:text-xl text-[#6B7280] max-w-lg leading-relaxed">
+      Desde 1943, al servicio de la salud en Concordia y la región del litoral argentino.
+    </p>
+  </div>
+
 </div>
 
-<!-- Misión / Visión / Valores -->
-<section class="text-gray-600 body-font">
+<!-- Misión y Visión -->
+<section>
   <div class="container px-5 lg:px-16 2xl:px-5 pt-12 md:pt-24 mx-auto">
 
     <div class="text-center mb-12">
-      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Misión y Visión</h2>
-      <div class="h-1 w-20 bg-[#00c950] rounded mx-auto"></div>
+      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold mb-2 text-[#3D4852] uppercase">Misión y Visión</h2>
+      <div class="h-1 w-20 bg-[#00c950] rounded-full mx-auto"></div>
     </div>
 
     <!-- Misión + Visión -->
@@ -33,11 +56,11 @@
           <svg class="w-8 h-8 text-[#00c950] shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
-          <h3 class="text-3xl lg:text-2xl 2xl:text-3xl text-gray-900 tracking-tight leading-tight">Misión</h3>
+          <h3 class="text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] tracking-tight leading-tight">Misión</h3>
         </div>
-        <div class="leading-relaxed text-gray-700 text-lg lg:text-base 2xl:text-lg w-full space-y-5">
+        <div class="leading-relaxed text-[#6B7280] text-lg lg:text-base 2xl:text-lg w-full space-y-5">
           <p>
-            Brindar atención médica integral a la comunidad de Concordia y la región del litoral, sosteniendo los más altos estándares de excelencia clínica y el trato humano que caracterizó al instituto desde su fundación en <span class="font-semibold text-gray-900">1943</span>.
+            Brindar atención médica integral a la comunidad de Concordia y la región del litoral, sosteniendo los más altos estándares de excelencia clínica y el trato humano que caracterizó al instituto desde su fundación en <span class="font-semibold text-[#3D4852]">1943</span>.
           </p>
           <p>
             Cada especialidad, cada profesional y cada decisión clínica están orientados a mejorar la calidad de vida de nuestros pacientes con responsabilidad, vocación y compromiso.
@@ -51,73 +74,74 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
-          <h3 class="text-3xl lg:text-2xl 2xl:text-3xl text-gray-900 tracking-tight leading-tight">Visión</h3>
+          <h3 class="text-3xl lg:text-2xl 2xl:text-3xl text-[#3D4852] tracking-tight leading-tight">Visión</h3>
         </div>
-        <div class="leading-relaxed text-gray-700 text-lg lg:text-base 2xl:text-lg w-full space-y-5">
+        <div class="leading-relaxed text-[#6B7280] text-lg lg:text-base 2xl:text-lg w-full space-y-5">
           <p>
             Ser el centro médico de referencia regional en múltiples especialidades, integrando tecnología, formación continua y vocación de servicio para mejorar la calidad de vida de nuestros pacientes.
           </p>
           <p>
-            Brindamos atención con un enfoque centrado en el paciente, priorizando la <span class="italic text-gray-900 font-medium">atención humanizada</span>, la seguridad en cada procedimiento y la resolución oportuna de patologías complejas.
+            Brindamos atención con un enfoque centrado en el paciente, priorizando la <span class="italic text-[#3D4852] font-medium">atención humanizada</span>, la seguridad en cada procedimiento y la resolución oportuna de patologías complejas.
           </p>
         </div>
       </div>
     </div>
 
     <!-- Valores -->
-    <div class="flex flex-wrap -m-4">
-      <div class="p-4 lg:w-1/4 md:w-1/2 w-full">
-        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-              </svg>
-            </div>
-            <h3 class="title-font font-semibold text-gray-900 text-lg">Excelencia</h3>
-          </div>
-          <p class="text-gray-500 text-sm leading-relaxed">Compromiso permanente con la calidad en cada diagnóstico y tratamiento.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col h-full transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg class="w-5 h-5 text-[#00c950]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
         </div>
+        <h3 class="font-semibold text-[#3D4852] text-lg mb-2">Excelencia</h3>
+        <p class="text-[#6B7280] text-sm leading-relaxed">Compromiso permanente con la calidad en cada diagnóstico y tratamiento.</p>
       </div>
-      <div class="p-4 lg:w-1/4 md:w-1/2 w-full">
-        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-            </div>
-            <h3 class="title-font font-semibold text-gray-900 text-lg">Vocación</h3>
-          </div>
-          <p class="text-gray-500 text-sm leading-relaxed">La medicina como servicio genuino a las personas, no como transacción.</p>
+
+      <div class="bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col h-full transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg class="w-5 h-5 text-[#00c950]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
         </div>
+        <h3 class="font-semibold text-[#3D4852] text-lg mb-2">Vocación</h3>
+        <p class="text-[#6B7280] text-sm leading-relaxed">La medicina como servicio genuino a las personas, no como transacción.</p>
       </div>
-      <div class="p-4 lg:w-1/4 md:w-1/2 w-full">
-        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="title-font font-semibold text-gray-900 text-lg">Trayectoria</h3>
-          </div>
-          <p class="text-gray-500 text-sm leading-relaxed">Más de 80 años de historia que respaldan cada decisión clínica.</p>
+
+      <div class="bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col h-full transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg class="w-5 h-5 text-[#00c950]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
         </div>
+        <h3 class="font-semibold text-[#3D4852] text-lg mb-2">Trayectoria</h3>
+        <p class="text-[#6B7280] text-sm leading-relaxed">Más de 80 años de historia que respaldan cada decisión clínica.</p>
       </div>
-      <div class="p-4 lg:w-1/4 md:w-1/2 w-full">
-        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
-            </div>
-            <h3 class="title-font font-semibold text-gray-900 text-lg">Comunidad</h3>
-          </div>
-          <p class="text-gray-500 text-sm leading-relaxed">Arraigo profundo con Concordia y la región del litoral argentino.</p>
+
+      <div class="bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col h-full transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg class="w-5 h-5 text-[#00c950]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
         </div>
+        <h3 class="font-semibold text-[#3D4852] text-lg mb-2">Comunidad</h3>
+        <p class="text-[#6B7280] text-sm leading-relaxed">Arraigo profundo con Concordia y la región del litoral argentino.</p>
       </div>
+
     </div>
 
   </div>
@@ -129,29 +153,32 @@
 </section>
 
 <!-- Nuestra Historia y El Fundador -->
-<section class="text-gray-600 body-font">
+<section>
   <div class="container px-5 lg:px-16 2xl:px-5 mx-auto">
 
     <!-- Header split -->
     <div class="flex flex-wrap w-full mb-12">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-        <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Nuestra Historia</h2>
-        <div class="h-1 w-20 bg-[#00c950] rounded"></div>
+        <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold mb-2 text-[#3D4852] uppercase">Nuestra Historia</h2>
+        <div class="h-1 w-20 bg-[#00c950] rounded-full"></div>
       </div>
     </div>
 
     <div class="flex flex-wrap items-stretch -mx-4">
 
       <!-- Foto (columna izquierda, alto completo) -->
-      <div class="px-4 w-full lg:w-1/2 mb-10 lg:mb-0 relative">
-        <img
-          src="https://ik.imagekit.io/wonback/Institucional/dr-garat"
-          alt="Dr. Néstor Ramón Garat Pierrestegui"
-          class="w-full h-full object-cover object-top rounded-xl shadow-md"
-        />
-        <div class="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white rounded-b-xl px-4 py-3">
-          <p class="font-semibold text-sm leading-tight">Dr. Néstor Ramón Garat Pierrestegui</p>
-          <p class="text-white/70 text-xs mt-0.5">Fundador · 1943</p>
+      <div class="px-4 w-full lg:w-1/2 mb-10 lg:mb-0">
+        <div class="relative h-full rounded-[32px] overflow-hidden
+          shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]">
+          <img
+            src="https://ik.imagekit.io/wonback/Institucional/dr-garat"
+            alt="Dr. Néstor Ramón Garat Pierrestegui"
+            class="w-full h-full object-cover object-top"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white px-4 py-3">
+            <p class="font-semibold text-sm leading-tight">Dr. Néstor Ramón Garat Pierrestegui</p>
+            <p class="text-white/70 text-xs mt-0.5">Fundador · 1943</p>
+          </div>
         </div>
       </div>
 
@@ -160,57 +187,57 @@
 
         <!-- Historia -->
         <div class="space-y-5">
-          <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
-            El <strong class="text-gray-800">Sanatorio Garat</strong> fue fundado en <strong class="text-gray-800">1943</strong> por el Dr. Néstor Ramón Garat Pierrestegui, quien construyó desde el primer día una institución basada en la excelencia profesional y el compromiso con la comunidad.
+          <p class="leading-relaxed text-[#6B7280] text-lg lg:text-base 2xl:text-lg">
+            El <strong class="text-[#3D4852]">Sanatorio Garat</strong> fue fundado en <strong class="text-[#3D4852]">1943</strong> por el Dr. Néstor Ramón Garat Pierrestegui, quien construyó desde el primer día una institución basada en la excelencia profesional y el compromiso con la comunidad.
           </p>
-          <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
-            Con el paso de las décadas, el Sanatorio fue ampliando su oferta de servicios hasta consolidarse como el <strong class="text-gray-800">Instituto Médico Quirúrgico Garat</strong>, referencia regional en múltiples especialidades médicas.
+          <p class="leading-relaxed text-[#6B7280] text-lg lg:text-base 2xl:text-lg">
+            Con el paso de las décadas, el Sanatorio fue ampliando su oferta de servicios hasta consolidarse como el <strong class="text-[#3D4852]">Instituto Médico Quirúrgico Garat</strong>, referencia regional en múltiples especialidades médicas.
           </p>
-          <p class="leading-relaxed text-gray-600 text-lg lg:text-base 2xl:text-lg">
-            El Instituto está emplazado en terrenos que pertenecieron a la familia Garat —una de las familias pioneras de Concordia— en el barrio históricamente conocido como <strong class="text-gray-800">"La Cuchilla"</strong>, en la ciudad de Concordia, Entre Ríos.
+          <p class="leading-relaxed text-[#6B7280] text-lg lg:text-base 2xl:text-lg">
+            El Instituto está emplazado en terrenos que pertenecieron a la familia Garat —una de las familias pioneras de Concordia— en el barrio históricamente conocido como <strong class="text-[#3D4852]">"La Cuchilla"</strong>, en la ciudad de Concordia, Entre Ríos.
           </p>
         </div>
 
         <!-- El Fundador -->
         <div>
-        <h3 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2">
-          Dr. Néstor Ramón Garat Pierrestegui
-        </h3>
-        <p class="leading-relaxed text-lg text-gray-600 italic border-l-4 border-[#00c950] pl-4 mb-6">
-          "Médico, concejal y pionero de la salud pública en Concordia."
-        </p>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Graduado a los <strong class="text-gray-800">23 años</strong> en la Facultad de Medicina</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Formado junto al prestigioso <strong class="text-gray-800">Dr. Guillermo Zorraquín</strong></span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Trabajó junto a su hermano, el <strong class="text-gray-800">Dr. Juan Antonio Garat</strong>, Director del Instituto Argentino del Diagnóstico</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Concejal de la ciudad de Concordia en <strong class="text-gray-800">1963</strong></span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span class="text-gray-600 text-lg lg:text-base 2xl:text-lg">Una <strong class="text-gray-800">calle de Concordia lleva su nombre</strong> en homenaje a su legado</span>
-          </li>
-        </ul>
+          <h3 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#15aa45] to-[#4fd26a] mb-2">
+            Dr. Néstor Ramón Garat Pierrestegui
+          </h3>
+          <p class="leading-relaxed text-lg text-[#6B7280] italic border-l-4 border-[#00c950] pl-4 mb-6">
+            "Médico, concejal y pionero de la salud pública en Concordia."
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-[#6B7280] text-lg lg:text-base 2xl:text-lg">Graduado a los <strong class="text-[#3D4852]">23 años</strong> en la Facultad de Medicina</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-[#6B7280] text-lg lg:text-base 2xl:text-lg">Formado junto al prestigioso <strong class="text-[#3D4852]">Dr. Guillermo Zorraquín</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-[#6B7280] text-lg lg:text-base 2xl:text-lg">Trabajó junto a su hermano, el <strong class="text-[#3D4852]">Dr. Juan Antonio Garat</strong>, Director del Instituto Argentino del Diagnóstico</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-[#6B7280] text-lg lg:text-base 2xl:text-lg">Concejal de la ciudad de Concordia en <strong class="text-[#3D4852]">1963</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#00c950] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-[#6B7280] text-lg lg:text-base 2xl:text-lg">Una <strong class="text-[#3D4852]">calle de Concordia lleva su nombre</strong> en homenaje a su legado</span>
+            </li>
+          </ul>
         </div><!-- /fundador -->
 
       </div><!-- /columna derecha -->
@@ -226,92 +253,95 @@
 </section>
 
 <!-- Galería -->
-<section class="text-gray-600 body-font">
+<section>
   <div class="container px-5 lg:px-16 2xl:px-5 mx-auto">
     <div class="text-center mb-8">
-      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Nuestras Instalaciones</h2>
-      <div class="h-1 w-20 bg-[#00c950] rounded mx-auto"></div>
+      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold mb-2 text-[#3D4852] uppercase">Nuestras Instalaciones</h2>
+      <div class="h-1 w-20 bg-[#00c950] rounded-full mx-auto"></div>
     </div>
 
     <div class="group">
-    <div class="carousel w-full rounded-xl overflow-hidden shadow-md">
-      <div id="garat-slide1" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(0)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/1.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide8')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide2')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+      <div class="rounded-[32px] overflow-hidden
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]">
+        <div class="carousel w-full">
+          <div id="garat-slide1" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(0)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/1.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide8')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide2')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
+          <div id="garat-slide2" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(1)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/2.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide1')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide3')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
+          <div id="garat-slide3" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(2)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/3.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide2')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide4')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
+          <div id="garat-slide4" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(3)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/4.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide3')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide5')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
+          <div id="garat-slide5" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(4)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/5.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide4')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide6')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
+          <div id="garat-slide6" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(5)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/6.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide5')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide7')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
+          <div id="garat-slide7" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(6)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/7.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide6')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide8')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
+          <div id="garat-slide8" class="carousel-item relative w-full">
+            <button class="w-full cursor-pointer" (click)="openLightbox(7)">
+              <img src="https://ik.imagekit.io/wonback/Institucional/8.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
+            </button>
+            <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
+              <button (click)="scrollToSlide('garat-slide7')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
+              <button (click)="scrollToSlide('garat-slide1')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="garat-slide2" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(1)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/2.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide1')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide3')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
-        </div>
-      </div>
-      <div id="garat-slide3" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(2)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/3.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide2')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide4')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
-        </div>
-      </div>
-      <div id="garat-slide4" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(3)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/4.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide3')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide5')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
-        </div>
-      </div>
-      <div id="garat-slide5" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(4)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/5.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide4')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide6')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
-        </div>
-      </div>
-      <div id="garat-slide6" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(5)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/6.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide5')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide7')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
-        </div>
-      </div>
-      <div id="garat-slide7" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(6)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/7.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide6')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide8')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
-        </div>
-      </div>
-      <div id="garat-slide8" class="carousel-item relative w-full">
-        <button class="w-full cursor-pointer" (click)="openLightbox(7)">
-          <img src="https://ik.imagekit.io/wonback/Institucional/8.webp" alt="Instalaciones Instituto Garat" class="w-full h-64 md:h-[480px] object-cover" />
-        </button>
-        <div class="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 justify-between pointer-events-none">
-          <button (click)="scrollToSlide('garat-slide7')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❮</button>
-          <button (click)="scrollToSlide('garat-slide1')" class="btn btn-circle bg-[#00c950]/80 border-0 text-white hover:bg-[#15aa45] pointer-events-auto">❯</button>
-        </div>
-      </div>
-    </div>
-    <p class="text-center text-sm text-gray-400 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 select-none">
-      <svg class="inline w-4 h-4 mr-1 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
-      Hacé click en la imagen para expandirla
-    </p>
+      <p class="text-center text-sm text-[#6B7280]/60 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 select-none">
+        <svg class="inline w-4 h-4 mr-1 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+        Hacé click en la imagen para expandirla
+      </p>
     </div>
   </div>
 
@@ -322,57 +352,64 @@
 </section>
 
 <!-- Compromiso con la Comunidad -->
-<section class="text-gray-600 body-font">
+<section>
   <div class="container px-5 lg:px-16 2xl:px-5 mx-auto">
     <div class="text-center mb-12">
-      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase">Compromiso con la Comunidad</h2>
-      <div class="h-1 w-20 bg-[#00c950] rounded mx-auto mb-4"></div>
-      <p class="text-gray-500 text-lg lg:text-base 2xl:text-lg max-w-2xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold mb-2 text-[#3D4852] uppercase">Compromiso con la Comunidad</h2>
+      <div class="h-1 w-20 bg-[#00c950] rounded-full mx-auto mb-4"></div>
+      <p class="text-[#6B7280] text-lg lg:text-base 2xl:text-lg max-w-2xl mx-auto">
         Desde sus inicios, los profesionales del Instituto han estado profundamente vinculados al desarrollo de la salud pública en Concordia y la región.
       </p>
     </div>
 
-    <div class="flex flex-wrap -m-4">
-      <div class="p-4 lg:w-1/3 md:w-1/2 w-full">
-        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start justify-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
-          <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-            </svg>
-          </div>
-          <h3 class="title-font font-semibold text-gray-900 text-lg mb-2">Hospital Felipe Heras</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">El Dr. Garat brindó su aporte técnico y profesional al principal hospital público de referencia de la ciudad de Concordia.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col h-full transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg class="w-5 h-5 text-[#00c950]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
         </div>
+        <h3 class="font-semibold text-[#3D4852] text-lg mb-2">Hospital Felipe Heras</h3>
+        <p class="text-[#6B7280] text-sm leading-relaxed">El Dr. Garat brindó su aporte técnico y profesional al principal hospital público de referencia de la ciudad de Concordia.</p>
       </div>
-      <div class="p-4 lg:w-1/3 md:w-1/2 w-full">
-        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start justify-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
-          <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
-          </div>
-          <h3 class="title-font font-semibold text-gray-900 text-lg mb-2">Hospital Ferroviario y Colegio Médico</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">Participación activa en las principales instituciones de salud y en la organización médica de la región del litoral.</p>
+
+      <div class="bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col h-full transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg class="w-5 h-5 text-[#00c950]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
         </div>
+        <h3 class="font-semibold text-[#3D4852] text-lg mb-2">Hospital Ferroviario y Colegio Médico</h3>
+        <p class="text-[#6B7280] text-sm leading-relaxed">Participación activa en las principales instituciones de salud y en la organización médica de la región del litoral.</p>
       </div>
-      <div class="p-4 lg:w-1/3 md:w-1/2 w-full">
-        <div class="bg-base-100 border border-gray-200 shadow-sm rounded-lg flex flex-col p-6 h-full items-start justify-start transition-all duration-300 hover:shadow-md hover:scale-[1.02] hover:border-[#75da83]">
-          <div class="w-10 h-10 rounded-full bg-[#cbf1cd] flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-[#1c8b3b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-            </svg>
-          </div>
-          <h3 class="title-font font-semibold text-gray-900 text-lg mb-2">Salud Materno-Infantil</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">La familia fundadora presidió cooperadoras de centros materno-infantiles y participó en la creación de Ayuda Psicosomática San Antonio de la Concordia.</p>
+
+      <div class="bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col h-full transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg class="w-5 h-5 text-[#00c950]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
         </div>
+        <h3 class="font-semibold text-[#3D4852] text-lg mb-2">Salud Materno-Infantil</h3>
+        <p class="text-[#6B7280] text-sm leading-relaxed">La familia fundadora presidió cooperadoras de centros materno-infantiles y participó en la creación de Ayuda Psicosomática San Antonio de la Concordia.</p>
       </div>
+
     </div>
   </div>
 
 </section>
 
 <!-- CTA de cierre -->
-<div class="bg-base-100 py-12 md:py-24">
+<div class="bg-[#E0E5EC] py-12 md:py-24">
   <section class="bg-gradient-to-r from-[#1d6e30] to-[#15aa45] py-20 md:py-28">
     <div class="container mx-auto px-8 md:px-16 text-center">
       <h2 class="text-3xl md:text-4xl font-black text-white uppercase leading-tight tracking-tight mb-4">

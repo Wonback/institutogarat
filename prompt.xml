@@ -30,6 +30,106 @@ Always aim to:
 
 </role>
 
+<project-context>
+# Instituto Garat — Project-Specific Overrides
+
+## Tech Stack
+- **Framework**: Angular 21, standalone components (no NgModules), lazy-loaded routes, Angular Signals
+- **Styling**: Tailwind CSS 4 + DaisyUI 5. All custom styles go in component `.css` files or `styles.css`. No inline `style=""` attributes unless technically required (e.g. dynamic bindings).
+- **Animations**: Motion One (`motion` package) — `animate()`, `inView()`.
+- **Icons**: `lucide-angular` via `<lucide-icon name="..." [size]="N">`. No FontAwesome, no Heroicons.
+- **Images**: Hosted on ImageKit (`https://ik.imagekit.io/wonback/...`). Use Angular `NgOptimizedImage` (`ngSrc`) for above-the-fold images.
+- **Rendering**: SSR enabled. Always guard `localStorage`/`document` with `isPlatformBrowser()`.
+
+## Accent Color — CRITICAL OVERRIDE
+The design system document uses `#6C63FF` (violet) as accent. **This project uses green instead.**
+
+| Role | Value |
+|------|-------|
+| Primary accent (buttons, icons, borders) | `#00c950` |
+| Accent hover | `#15aa45` |
+| Accent shade (section titles) | `#1c8b3b` |
+| Accent soft background | `#cbf1cd` |
+| Accent tint 2 | `#75da83` |
+| Accent tint 3 | `#94e29b` |
+
+Never use `#6C63FF`, `#8B84FF`, or any violet. Never use Tailwind's `green-*` classes — use hex values directly.
+
+## Background & Surface — CRITICAL
+- **Page background**: `#E0E5EC` globally. Set on `<body>` in `styles.css` and per-section as `bg-[#E0E5EC]`.
+- **DaisyUI `bg-base-100`**: Resolves to white in the default theme. **Never use `bg-base-100` on cards, sections, or containers** that should be neumorphic. Replace with `bg-[#E0E5EC]` explicitly.
+- **`bg-white`**: Never use. Same issue.
+- When converting existing pages: grep for `bg-base-100`, `bg-white`, `bg-gray-*`, and replace with `bg-[#E0E5EC]`.
+
+## Typography
+- Fonts already loaded in `index.html`: **Plus Jakarta Sans** (display) + **DM Sans** (body).
+- Primary text: `text-[#3D4852]`. Secondary/muted: `text-[#6B7280]`.
+- Section titles: `text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold text-[#3D4852]` + green underline `<div class="h-1 w-20 bg-[#00c950] rounded-full">`.
+
+## Responsive Breakpoint Pattern (lg/2xl)
+Pages use a three-step responsive pattern — **always apply both `lg:` and `2xl:` when scaling**:
+- `px-5 lg:px-16 2xl:px-5` — container horizontal padding
+- `py-8 md:py-16 2xl:py-24` — section vertical separators
+- `text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl` — section headings
+- `text-lg lg:text-base 2xl:text-lg` — body/descriptive text
+- Never use only `lg:` without restoring with `2xl:`.
+
+## Layout Conventions
+- **Section separators**: Spacing between sections is controlled exclusively by a divider element, not `py-*` on the sections themselves. Pattern: `<div class="container px-5 py-12 md:py-24 mx-auto flex w-full flex-col"><div class="divider"></div></div>`. DaisyUI `.divider` renders two lines — for a clean single line use `<hr class="border-[#c8cfd8] my-1 w-full">` inside a `<li>`.
+- **Footer**: Has its own `mt-12 md:mt-24`. No page needs to add bottom spacing before footer.
+- **FAB WhatsApp**: Present on every finished page. Always include `text-white` on the `<a>` (SVG uses `fill="currentColor"`).
+
+## Card Taxonomy (do not mix variants)
+| Variant | Base classes | Use |
+|---------|-------------|-----|
+| **A — Feature/highlight** | `bg-[#cbf1cd]/30 border border-[#94e29b]/50 rounded-2xl` | 2–4 items defining the service |
+| **B — Clickable list** | `bg-[#E0E5EC] border border-gray-200 shadow-sm rounded-lg` + hover | 6+ items (treatments, procedures) |
+| **C — Stat/data** | `bg-[#E0E5EC] rounded-2xl shadow-sm` | Non-interactive stats |
+
+Neumorphic extruded cards use `bg-[#E0E5EC]` with the standard dual shadow.
+
+## Shadows — Project Shadow Values
+Use these exact values (already match the design system):
+- **Extruded standard**: `shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]`
+- **Extruded hover**: `shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)]`
+- **Extruded small**: `shadow-[5px_5px_10px_rgb(163,177,198,0.6),-5px_-5px_10px_rgba(255,255,255,0.5)]`
+- **Inset standard**: `shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]`
+- **Inset deep**: `shadow-[inset_10px_10px_20px_rgb(163,177,198,0.7),inset_-10px_-10px_20px_rgba(255,255,255,0.6)]`
+- **Footer (upward)**: `box-shadow: 0px -8px 20px rgb(163,177,198,0.5), 0px 4px 6px rgba(255,255,255,0.4)`
+
+## Hero Neumórfico — Convenciones
+
+**Dot pattern del body:** `styles.css` define en `body` un `background-image: radial-gradient(circle, rgba(163,177,198,0.45) 1px, transparent 1px)` con `background-size: 24px 24px`. Cualquier elemento con `bg-[#E0E5EC]` **tapa** ese pattern porque pisa el `background-image` heredado. Para que el hero muestre el dot pattern, el wrapper no debe tener `bg-[#E0E5EC]` — el body ya provee color y patrón. Solo agregar `overflow-hidden relative` al wrapper.
+
+**Clusters circulares decorativos:** Cada página debe tener su propia composición de clusters — nunca copiar posición, tamaño ni tipo de shadow de otra página (efecto procedural). Variables a cambiar entre páginas:
+- **Posición**: `top/bottom/left/right` con offset negativo (`-top-12 -left-12`, `-bottom-10 -right-10`, etc.)
+- **Tamaños**: variar los tres círculos concéntricos (ej. w-72/44/20 vs w-80/52/28)
+- **Tipo de shadow por capa**: alternar extruido (`shadow-[12px...]`) e inset (`shadow-[inset_10px...]`) en orden distinto al landing
+
+Landing usa: top-right extruido → bottom-left inset.
+Institucional usa: top-left inset → bottom-right extruido.
+Cada página nueva debe diferir de las anteriores.
+
+## Elements to Preserve (Do Not Redesign)
+- **Navbar**: Sticky header, desktop nav with neumorphic inset hover, mobile drawer with DaisyUI `drawer`. Already neumorphic.
+- **Footer**: Already neumorphic. Shadow defined in `footer.css`.
+- **Landing hero**: Dark gradient overlay, left-aligned split-weight H1. Do not redesign unless explicitly asked.
+- **Obras sociales marquee**: Animated logo strip in `landing.html`. Do not touch.
+- **FAB WhatsApp**: Green circle fixed button. Present on all finished pages.
+- **CV form** (`pages/contacto/`): Reactive Forms with custom validators. Do not touch form logic.
+
+## SEO Requirements
+- One `<h1>` per page (in the hero). Sections use `<h2>`, sub-sections `<h3>`.
+- No `<h2>`/`<h3>` for decorative labels, step counters, or stat numbers — use `<p>` or `<span>`.
+- Each component injects `Meta` and `Title` in `ngOnInit()`.
+- All `target="_blank"` links require `rel="noopener noreferrer"`.
+- Unique `aria-label` on repeated anchor text.
+
+## Page Structure — Canonical Section Order
+Hero → Nosotros → [Treatments/Procedures/Pathologies] → Team (always last, acts as "credits").
+Exception: support-service pages (e.g. Guardia) have no Team or Nosotros section.
+</project-context>
+
 <design-system>
 # Neumorphism (Soft UI) Design System
 
