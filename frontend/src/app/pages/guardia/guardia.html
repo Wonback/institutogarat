@@ -1,22 +1,46 @@
 <!-- HERO -->
-<div
-  class="hero min-h-[60vh] relative"
-  style="background-image: url('https://ik.imagekit.io/wonback/Guardia/guardia.webp')"
->
-  <div
-    class="absolute inset-0 bg-gradient-to-r from-[#17381c]/95 to-[#1c5226]/50 mix-blend-multiply z-0 pointer-events-none"
-  ></div>
-  <div class="hero-content text-white w-full justify-start px-8 md:px-16 z-10">
-    <div class="max-w-2xl text-left mt-32 md:mt-0">
-      <h1
-        class="mb-6 text-4xl md:text-5xl lg:text-4xl 2xl:text-5xl font-black uppercase leading-tight tracking-tight"
-      >
-        Guardia<br />Médica
+<div class="overflow-x-clip relative">
+
+  <!-- Cluster decorativo top-right (inset → extruido → inset) -->
+  <div class="absolute -top-16 -right-16 pointer-events-none" aria-hidden="true">
+    <div class="w-80 h-80 rounded-full flex items-center justify-center
+      shadow-[inset_12px_12px_24px_rgb(163,177,198,0.4),inset_-12px_-12px_24px_rgba(255,255,255,0.35)]">
+      <div class="w-52 h-52 rounded-full flex items-center justify-center
+        shadow-[9px_9px_18px_rgb(163,177,198,0.4),-9px_-9px_18px_rgba(255,255,255,0.35)]">
+        <div class="w-28 h-28 rounded-full
+          shadow-[inset_8px_8px_16px_rgb(163,177,198,0.4),inset_-8px_-8px_16px_rgba(255,255,255,0.35)]"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cluster decorativo bottom-left (extruido → inset → extruido) -->
+  <div class="absolute bottom-0 left-0 pointer-events-none" aria-hidden="true">
+    <div class="w-64 h-64 rounded-full flex items-center justify-center
+      shadow-[9px_9px_18px_rgb(163,177,198,0.45),-9px_-9px_18px_rgba(255,255,255,0.4)]">
+      <div class="w-40 h-40 rounded-full flex items-center justify-center
+        shadow-[inset_10px_10px_20px_rgb(163,177,198,0.4),inset_-10px_-10px_20px_rgba(255,255,255,0.35)]">
+        <div class="w-20 h-20 rounded-full
+          shadow-[9px_9px_16px_rgb(163,177,198,0.4),-9px_-9px_16px_rgba(255,255,255,0.35)]"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container px-5 lg:px-16 2xl:px-5 mx-auto flex flex-col lg:flex-row items-center min-h-[60vh] relative z-10">
+
+    <!-- Texto izquierda -->
+    <div class="flex-1 flex flex-col justify-center py-16 lg:py-0">
+      <p class="text-xs font-semibold tracking-[0.2em] text-[#00c950] uppercase mb-5">
+        Atención Permanente · 24hs · 365 días
+      </p>
+      <h1 class="mb-8 text-5xl md:text-6xl lg:text-5xl 2xl:text-6xl leading-[1.1] tracking-tight text-[#3D4852]">
+        <span class="font-light" style="opacity: 0.6">GUARDIA </span><span class="font-extrabold">MÉDICA</span>
       </h1>
       <div class="flex flex-col sm:flex-row gap-3 flex-wrap">
         <a
           href="tel:4229000"
-          class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200 shadow-lg drop-shadow-lg text-lg"
+          class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 w-fit
+            shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+            hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-0.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +63,10 @@
           href="https://www.google.com/maps/search/?api=1&query=Instituto+Medico+Quirurgico+Garat+Concordia"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 border border-white/30 text-lg w-fit"
+          aria-label="Cómo llegar al Instituto Garat en Google Maps"
+          class="inline-flex items-center gap-3 bg-[#E0E5EC] text-[#3D4852] font-semibold py-3 px-8 rounded-2xl transition-all duration-300 w-fit
+            shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+            hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-0.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,50 +86,73 @@
         </a>
       </div>
     </div>
+
+    <!-- Imagen derecha en marco neumórfico -->
+    <div class="flex-1 hidden lg:flex items-center justify-center w-full py-12 lg:py-16">
+      <div
+        class="relative w-full rounded-[32px] overflow-hidden
+          shadow-[12px_12px_24px_rgb(163,177,198,0.65),-12px_-12px_24px_rgba(255,255,255,0.6)]"
+        style="aspect-ratio: 4/3; max-height: 60vh;"
+      >
+        <img
+          src="https://ik.imagekit.io/wonback/Guardia/guardia.webp"
+          alt="Guardia Médica Instituto Garat"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 to-red-400"></div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <!-- DISPONIBILIDAD Y CAPACIDAD -->
-<section class="text-gray-600 body-font bg-base-100">
+<section>
   <div class="container mx-auto px-5 lg:px-16 2xl:px-5 pt-12 md:pt-16 2xl:pt-24 pb-0">
     <div class="flex flex-col items-center text-center w-full mb-10 lg:mb-12">
       <h2
-        class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-3 text-gray-900 uppercase"
+        class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold mb-2 text-[#3D4852] uppercase"
       >
         Disponibilidad y Capacidad
       </h2>
-      <div class="h-1 w-24 bg-[#00c950] rounded mx-auto mb-6"></div>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-lg lg:text-base 2xl:text-lg text-gray-500">
+      <div class="h-1 w-24 bg-[#00c950] rounded-full mx-auto mb-6"></div>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-lg lg:text-base 2xl:text-lg text-[#6B7280]">
         La Guardia del Instituto Garat cuenta con atención médica y de enfermería permanente,
         equipada para resolver urgencias y emergencias de alta complejidad sin necesidad de
         derivación.
       </p>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- 24/7 — fila completa en mobile, columna simple en desktop -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 24/7 -->
       <div
-        class="col-span-2 lg:col-span-1 flex items-center gap-5 p-5 bg-base-100 rounded-2xl shadow-sm"
+        class="col-span-2 lg:col-span-1 bg-[#E0E5EC] rounded-[32px] p-6 flex items-center gap-5 transition-all duration-300
+          shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+          hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-10 h-10 text-[#00c950] shrink-0"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
-        </svg>
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 text-[#00c950]"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
         <div>
           <p class="text-4xl font-black text-[#00c950] leading-none mb-1">24/7</p>
-          <p class="text-sm font-semibold text-gray-900 uppercase tracking-wide leading-tight">
+          <p class="text-sm font-semibold text-[#3D4852] uppercase tracking-wide leading-tight">
             365 días al año
           </p>
-          <p class="text-sm text-gray-500 leading-tight">
+          <p class="text-sm text-[#6B7280] leading-tight">
             Atención médica y de enfermería sin interrupciones
           </p>
         </div>
@@ -110,49 +160,59 @@
 
       <!-- 3 Consultorios -->
       <div
-        class="col-span-1 flex flex-col items-center text-center p-4 bg-base-100 rounded-2xl shadow-sm"
+        class="col-span-1 bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col items-center text-center transition-all duration-300
+          shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+          hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8 text-[#00c950] mb-2"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-        >
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
-        </svg>
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-[#00c950]"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        </div>
         <p class="text-2xl lg:text-4xl font-black text-[#00c950] leading-none mb-1">3</p>
-        <p class="text-xs font-semibold text-gray-900 uppercase tracking-wide leading-tight">
+        <p class="text-xs font-semibold text-[#3D4852] uppercase tracking-wide leading-tight">
           Consultorios
         </p>
-        <p class="text-xs text-gray-500 leading-tight mt-0.5">Atención simultánea</p>
+        <p class="text-xs text-[#6B7280] leading-tight mt-0.5">Atención simultánea</p>
       </div>
 
       <!-- Shock Room -->
       <div
-        class="col-span-1 flex flex-col items-center text-center p-4 bg-base-100 rounded-2xl shadow-sm"
+        class="col-span-1 bg-[#E0E5EC] rounded-[32px] p-6 flex flex-col items-center text-center transition-all duration-300
+          shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+          hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8 text-[#00c950] mb-2"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-        >
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-        </svg>
+        <div class="w-12 h-12 rounded-2xl mb-4 flex items-center justify-center shrink-0
+          shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-[#00c950]"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+          >
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+        </div>
         <p class="text-2xl lg:text-4xl font-black text-[#00c950] leading-none mb-1">2</p>
-        <p class="text-xs font-semibold text-gray-900 uppercase tracking-wide leading-tight">
+        <p class="text-xs font-semibold text-[#3D4852] uppercase tracking-wide leading-tight">
           Shock Room
         </p>
-        <p class="text-xs text-gray-500 leading-tight mt-0.5">Alta complejidad</p>
+        <p class="text-xs text-[#6B7280] leading-tight mt-0.5">Alta complejidad</p>
       </div>
 
     </div>
@@ -164,19 +224,19 @@
 </div>
 
 <!-- APOYO DIAGNÓSTICO 24HS -->
-<section class="text-gray-600 body-font bg-base-100">
+<section>
   <div class="container mx-auto px-5 lg:px-16 2xl:px-5 pb-0">
     <div class="flex flex-wrap w-full mb-10 lg:mb-12">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
         <h2
-          class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-2 text-gray-900 uppercase"
+          class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold mb-2 text-[#3D4852] uppercase"
         >
           Diagnóstico 24hs
         </h2>
-        <div class="h-1 w-20 bg-[#00c950] rounded"></div>
+        <div class="h-1 w-20 bg-[#00c950] rounded-full"></div>
       </div>
       <p
-        class="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg lg:text-base 2xl:text-lg self-center"
+        class="lg:w-1/2 w-full leading-relaxed text-[#6B7280] text-lg lg:text-base 2xl:text-lg self-center"
       >
         Contamos con servicios de apoyo diagnóstico disponibles las 24 horas. El paciente no
         necesita ser derivado a otro centro para estudios básicos.
@@ -184,13 +244,17 @@
     </div>
 
     <div class="flex flex-col md:flex-row gap-6 lg:gap-10">
+
       <!-- Laboratorio -->
-      <div class="md:w-1/2 bg-base-100 border border-gray-100 rounded-2xl shadow-sm p-8">
+      <div class="md:w-1/2 bg-[#E0E5EC] rounded-[32px] p-8 transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
         <div class="flex items-center gap-4 mb-5">
-          <div class="w-12 h-12 rounded-xl bg-[#cbf1cd] flex items-center justify-center shrink-0">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0
+            shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6 text-[#1c8b3b]"
+              class="w-6 h-6 text-[#00c950]"
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
@@ -202,7 +266,7 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-xl lg:text-lg 2xl:text-xl font-bold text-gray-900">
+            <h3 class="text-xl lg:text-lg 2xl:text-xl font-bold text-[#3D4852]">
               Laboratorio de Análisis Clínicos
             </h3>
             <span
@@ -211,19 +275,22 @@
             >
           </div>
         </div>
-        <p class="text-gray-500 leading-relaxed text-lg lg:text-base 2xl:text-lg">
+        <p class="text-[#6B7280] leading-relaxed text-lg lg:text-base 2xl:text-lg">
           Procesamiento inmediato de muestras para hemogramas, bioquímica, coagulación, gasometría
           arterial y otros estudios urgentes que orientan el diagnóstico en tiempo real.
         </p>
       </div>
 
       <!-- Diagnóstico por Imágenes -->
-      <div class="md:w-1/2 bg-base-100 border border-gray-100 rounded-2xl shadow-sm p-8">
+      <div class="md:w-1/2 bg-[#E0E5EC] rounded-[32px] p-8 transition-all duration-300
+        shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+        hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-1">
         <div class="flex items-center gap-4 mb-5">
-          <div class="w-12 h-12 rounded-xl bg-[#cbf1cd] flex items-center justify-center shrink-0">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0
+            shadow-[inset_6px_6px_10px_rgb(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.5)]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6 text-[#1c8b3b]"
+              class="w-6 h-6 text-[#00c950]"
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
@@ -237,7 +304,7 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-xl lg:text-lg 2xl:text-xl font-bold text-gray-900">
+            <h3 class="text-xl lg:text-lg 2xl:text-xl font-bold text-[#3D4852]">
               Diagnóstico por Imágenes
             </h3>
             <span
@@ -250,16 +317,17 @@
           @for (modalidad of imagingModalities; track modalidad.sigla) {
             <li class="flex items-center gap-3">
               <span
-                class="w-10 text-center text-xs font-bold text-white bg-[#00c950] rounded px-1.5 py-0.5 shrink-0"
+                class="w-10 text-center text-xs font-bold text-white bg-[#00c950] rounded-lg px-1.5 py-0.5 shrink-0"
                 >{{ modalidad.sigla }}</span
               >
-              <span class="text-gray-700 text-lg lg:text-base 2xl:text-lg">{{
+              <span class="text-[#3D4852] text-lg lg:text-base 2xl:text-lg">{{
                 modalidad.nombre
               }}</span>
             </li>
           }
         </ul>
       </div>
+
     </div>
   </div>
 </section>
@@ -269,16 +337,16 @@
 </div>
 
 <!-- SISTEMA DE TRIAGE -->
-<section class="text-gray-600 body-font bg-base-100">
+<section>
   <div class="container mx-auto px-5 lg:px-16 2xl:px-5 pb-12 md:pb-16 2xl:pb-24">
     <div class="flex flex-col items-center text-center w-full mb-10 lg:mb-12">
       <h2
-        class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-medium title-font mb-3 text-gray-900 uppercase"
+        class="text-2xl sm:text-3xl lg:text-2xl 2xl:text-3xl font-bold mb-2 text-[#3D4852] uppercase"
       >
         Prioridad de Atención
       </h2>
-      <div class="h-1 w-24 bg-[#00c950] rounded mx-auto mb-6"></div>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-lg lg:text-base 2xl:text-lg text-gray-500">
+      <div class="h-1 w-24 bg-[#00c950] rounded-full mx-auto mb-6"></div>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-lg lg:text-base 2xl:text-lg text-[#6B7280]">
         La atención en guardia no se asigna por orden de llegada, sino según la gravedad de cada
         caso. Nuestro sistema de triage clasifica a cada paciente para garantizar que quienes más lo
         necesitan reciban atención primero.
@@ -288,11 +356,13 @@
     <div class="flex flex-col gap-4">
       @for (level of triageLevels; track level.nivel) {
         <div
-          class="flex flex-col sm:flex-row items-stretch bg-base-100 border border-gray-100 rounded-2xl shadow-sm overflow-hidden"
+          class="bg-[#E0E5EC] rounded-[32px] overflow-hidden flex flex-col sm:flex-row items-stretch transition-all duration-300
+            shadow-[9px_9px_16px_rgb(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)]
+            hover:shadow-[12px_12px_20px_rgb(163,177,198,0.7),-12px_-12px_20px_rgba(255,255,255,0.6)] hover:-translate-y-0.5"
         >
           <!-- Color band -->
           <div
-            class="sm:w-48 lg:w-44 2xl:w-52 shrink-0 flex flex-col items-center justify-center p-4 sm:p-6 text-white text-center gap-1"
+            class="sm:w-48 lg:w-44 2xl:w-52 shrink-0 flex flex-col items-center justify-center p-4 sm:p-6 text-white text-center gap-1 rounded-t-[32px] sm:rounded-t-none sm:rounded-l-[32px]"
             [style.background-color]="level.color"
           >
             <span class="text-xs font-bold uppercase tracking-widest opacity-90">{{
@@ -305,7 +375,7 @@
           <div
             class="flex flex-col sm:flex-row flex-1 p-5 sm:p-6 items-start sm:items-center gap-4 sm:gap-8"
           >
-            <p class="flex-1 text-gray-600 leading-relaxed text-lg lg:text-base 2xl:text-lg">
+            <p class="flex-1 text-[#6B7280] leading-relaxed text-lg lg:text-base 2xl:text-lg">
               {{ level.descripcion }}
             </p>
             <!-- Tiempo de atención -->
