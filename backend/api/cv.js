@@ -84,7 +84,7 @@ module.exports = async function handler(req, res) {
       apellido,
       sector,
       fileBuffer,
-      fileName: `CV_${nombre}_${apellido}.pdf`,
+      fileName: `CV_${nombre.trim().replace(/\s+/g, '_')}_${apellido.trim().replace(/\s+/g, '_')}_${sector.trim().replace(/\s+/g, '_')}.pdf`,
     });
     ipCooldowns.set(ip, Date.now());
     return res.status(200).json({ ok: true });
