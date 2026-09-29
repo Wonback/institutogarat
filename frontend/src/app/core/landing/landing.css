@@ -15,9 +15,8 @@
 }
 
 .obras-marquee-container {
-    /* --pad matches container px-5 lg:px-16 2xl:px-5 + centering offset per breakpoint */
-    --pad: 1.25rem;
-    --fade-len: 1rem;
+    --pad: 0px;
+    --fade-len: 2rem;
     overflow: hidden;
     mask-image: linear-gradient(
         to right,
@@ -33,27 +32,6 @@
         black calc(100% - var(--pad) - var(--fade-len)),
         transparent calc(100% - var(--pad))
     );
-}
-
-/* lg: container max-width 64rem + px-16 (4rem) */
-@media (min-width: 1024px) {
-    .obras-marquee-container {
-        --pad: calc(max(0px, (100vw - 64rem) / 2) + 4rem);
-    }
-}
-
-/* xl: container max-width 80rem + px-16 (4rem) */
-@media (min-width: 1280px) {
-    .obras-marquee-container {
-        --pad: calc(max(0px, (100vw - 80rem) / 2) + 4rem);
-    }
-}
-
-/* 2xl: container max-width 96rem + px-5 (1.25rem) */
-@media (min-width: 1536px) {
-    .obras-marquee-container {
-        --pad: calc(max(0px, (100vw - 96rem) / 2) + 1.25rem);
-    }
 }
 
 .obras-marquee-track {

@@ -13,9 +13,12 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Figtree', sans-serif;
 }
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'DM Sans', 'Noto Sans', sans-serif;
+  background-color: #E0E5EC;
+  background-image: radial-gradient(circle, rgba(163,177,198,0.45) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
